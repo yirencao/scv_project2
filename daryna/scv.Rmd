@@ -1,0 +1,86 @@
+---
+title: "R Notebook"
+output: html_document
+---
+
+```{r}
+set.seed(10)
+taxi_trips = taxi_trips[sample(nrow(taxi_trips), 100000), ]
+```
+
+```{r}
+# Let's first load the packages we will use further in the analysis
+library(ggplot2)
+library(data.table)
+library(dplyr)
+library(ggrepel)
+library(tidyverse)
+library(psych)
+library(qqplotr)
+require(scales)
+```
+
+```{r}
+attach(taxi_trips)
+```
+
+```{r}
+taxi_trips$Trip.Start.Timestamp <- as.character(Trip.Start.Timestamp)
+```
+
+
+```{r}
+# Get the date without hour
+taxi_trips$days <- as.Date.character(taxi_trips$Trip.Start.Timestamp, format = "%m/%d/%Y")
+```
+
+```{r}
+# Get the weekday
+taxi_trips$weekday = strftime(taxi_trips$days,'%A')
+```
+
+```{r}
+# Get the year
+taxi_trips$month = strftime(taxi_trips$days,'%B')
+```
+
+```{r}
+# Get the year
+taxi_trips$year = strftime(taxi_trips$days,'%Y')
+```
+
+```{r}
+# Get the year
+taxi_trips$day_number = strftime(taxi_trips$days,'%d')
+```
+
+
+### See the frequency of data points by year
+```{r}
+year_freq = as.data.frame(table(taxi_trips$year)) 
+```
+
+```{r}
+ggplot(year_freq, aes(x = Var1, y = Freq)) +
+  geom_bar(fill = "#0073C2FF", stat = "identity") + xlab("Year") + ylab("Frequency of trips") + theme_bw()
+
+```
+
+## I want to see the frequency of each area by year
+```{r}
+table(taxi_trips$Pickup.Community.Area, taxi_trips$year)
+```
+
+```{r}
+year_13 <- subset(taxi_trips, year == 2013)
+freq_area_13 <- as.data.frame(table(year_2013$Pickup.Community.Area))
+freq_area_13 <- freq_area[order(freq_area$Freq, decreasing = TRUE),]
+top_pickup_13 <- freq_area[1:10,]
+bottom_pickup_13 <- freq_area[11:77,]
+sum_bottom_13 <- sum(as.numeric(bottom_pickup$Freq), na.rm = TRUE) # sum up the frequencies of the least common areas
+top_pickup_13 <- top_pickup %>% add_row(Var1 = "Other", Freq = sum_bottom)
+top_pickup_13
+```
+
+
+
