@@ -1,0 +1,51 @@
+---
+title: "flexdashboard test"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+---
+
+```{r, include = FALSE}
+pacman::p_load(tidyverse, pacman, ggmap, janitor, sf, mapview, leaflet, rgdal, RColorBrewer, ggplot2, data.table, readr, qqplotr, GGally, lubridate, raster, spData, spDataLarge, tmap, osmdata, gifski, jsonlite, zoo,gganimate, flexdashboard, plotly)
+```
+
+```{r setup, include=FALSE}
+df <- jsonlite::fromJSON(paste("./data/", 2013, ".json", sep = ""), flatten=TRUE) %>%
+ drop_na()
+
+for(i in 2014:2021) { 
+ temp <- jsonlite::fromJSON(paste("./data/", i, ".json", sep = ""), flatten=TRUE) %>%
+ drop_na()
+ df <- rbind(df, temp)
+ 
+}
+df <- df %>%
+  mutate(trip_total = as.numeric(count_trip_total), pickup_community_area = as.factor(pickup_community_area),
+         month = as.numeric(month), year = as.numeric(year))
+
+df$ym<- as.yearmon(paste(df$year, df$month, sep="-"))
+```
+
+
+CColumn {data-width=1250}
+-----------------------------------------------------------------------
+
+### Trip total vs Time
+
+```{r}
+ggplotly(df %>% ggplot(aes(x = ym , y=trip_total)) + geom_smooth()) 
+  
+```
+
+
+Column {data-width=1250}
+-----------------------------------------------------------------------
+
+### Trip total by Zone
+
+```{r}
+
+ggplotly(df %>% ggplot(aes(x = ym , y=trip_total)) + geom_smooth(aes(color =pickup_community_area))) 
+# ggplotly(diamonds %>% ggplot(aes(x = carat , y=price)) + geom_smooth(aes(color=color)))
+```
