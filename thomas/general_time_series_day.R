@@ -1,16 +1,3 @@
----
-title: "time_series"
-author: "tho"
-date: "11/14/2021"
-output: html_document
-runtime: shiny
----
-
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
-
-```{r, Loading library, echo=FALSE, warning=FALSE, include=FALSE}
 library(shiny)
 library(tidyverse)
 library(ggmap)
@@ -24,10 +11,22 @@ library(lubridate)
 library(plotly)
 library(reshape2)
 library(shinyWidgets)
-```
 
+#load("Taxi_Trips.RData")
 
-```{r Loading data, echo=FALSE, warning=FALSE, include=FALSE}
+#taxi_trips <- subset(taxi_trips, select = c("Trip.Start.Timestamp","Trip.End.Timestamp",
+#                                            "Trip.Total","Pickup.Community.Area",
+#                                            "Dropoff.Community.Area","Company",
+#                                            "Trip.Miles","Trip.Seconds"))
+# DATA WITHOUT NA
+#taxi_trips <- na.omit(taxi_trips,cols=c("Trip.Start.Timestamp","Trip.End.Timestamp",
+#                                        "Trip.Total","Pickup.Community.Area",
+#                                        "Dropoff.Community.Area"))
+#taxi_trips <- clean_names(taxi_trips)
+
+# Taking a sample of taxi_trips
+#trips <- slice_sample(taxi_trips,n=500000)
+
 # Load the sample date
 load("trips_sample.RData")
 trips <- trips_thomas
@@ -47,10 +46,7 @@ trips <- cbind(trips,date_month,date_year,date_day_month)
 month_year <- floor_date(trips$date,"month")
 year_floor <- floor_date(trips$date,"year")
 trips <- cbind(trips,month_year,year_floor)
-```
 
-# Basic time series where we have to select which period we wish to visualize
-```{r functions, echo=FALSE, warning=FALSE, include=FALSE}
 data_selection <- function(trips, start, end, choice){
   if (choice == "year"){
     my_data <- trips %>%
@@ -120,9 +116,8 @@ time_serie <- function(trips, choice, dates_m, dates_y, dates_d){
   p <- ggplotly(p)
   return(p)
 }
-```
+#################
 
-```{r UI1, echo=FALSE, warning=FALSE}
 # Defining the UI
 ui <- fluidPage(
   sidebarPanel(
@@ -132,8 +127,7 @@ ui <- fluidPage(
                 selected = "month"),
     conditionalPanel(
       condition = "input.choice == 'month'",
-      airMonthpickerInput(inputId = "dates_month", range = TRUE, 
-                          dateFormat ="mm-yyyy",
+      airMonthpickerInput(inputId = "dates_month", range = TRUE, dateFormat = "mm-yyyy",
                           label = "Choose the interval of time you want to visualize :",
                           minDate = "2013-01-01", maxDate = "2021-10-01",
                           separator = "  to  ", value = "2013-01-01",
@@ -147,8 +141,7 @@ ui <- fluidPage(
                          view = "years", autoClose = TRUE, minView = "years")),
     conditionalPanel(
       condition = "input.choice == 'day'",
-      airDatepickerInput(inputId = "dates_day", range = TRUE,
-                         dateFormat = "mm-dd-yyyy",
+      airDatepickerInput(inputId = "dates_day", range = TRUE, dateFormat = "mm-dd-yyyy",
                          label = "Choose the interval of time you want to visualize :",
                          minDate = "2013-01-01", maxDate = "2021-10-01",
                          separator = "  to  ",
@@ -165,122 +158,12 @@ ui <- fluidPage(
     #verbatimTextOutput("res")
   )
 )
-```
 
-```{r Server1, echo=FALSE, warning=FALSE}
 # Defining the server
 server = function(input, output) {
   output$plot <- renderPlotly(time_serie(trips, input$choice, input$dates_month,
                                          input$dates_year, input$dates_day))
   #output$res <- renderPrint(input$dates_year)
 }
-```
-
-
-```{r 1st app, echo=FALSE, warning=FALSE}
 
 shinyApp(ui = ui, server = server)
-
-```
-
-# Basic time series where we have to select which period we wish to compare
-
-```{r functions 2, echo=FALSE, warning=FALSE, include=FALSE}
-data_selection2 <- function(trips, years, choice){
-  my_data <- trips %>%
-    filter(date_year %in% years)
-  if (choice == "month") {
-    trip_date <- my_data %>%
-      select(trip_total, month_year) %>%
-      mutate(trip_total = as.numeric(trip_total)) %>%
-      group_by(month_year) %>%
-      summarise(trip_total = median(trip_total))
-    year <- format(trip_date$month_year, "%Y")
-    date_month <- format(trip_date$month_year, "%m")
-    trip_date <- cbind(trip_date,year,date_month)
-    #trip_date <- trip_date[,-1]
-  } else {
-    trip_date <- my_data %>%
-      select(trip_total, date) %>%
-      mutate(trip_total = as.numeric(trip_total)) %>%
-      group_by(date) %>%
-      summarise(trip_total = median(trip_total))
-    date_year <- format(trip_date$date,"%Y")
-    date_day_month <- format(trip_date$date, "%m-%d")
-    trip_date <- cbind(trip_date,date_year,date_day_month)
-    trip_date <- trip_date[,-1]
-  }
-  
-  return(trip_date)
-}
-
-time_serie2 <- function(trips, years, choice){
-  if (choice == "month") {
-    p <- ggplot(data = data_selection2(trips,years,choice), 
-                aes(x = date_month, y = trip_total, group = factor(year),
-                    colour = factor(year))) + 
-      geom_line(size=0.4) +
-      labs(x = "Date", colour = "Year") +
-      scale_x_discrete(expand = expansion(mult = c(.02, .02))) +
-      theme(axis.text.x = element_text(angle = 45)) +
-      scale_y_continuous(n.breaks = 10, 
-                         expand = expansion(mult = c(.02, .02)))
-  } else {
-    p <- ggplot(data = data_selection2(trips,years,choice), 
-                aes(x = date_day_month, y = trip_total, group = factor(date_year),
-                    colour = factor(date_year))) + 
-      geom_line(size=0.4) +
-      labs(x = "Date", colour = "Year") +
-      scale_x_discrete(breaks = c("01-01","02-01","03-01","04-01","05-01","06-01",
-                                  "07-01","08-01","09-01","10-01","11-01","12-01",
-                                  "12-31"),
-                       expand = expansion(mult = c(.02, .02))) +
-      theme(axis.text.x = element_text(angle = 45)) +
-      scale_y_continuous(n.breaks = 10, 
-                         expand = expansion(mult = c(.02, .02)))
-  }
-  p <- ggplotly(p)
-  return(p)
-}
-```
-
-```{r UI2, echo=FALSE, warning=FALSE}
-# Defining the UI
-ui2 <- fluidPage(
-  
-  sidebarPanel(
-    selectInput(inputId = "choice",
-                label = "Choose if you want to visualize by day or month:",
-                choices = c("Day"="day","Month"="month"),
-                selected = "month"),
-    selectInput(inputId = "years",
-                label = "Choose which years you wish to compare (two or more):",
-                choices = c("2013"="2013","2014"="2014","2015"="2015","2016"="2016",
-                            "2017"="2017","2018"="2018","2019"="2019",
-                            "2020"="2020","2021"="2021"),
-                selected = c("2013","2014"),
-                multiple = TRUE)
-  ),
-  
-  # Main panel for displaying outputs
-  mainPanel(
-    plotlyOutput("plot")
-  )
-)
-```
-
-```{r Server2, echo=FALSE, warning=FALSE}
-# Defining the server
-server2 = function(input, output) {
-  output$plot <- renderPlotly(time_serie2(trips, input$years, input$choice))
-}
-
-```
-
-
-```{r 2nd app, echo=FALSE, warning=FALSE}
-
-shinyApp(ui = ui2, server = server2)
-
-```
-
