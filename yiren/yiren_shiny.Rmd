@@ -110,63 +110,6 @@ server = function(input, output) {
 
 ## Chicago Taxi Trip Changes from 2013 to 2021
 
-### Interactive Map for Total Number of Taxi Trips Since 2013
-
-```{r, echo = FALSE, warning = FALSE, message = FALSE}
-# # run the cell load("yiren_total_count.RData") first
-# zone_total_count = df_total_count %>% group_by(pickup_community_area) %>% summarise(total_count = sum(count))
-# 
-# zone_total_count
-
-#Register API key to google
-register_google(key="AIzaSyBT6yzDKV_DGcFGK9E-cXu0zNUD4WTJOZA")
-            
-#Get location of chicago
-chicago <- geocode("Chicago, IL")
-
-#Make leaflet map with chicago center -> make sure the maps are calculated at runtime
-chicago_leaflet <- leaflet() %>% 
-  setView(lng=chicago$lon, lat=chicago$lat, zoom=10) %>%
-  addProviderTiles(providers$CartoDB.Positron) 
-
-load("yiren_total_count_polygon_leaflet.RData")
-
-pal1 <- colorBin("Oranges",bins=4, domain =log10(zone_total_count$total_count), )
-
-labels <- sprintf(
-  "%s <strong>%s</strong><br/>%g trips",
-  zone_total_count$pickup_community_area, zone_total_count$community_name, zone_total_count$total_count
-) %>% lapply(htmltools::HTML)
-
-#Make the map
-chicago_leaflet %>%
-  addPolygons(data=zone_total_count,
-              fillColor=~pal1(log10(zone_total_count$total_count)),
-              color="lightgrey",
-              weight=2,
-              fillOpacity=0.8,
-              highlightOptions = highlightOptions(
-                weight=3,
-                opacity=2,
-                color="Oranges",
-                bringToFront=TRUE),
-              label=labels,
-              labelOptions=labelOptions(
-                style = list("font-weight" = "normal", padding = "3px 8px"),
-                textsize = "15px",
-                direction = "auto")) %>%
-  
-  addLegend("bottomright",
-            pal = pal1,
-            values = log10(zone_total_count$total_count),
-            title = "Total Number of Taxi Trips Since 2013",
-            opacity = 0.8,
-            labFormat = leaflet::labelFormat(
-              transform = function(x) 10^(x)))
-
-```
-
-
 ### Number of Trips and Total Revenue Changes throughout years
 
 ```{r, echo = FALSE, warning = FALSE, message = FALSE}
@@ -260,9 +203,92 @@ shinyApp(ui = ui, server = server)
 ```
 
 
+### Interactive Map for Total Number of Taxi Trips Since 2013
+
+```{r, echo = FALSE, warning = FALSE, message = FALSE}
+# # run the cell load("yiren_total_count.RData") first
+# zone_total_count = df_total_count %>% group_by(pickup_community_area) %>% summarise(total_count = sum(count))
+# 
+# zone_total_count
+
+#Register API key to google
+register_google(key="AIzaSyBT6yzDKV_DGcFGK9E-cXu0zNUD4WTJOZA")
+            
+#Get location of chicago
+chicago <- geocode("Chicago, IL")
+
+#Make leaflet map with chicago center -> make sure the maps are calculated at runtime
+chicago_leaflet <- leaflet() %>% 
+  setView(lng=chicago$lon, lat=chicago$lat, zoom=10) %>%
+  addProviderTiles(providers$CartoDB.Positron) 
+
+load("yiren_total_count_polygon_leaflet.RData")
+
+pal1 <- colorBin("Oranges",bins=4, domain =log10(zone_total_count$total_count), )
+
+labels <- sprintf(
+  "%s <strong>%s</strong><br/>%g trips",
+  zone_total_count$pickup_community_area, zone_total_count$community_name, zone_total_count$total_count
+) %>% lapply(htmltools::HTML)
+
+#Make the map
+chicago_leaflet %>%
+  addPolygons(data=zone_total_count,
+              fillColor=~pal1(log10(zone_total_count$total_count)),
+              color="lightgrey",
+              weight=2,
+              fillOpacity=0.8,
+              highlightOptions = highlightOptions(
+                weight=3,
+                opacity=2,
+                color="Oranges",
+                bringToFront=TRUE),
+              label=labels,
+              labelOptions=labelOptions(
+                style = list("font-weight" = "normal", padding = "3px 8px"),
+                textsize = "15px",
+                direction = "auto")) %>%
+  
+  addLegend("bottomright",
+            pal = pal1,
+            values = log10(zone_total_count$total_count),
+            title = "Total Number of Taxi Trips Since 2013",
+            opacity = 0.8,
+            labFormat = leaflet::labelFormat(
+              transform = function(x) 10^(x)))
+
+```
+
 
 ### Applying PCA to Explain the difference among zones
 
+We would like to use PCA to reduce the dimensionality as well as acquire the classification power of our data. We perform log on our `count_taxi_trips` variance first since it has great variance compared to other variables and will dominate without logrithmic transformation.
+
+```{r, echo = FALSE}
+knitr::include_graphics("./1.png")
+```
+
+As shown above, when we have 3 principle components, most of the variation will be explained.
+
+```{r, echo = FALSE}
+knitr::include_graphics("./2.png")
+```
+
+When PC1 increases, population, density, log_count and per_capita_income gets higher.
+When PC2 increases, per_capita_income gets higher, hardship_index gets lower.
+To classify zones based on the result, we apply k-means clustering.
+
+```{r, echo = FALSE}
+knitr::include_graphics("./5.png")
+```
+
+For the red cluster, we have zones Near North Side, Lake View, Lincoln Park and West Town, where they have high per_capita_income, density, and population, which can be the main reason why it gives the highest log_count, the indicator of number of taxi trips. Geographically, they also can be found in the interactive map above that they are located adjacent to each other.
+
+As for the blue cluster, it has high per_capita_income and low population, while the purple cluster is the opposite, with high population and low per_capita_income. Both of them have reasonable good amount of taxi trips.
+
+This finding indicates that both per_capita_income and population contribute to the number of taxi trips in the zone.
+
+As for the zones in green cluster, they have low per_capita_income and low population, hence low number of taxi trips.
 
 
 
