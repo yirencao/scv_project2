@@ -1,0 +1,301 @@
+[{"year":"2013","month":"1","company":"2767 - Sayed M Badri","revenue":"2936.42","activity":"321"}
+,{"year":"2013","month":"1","company":"5437 - Great American Cab Co","revenue":"1298.65","activity":"96"}
+,{"year":"2013","month":"1","company":"6743 - Luhak Corp","revenue":"6879.65","activity":"571"}
+,{"year":"2013","month":"1","company":"Blue Ribbon Taxi Association Inc.","revenue":"1309946.61","activity":"108082"}
+,{"year":"2013","month":"1","company":"Chicago Elite Cab Corp.","revenue":"185.05","activity":"1"}
+,{"year":"2013","month":"1","company":"Choice Taxi Association","revenue":"557433.65","activity":"46441"}
+,{"year":"2013","month":"1","company":"Dispatch Taxi Affiliation","revenue":"2448074.59","activity":"206410"}
+,{"year":"2013","month":"1","company":"Northwest Management LLC","revenue":"877786.83","activity":"69795"}
+,{"year":"2013","month":"1","company":"Taxi Affiliation Services","revenue":"5823528.98","activity":"439209"}
+,{"year":"2013","month":"1","company":"Yellow Cab","revenue":"4.75","activity":"1"}
+,{"year":"2013","month":"1","revenue":"10293109.88","activity":"719135"}
+,{"year":"2013","month":"2","company":"1085 - N and W Cab Co","revenue":"307.60","activity":"29"}
+,{"year":"2013","month":"2","company":"2767 - Sayed M Badri","revenue":"4348.60","activity":"434"}
+,{"year":"2013","month":"2","company":"4615 - Tyrone Henderson","revenue":"634.85","activity":"59"}
+,{"year":"2013","month":"2","company":"4787 - Reny Cab Co","revenue":"8.50","activity":"2"}
+,{"year":"2013","month":"2","company":"5437 - Great American Cab Co","revenue":"1589.25","activity":"152"}
+,{"year":"2013","month":"2","company":"6743 - Luhak Corp","revenue":"7311.21","activity":"601"}
+,{"year":"2013","month":"2","company":"American United Cab Association","revenue":"63.10","activity":"8"}
+,{"year":"2013","month":"2","company":"Blue Ribbon Taxi Association Inc.","revenue":"1335443.50","activity":"110533"}
+,{"year":"2013","month":"2","company":"Chicago Elite Cab Corp.","revenue":"2273231.44","activity":"124799"}
+,{"year":"2013","month":"2","company":"Choice Taxi Association","revenue":"724379.54","activity":"59580"}
+,{"year":"2013","month":"2","company":"Dispatch Taxi Affiliation","revenue":"2625806.05","activity":"220315"}
+,{"year":"2013","month":"2","company":"Northwest Management LLC","revenue":"939965.40","activity":"73853"}
+,{"year":"2013","month":"2","company":"Park Ridge Taxi and Livery","revenue":"29734.05","activity":"1142"}
+,{"year":"2013","month":"2","company":"Taxi Affiliation Services","revenue":"6107441.43","activity":"465826"}
+,{"year":"2013","month":"2","revenue":"11377526.61","activity":"743069"}
+,{"year":"2013","month":"3","company":"1085 - N and W Cab Co","revenue":"4811.57","activity":"487"}
+,{"year":"2013","month":"3","company":"2192 - Zeymane Corp","revenue":"5341.60","activity":"456"}
+,{"year":"2013","month":"3","company":"4615 - Tyrone Henderson","revenue":"3218.55","activity":"268"}
+,{"year":"2013","month":"3","company":"4787 - Reny Cab Co","revenue":"2950.30","activity":"294"}
+,{"year":"2013","month":"3","company":"5437 - Great American Cab Co","revenue":"1268.05","activity":"110"}
+,{"year":"2013","month":"3","company":"6743 - Luhak Corp","revenue":"7906.10","activity":"607"}
+,{"year":"2013","month":"3","company":"American United","revenue":"9.75","activity":"3"}
+,{"year":"2013","month":"3","company":"Blue Ribbon Taxi Association Inc.","revenue":"1710737.99","activity":"137890"}
+,{"year":"2013","month":"3","company":"Chicago Elite Cab Corp.","revenue":"3453855.37","activity":"221274"}
+,{"year":"2013","month":"3","company":"Chicago Elite Cab Corp. (Chicago Carriag","revenue":"15.75","activity":"2"}
+,{"year":"2013","month":"3","company":"Chicago Medallion Management","revenue":"10766.42","activity":"860"}
+,{"year":"2013","month":"3","company":"Choice Taxi Association","revenue":"1137436.17","activity":"90396"}
+,{"year":"2013","month":"3","company":"Dispatch Taxi Affiliation","revenue":"3192780.68","activity":"261276"}
+,{"year":"2013","month":"3","company":"Flash Cab","revenue":"3.25","activity":"1"}
+,{"year":"2013","month":"3","company":"Northwest Management LLC","revenue":"1172193.43","activity":"91372"}
+,{"year":"2013","month":"3","company":"Park Ridge Taxi and Livery","revenue":"34988.99","activity":"1212"}
+,{"year":"2013","month":"3","company":"T.A.S. - Payment Only","revenue":"134.60","activity":"6"}
+,{"year":"2013","month":"3","company":"Taxi Affiliation Services","revenue":"7696869.51","activity":"571224"}
+,{"year":"2013","month":"3","company":"Yellow Cab","revenue":"18.35","activity":"5"}
+,{"year":"2013","month":"3","revenue":"13741120.89","activity":"883634"}
+,{"year":"2013","month":"4","company":"1085 - N and W Cab Co","revenue":"5402.20","activity":"516"}
+,{"year":"2013","month":"4","company":"2192 - Zeymane Corp","revenue":"5207.05","activity":"466"}
+,{"year":"2013","month":"4","company":"2733 - Benny Jona","revenue":"6305.75","activity":"422"}
+,{"year":"2013","month":"4","company":"3201 - CID Cab Co Inc","revenue":"59.25","activity":"8"}
+,{"year":"2013","month":"4","company":"3897 - Ilie Malec","revenue":"727.35","activity":"44"}
+,{"year":"2013","month":"4","company":"4615 - Tyrone Henderson","revenue":"3253.65","activity":"283"}
+,{"year":"2013","month":"4","company":"4787 - Reny Cab Co","revenue":"3855.15","activity":"359"}
+,{"year":"2013","month":"4","company":"5437 - Great American Cab Co","revenue":"1095.15","activity":"104"}
+,{"year":"2013","month":"4","company":"6743 - Luhak Corp","revenue":"8921.98","activity":"662"}
+,{"year":"2013","month":"4","company":"American United","revenue":"2812.89","activity":"119"}
+,{"year":"2013","month":"4","company":"Blue Ribbon Taxi Association Inc.","revenue":"1834261.74","activity":"140891"}
+,{"year":"2013","month":"4","company":"Chicago Elite Cab Corp.","revenue":"3075136.63","activity":"152844"}
+,{"year":"2013","month":"4","company":"Chicago Medallion Management","revenue":"19812.06","activity":"1651"}
+,{"year":"2013","month":"4","company":"Choice Taxi Association","revenue":"1258456.54","activity":"94967"}
+,{"year":"2013","month":"4","company":"Dispatch Taxi Affiliation","revenue":"3247334.43","activity":"256028"}
+,{"year":"2013","month":"4","company":"Northwest Management LLC","revenue":"1203821.63","activity":"90493"}
+,{"year":"2013","month":"4","company":"Park Ridge Taxi and Livery","revenue":"34842.48","activity":"1298"}
+,{"year":"2013","month":"4","company":"T.A.S. - Payment Only","revenue":"564.45","activity":"19"}
+,{"year":"2013","month":"4","company":"Taxi Affiliation Services","revenue":"7768643.10","activity":"564074"}
+,{"year":"2013","month":"4","company":"Top Cab Affiliation","revenue":"14543.50","activity":"1351"}
+,{"year":"2013","month":"4","revenue":"13814109.04","activity":"810072"}
+,{"year":"2013","month":"5","company":"1085 - N and W Cab Co","revenue":"5315.15","activity":"531"}
+,{"year":"2013","month":"5","company":"2192 - Zeymane Corp","revenue":"5448.83","activity":"467"}
+,{"year":"2013","month":"5","company":"2733 - Benny Jona","revenue":"8740.61","activity":"535"}
+,{"year":"2013","month":"5","company":"3201 - CID Cab Co Inc","revenue":"1388.31","activity":"94"}
+,{"year":"2013","month":"5","company":"3620 - David K. Cab Corp.","revenue":"74.85","activity":"10"}
+,{"year":"2013","month":"5","company":"3897 - Ilie Malec","revenue":"6880.30","activity":"364"}
+,{"year":"2013","month":"5","company":"4615 - Tyrone Henderson","revenue":"3167.25","activity":"277"}
+,{"year":"2013","month":"5","company":"4787 - Reny Cab Co","revenue":"3194.22","activity":"297"}
+,{"year":"2013","month":"5","company":"5437 - Great American Cab Co","revenue":"2306.04","activity":"201"}
+,{"year":"2013","month":"5","company":"5776 - Mekonen Cab Company","revenue":"4425.50","activity":"345"}
+,{"year":"2013","month":"5","company":"6743 - Luhak Corp","revenue":"7231.64","activity":"495"}
+,{"year":"2013","month":"5","company":"Blue Ribbon Taxi Association Inc.","revenue":"2038016.50","activity":"154847"}
+,{"year":"2013","month":"5","company":"Chicago Elite Cab Corp.","revenue":"3342527.97","activity":"164556"}
+,{"year":"2013","month":"5","company":"Chicago Medallion Management","revenue":"36156.44","activity":"2936"}
+,{"year":"2013","month":"5","company":"Choice Taxi Association","revenue":"1467668.57","activity":"106895"}
+,{"year":"2013","month":"5","company":"Dispatch Taxi Affiliation","revenue":"3454744.20","activity":"263190"}
+,{"year":"2013","month":"5","company":"KOAM Taxi Association","revenue":"520.10","activity":"60"}
+,{"year":"2013","month":"5","company":"Northwest Management LLC","revenue":"1295987.06","activity":"95392"}
+,{"year":"2013","month":"5","company":"Park Ridge Taxi and Livery","revenue":"38180.04","activity":"1358"}
+,{"year":"2013","month":"5","company":"T.A.S. - Payment Only","revenue":"5.85","activity":"1"}
+,{"year":"2013","month":"5","company":"Taxi Affiliation Services","revenue":"8823608.48","activity":"621182"}
+,{"year":"2013","month":"5","company":"Top Cab Affiliation","revenue":"40117.08","activity":"3026"}
+,{"year":"2013","month":"5","revenue":"13138069.15","activity":"843918"}
+,{"year":"2013","month":"6","company":"1085 - N and W Cab Co","revenue":"4497.75","activity":"419"}
+,{"year":"2013","month":"6","company":"2192 - Zeymane Corp","revenue":"4292.64","activity":"322"}
+,{"year":"2013","month":"6","company":"2733 - Benny Jona","revenue":"8931.84","activity":"515"}
+,{"year":"2013","month":"6","company":"3201 - CID Cab Co Inc","revenue":"2923.64","activity":"172"}
+,{"year":"2013","month":"6","company":"3620 - David K. Cab Corp.","revenue":"4590.21","activity":"250"}
+,{"year":"2013","month":"6","company":"3669 - Jordan Taxi Inc","revenue":"242.80","activity":"22"}
+,{"year":"2013","month":"6","company":"3897 - Ilie Malec","revenue":"6525.89","activity":"342"}
+,{"year":"2013","month":"6","company":"4615 - Tyrone Henderson","revenue":"860.50","activity":"70"}
+,{"year":"2013","month":"6","company":"4787 - Reny Cab Co","revenue":"1903.90","activity":"191"}
+,{"year":"2013","month":"6","company":"5437 - Great American Cab Co","revenue":"3549.82","activity":"269"}
+,{"year":"2013","month":"6","company":"5776 - Mekonen Cab Company","revenue":"9729.88","activity":"679"}
+,{"year":"2013","month":"6","company":"6743 - Luhak Corp","revenue":"8660.60","activity":"547"}
+,{"year":"2013","month":"6","company":"Blue Ribbon Taxi Association Inc.","revenue":"2291950.85","activity":"174120"}
+,{"year":"2013","month":"6","company":"Chicago Elite Cab Corp.","revenue":"3363174.54","activity":"162760"}
+,{"year":"2013","month":"6","company":"Chicago Elite Cab Corp. (Chicago Carriag","revenue":"78.23","activity":"2"}
+,{"year":"2013","month":"6","company":"Chicago Medallion Management","revenue":"36845.92","activity":"3174"}
+,{"year":"2013","month":"6","company":"Choice Taxi Association","revenue":"1676045.02","activity":"122405"}
+,{"year":"2013","month":"6","company":"Dispatch Taxi Affiliation","revenue":"3564195.55","activity":"266707"}
+,{"year":"2013","month":"6","company":"KOAM Taxi Association","revenue":"42546.13","activity":"3172"}
+,{"year":"2013","month":"6","company":"Northwest Management LLC","revenue":"1282601.00","activity":"95028"}
+,{"year":"2013","month":"6","company":"Park Ridge Taxi and Livery","revenue":"36437.55","activity":"1286"}
+,{"year":"2013","month":"6","company":"Taxi Affiliation Services","revenue":"9500936.14","activity":"671037"}
+,{"year":"2013","month":"6","company":"Top Cab Affiliation","revenue":"54258.34","activity":"4728"}
+,{"year":"2013","month":"6","revenue":"13501506.29","activity":"878191"}
+,{"year":"2013","month":"7","company":"1085 - N and W Cab Co","revenue":"5961.30","activity":"631"}
+,{"year":"2013","month":"7","company":"2192 - Zeymane Corp","revenue":"4909.35","activity":"439"}
+,{"year":"2013","month":"7","company":"2241 - Manuel Alonso","revenue":"381.40","activity":"32"}
+,{"year":"2013","month":"7","company":"2733 - Benny Jona","revenue":"7720.38","activity":"493"}
+,{"year":"2013","month":"7","company":"3201 - CID Cab Co Inc","revenue":"1421.85","activity":"104"}
+,{"year":"2013","month":"7","company":"3319 - C&D Cab Company","revenue":"3773.43","activity":"335"}
+,{"year":"2013","month":"7","company":"3620 - David K. Cab Corp.","revenue":"5145.00","activity":"259"}
+,{"year":"2013","month":"7","company":"3897 - Ilie Malec","revenue":"7267.80","activity":"389"}
+,{"year":"2013","month":"7","company":"4615 - Tyrone Henderson","revenue":"323.60","activity":"35"}
+,{"year":"2013","month":"7","company":"4787 - Reny Cab Co","revenue":"4818.35","activity":"446"}
+,{"year":"2013","month":"7","company":"5437 - Great American Cab Co","revenue":"2660.45","activity":"233"}
+,{"year":"2013","month":"7","company":"5776 - Mekonen Cab Company","revenue":"9171.96","activity":"711"}
+,{"year":"2013","month":"7","company":"5874 - Sergey Cab Corp.","revenue":"3814.10","activity":"251"}
+,{"year":"2013","month":"7","company":"6743 - Luhak Corp","revenue":"6754.24","activity":"469"}
+,{"year":"2013","month":"7","company":"Blue Ribbon Taxi Association Inc.","revenue":"2211869.46","activity":"171074"}
+,{"year":"2013","month":"7","company":"Chicago Elite Cab Corp.","revenue":"2803517.49","activity":"140141"}
+,{"year":"2013","month":"7","company":"Chicago Elite Cab Corp. (Chicago Carriag","revenue":"0.00","activity":"1"}
+,{"year":"2013","month":"7","company":"Chicago Medallion Management","revenue":"54684.72","activity":"4631"}
+,{"year":"2013","month":"7","company":"Choice Taxi Association","revenue":"1624215.54","activity":"120252"}
+,{"year":"2013","month":"7","company":"Dispatch Taxi Affiliation","revenue":"3201915.64","activity":"246676"}
+,{"year":"2013","month":"7","company":"Flash Cab","revenue":"2086.67","activity":"179"}
+,{"year":"2013","month":"7","company":"KOAM Taxi Association","revenue":"92538.69","activity":"6961"}
+,{"year":"2013","month":"7","company":"Northwest Management LLC","revenue":"1204721.86","activity":"90446"}
+,{"year":"2013","month":"7","company":"Park Ridge Taxi and Livery","revenue":"36618.56","activity":"1244"}
+,{"year":"2013","month":"7","company":"T.A.S. - Payment Only","revenue":"230626.60","activity":"11581"}
+,{"year":"2013","month":"7","company":"Taxi Affiliation Services","revenue":"9251865.88","activity":"671528"}
+,{"year":"2013","month":"7","company":"Top Cab Affiliation","revenue":"54798.44","activity":"4880"}
+,{"year":"2013","month":"7","revenue":"12432163.82","activity":"828202"}
+,{"year":"2013","month":"8","company":"1085 - N and W Cab Co","revenue":"5809.15","activity":"608"}
+,{"year":"2013","month":"8","company":"2192 - Zeymane Corp","revenue":"4548.50","activity":"374"}
+,{"year":"2013","month":"8","company":"2241 - Manuel Alonso","revenue":"3392.34","activity":"121"}
+,{"year":"2013","month":"8","company":"2733 - Benny Jona","revenue":"6853.15","activity":"439"}
+,{"year":"2013","month":"8","company":"3201 - CID Cab Co Inc","revenue":"4092.92","activity":"407"}
+,{"year":"2013","month":"8","company":"3319 - C&D Cab Company","revenue":"13980.50","activity":"1260"}
+,{"year":"2013","month":"8","company":"3620 - David K. Cab Corp.","revenue":"5574.63","activity":"291"}
+,{"year":"2013","month":"8","company":"3897 - Ilie Malec","revenue":"6654.68","activity":"376"}
+,{"year":"2013","month":"8","company":"4615 - Tyrone Henderson","revenue":"3474.05","activity":"301"}
+,{"year":"2013","month":"8","company":"4787 - Reny Cab Co","revenue":"4344.22","activity":"401"}
+,{"year":"2013","month":"8","company":"5437 - Great American Cab Co","revenue":"2537.92","activity":"228"}
+,{"year":"2013","month":"8","company":"5776 - Mekonen Cab Company","revenue":"8431.09","activity":"685"}
+,{"year":"2013","month":"8","company":"5874 - Sergey Cab Corp.","revenue":"5325.05","activity":"320"}
+,{"year":"2013","month":"8","company":"6743 - Luhak Corp","revenue":"7422.75","activity":"524"}
+,{"year":"2013","month":"8","company":"American United","revenue":"19747.50","activity":"1472"}
+,{"year":"2013","month":"8","company":"Blue Ribbon Taxi Association Inc.","revenue":"2290533.10","activity":"179679"}
+,{"year":"2013","month":"8","company":"Chicago Elite Cab Corp.","revenue":"1105475.82","activity":"55935"}
+,{"year":"2013","month":"8","company":"Chicago Elite Cab Corp. (Chicago Carriag","revenue":"1909941.75","activity":"98607"}
+,{"year":"2013","month":"8","company":"Chicago Medallion Management","revenue":"66718.77","activity":"5629"}
+,{"year":"2013","month":"8","company":"Choice Taxi Association","revenue":"1731459.05","activity":"126330"}
+,{"year":"2013","month":"8","company":"Dispatch Taxi Affiliation","revenue":"3162156.21","activity":"244780"}
+,{"year":"2013","month":"8","company":"Flash Cab","revenue":"121861.54","activity":"9740"}
+,{"year":"2013","month":"8","company":"KOAM Taxi Association","revenue":"153571.37","activity":"12079"}
+,{"year":"2013","month":"8","company":"Northwest Management LLC","revenue":"1126692.90","activity":"85654"}
+,{"year":"2013","month":"8","company":"Park Ridge Taxi and Livery","revenue":"39074.62","activity":"1334"}
+,{"year":"2013","month":"8","company":"T.A.S. - Payment Only","revenue":"0.00","activity":"54"}
+,{"year":"2013","month":"8","company":"Taxi Affiliation Services","revenue":"9971979.37","activity":"732677"}
+,{"year":"2013","month":"8","company":"Top Cab Affiliation","revenue":"60438.32","activity":"5337"}
+,{"year":"2013","month":"8","revenue":"12010207.07","activity":"844960"}
+,{"year":"2013","month":"9","company":"1085 - N and W Cab Co","revenue":"5600.12","activity":"573"}
+,{"year":"2013","month":"9","company":"2192 - Zeymane Corp","revenue":"5620.45","activity":"518"}
+,{"year":"2013","month":"9","company":"2241 - Manuel Alonso","revenue":"602.70","activity":"26"}
+,{"year":"2013","month":"9","company":"2733 - Benny Jona","revenue":"6249.31","activity":"348"}
+,{"year":"2013","month":"9","company":"3201 - C & D Cab Co Inc","revenue":"598.61","activity":"57"}
+,{"year":"2013","month":"9","company":"3201 - CID Cab Co Inc","revenue":"2868.33","activity":"255"}
+,{"year":"2013","month":"9","company":"3319 - C&D Cab Company","revenue":"5339.00","activity":"378"}
+,{"year":"2013","month":"9","company":"3620 - David K. Cab Corp.","revenue":"4349.05","activity":"252"}
+,{"year":"2013","month":"9","company":"3897 - Ilie Malec","revenue":"6204.28","activity":"382"}
+,{"year":"2013","month":"9","company":"4053 - Adwar H. Nikola","revenue":"3969.97","activity":"287"}
+,{"year":"2013","month":"9","company":"4615 - Tyrone Henderson","revenue":"3525.85","activity":"283"}
+,{"year":"2013","month":"9","company":"4787 - Reny Cab Co","revenue":"3792.46","activity":"353"}
+,{"year":"2013","month":"9","company":"5437 - Great American Cab Co","revenue":"1820.37","activity":"131"}
+,{"year":"2013","month":"9","company":"5776 - Mekonen Cab Company","revenue":"9173.30","activity":"730"}
+,{"year":"2013","month":"9","company":"5874 - Sergey Cab Corp.","revenue":"5159.50","activity":"263"}
+,{"year":"2013","month":"9","company":"6743 - Luhak Corp","revenue":"7249.39","activity":"462"}
+,{"year":"2013","month":"9","company":"American United","revenue":"78260.45","activity":"5957"}
+,{"year":"2013","month":"9","company":"Blue Ribbon Taxi Association Inc.","revenue":"2243920.79","activity":"171076"}
+,{"year":"2013","month":"9","company":"Chicago Elite Cab Corp.","revenue":"904.00","activity":"88"}
+,{"year":"2013","month":"9","company":"Chicago Elite Cab Corp. (Chicago Carriag","revenue":"3201467.05","activity":"159919"}
+,{"year":"2013","month":"9","company":"Chicago Medallion Management","revenue":"74720.27","activity":"6260"}
+,{"year":"2013","month":"9","company":"Choice Taxi Association","revenue":"1715713.14","activity":"121066"}
+,{"year":"2013","month":"9","company":"Dispatch Taxi Affiliation","revenue":"3001337.86","activity":"227253"}
+,{"year":"2013","month":"9","company":"Flash Cab","revenue":"239388.58","activity":"17747"}
+,{"year":"2013","month":"9","company":"KOAM Taxi Association","revenue":"218344.81","activity":"16273"}
+,{"year":"2013","month":"9","company":"Northwest Management LLC","revenue":"1046716.02","activity":"77381"}
+,{"year":"2013","month":"9","company":"Park Ridge Taxi and Livery","revenue":"37335.44","activity":"1301"}
+,{"year":"2013","month":"9","company":"T.A.S. - Payment Only","revenue":"39.25","activity":"23"}
+,{"year":"2013","month":"9","company":"Taxi Affiliation Services","revenue":"10241741.14","activity":"734861"}
+,{"year":"2013","month":"9","company":"Top Cab Affiliation","revenue":"65713.98","activity":"4713"}
+,{"year":"2013","month":"9","revenue":"11362161.31","activity":"793433"}
+,{"year":"2013","month":"10","company":"1085 - N and W Cab Co","revenue":"6121.78","activity":"631"}
+,{"year":"2013","month":"10","company":"2192 - Zeymane Corp","revenue":"6118.45","activity":"493"}
+,{"year":"2013","month":"10","company":"2241 - Manuel Alonso","revenue":"4815.30","activity":"160"}
+,{"year":"2013","month":"10","company":"2733 - Benny Jona","revenue":"5600.45","activity":"315"}
+,{"year":"2013","month":"10","company":"2767 - Sayed M Badri","revenue":"60.55","activity":"9"}
+,{"year":"2013","month":"10","company":"3201 - C & D Cab Co Inc","revenue":"3023.45","activity":"249"}
+,{"year":"2013","month":"10","company":"3319 - C&D Cab Company","revenue":"5563.65","activity":"405"}
+,{"year":"2013","month":"10","company":"3620 - David K. Cab Corp.","revenue":"4690.31","activity":"274"}
+,{"year":"2013","month":"10","company":"3623-Arrington Enterprises","revenue":"317.20","activity":"29"}
+,{"year":"2013","month":"10","company":"3897 - Ilie Malec","revenue":"6629.15","activity":"361"}
+,{"year":"2013","month":"10","company":"4053 - Adwar H. Nikola","revenue":"6985.65","activity":"413"}
+,{"year":"2013","month":"10","company":"4615 - Tyrone Henderson","revenue":"3711.90","activity":"305"}
+,{"year":"2013","month":"10","company":"4787 - Reny Cab Co","revenue":"4461.81","activity":"418"}
+,{"year":"2013","month":"10","company":"5437 - Great American Cab Co","revenue":"2850.55","activity":"222"}
+,{"year":"2013","month":"10","company":"5776 - Mekonen Cab Company","revenue":"10196.29","activity":"746"}
+,{"year":"2013","month":"10","company":"5874 - Sergey Cab Corp.","revenue":"4889.70","activity":"256"}
+,{"year":"2013","month":"10","company":"5 Star Taxi","revenue":"6870.73","activity":"685"}
+,{"year":"2013","month":"10","company":"6743 - Luhak Corp","revenue":"6953.80","activity":"426"}
+,{"year":"2013","month":"10","company":"American United","revenue":"206299.01","activity":"14587"}
+,{"year":"2013","month":"10","company":"Blue Ribbon Taxi Association Inc.","revenue":"2461177.11","activity":"186261"}
+,{"year":"2013","month":"10","company":"C & D Cab Co Inc","revenue":"2573.25","activity":"187"}
+,{"year":"2013","month":"10","company":"Chicago Elite Cab Corp.","revenue":"1085.25","activity":"183"}
+,{"year":"2013","month":"10","company":"Chicago Elite Cab Corp. (Chicago Carriag","revenue":"3499507.98","activity":"174283"}
+,{"year":"2013","month":"10","company":"Chicago Medallion Management","revenue":"77945.34","activity":"6738"}
+,{"year":"2013","month":"10","company":"Choice Taxi Association","revenue":"1894881.68","activity":"134187"}
+,{"year":"2013","month":"10","company":"Dispatch Taxi Affiliation","revenue":"3270308.16","activity":"244532"}
+,{"year":"2013","month":"10","company":"Flash Cab","revenue":"503836.16","activity":"38589"}
+,{"year":"2013","month":"10","company":"KOAM Taxi Association","revenue":"297761.29","activity":"21207"}
+,{"year":"2013","month":"10","company":"Northwest Management LLC","revenue":"1112201.59","activity":"81408"}
+,{"year":"2013","month":"10","company":"Park Ridge Taxi and Livery","revenue":"39128.21","activity":"1315"}
+,{"year":"2013","month":"10","company":"T.A.S. - Payment Only","revenue":"2.00","activity":"12"}
+,{"year":"2013","month":"10","company":"Taxi Affiliation Services","revenue":"11199544.16","activity":"798457"}
+,{"year":"2013","month":"10","company":"Top Cab Affiliation","revenue":"77787.63","activity":"5471"}
+,{"year":"2013","month":"10","revenue":"12593762.73","activity":"855638"}
+,{"year":"2013","month":"11","company":"1085 - N and W Cab Co","revenue":"4956.75","activity":"498"}
+,{"year":"2013","month":"11","company":"2192 - Zeymane Corp","revenue":"5438.37","activity":"465"}
+,{"year":"2013","month":"11","company":"2241 - Manuel Alonso","revenue":"3219.55","activity":"115"}
+,{"year":"2013","month":"11","company":"2733 - Benny Jona","revenue":"5354.85","activity":"323"}
+,{"year":"2013","month":"11","company":"2767 - Sayed M Badri","revenue":"116.30","activity":"18"}
+,{"year":"2013","month":"11","company":"3620 - David K. Cab Corp.","revenue":"3987.50","activity":"200"}
+,{"year":"2013","month":"11","company":"3623-Arrington Enterprises","revenue":"140.18","activity":"10"}
+,{"year":"2013","month":"11","company":"3669 - Jordan Taxi Inc","revenue":"6.75","activity":"1"}
+,{"year":"2013","month":"11","company":"3897 - Ilie Malec","revenue":"5681.33","activity":"313"}
+,{"year":"2013","month":"11","company":"4053 - Adwar H. Nikola","revenue":"4529.00","activity":"263"}
+,{"year":"2013","month":"11","company":"4615 - Tyrone Henderson","revenue":"2827.23","activity":"259"}
+,{"year":"2013","month":"11","company":"4787 - Reny Cab Co","revenue":"3243.20","activity":"312"}
+,{"year":"2013","month":"11","company":"5437 - Great American Cab Co","revenue":"3735.22","activity":"319"}
+,{"year":"2013","month":"11","company":"5776 - Mekonen Cab Company","revenue":"8021.80","activity":"616"}
+,{"year":"2013","month":"11","company":"5874 - Sergey Cab Corp.","revenue":"4899.40","activity":"279"}
+,{"year":"2013","month":"11","company":"5 Star Taxi","revenue":"8457.46","activity":"690"}
+,{"year":"2013","month":"11","company":"6743 - Luhak Corp","revenue":"4579.53","activity":"343"}
+,{"year":"2013","month":"11","company":"American United","revenue":"302078.02","activity":"22243"}
+,{"year":"2013","month":"11","company":"Blue Ribbon Taxi Association Inc.","revenue":"2221563.22","activity":"179123"}
+,{"year":"2013","month":"11","company":"C & D Cab Co Inc","revenue":"7541.60","activity":"620"}
+,{"year":"2013","month":"11","company":"Chicago Elite Cab Corp.","revenue":"776.25","activity":"138"}
+,{"year":"2013","month":"11","company":"Chicago Elite Cab Corp. (Chicago Carriag","revenue":"2941808.40","activity":"153184"}
+,{"year":"2013","month":"11","company":"Chicago Medallion Management","revenue":"69668.40","activity":"6237"}
+,{"year":"2013","month":"11","company":"Choice Taxi Association","revenue":"1703376.33","activity":"126346"}
+,{"year":"2013","month":"11","company":"Dispatch Taxi Affiliation","revenue":"2959551.40","activity":"232625"}
+,{"year":"2013","month":"11","company":"Flash Cab","revenue":"1050160.52","activity":"83150"}
+,{"year":"2013","month":"11","company":"KOAM Taxi Association","revenue":"352123.80","activity":"26547"}
+,{"year":"2013","month":"11","company":"Northwest Management LLC","revenue":"1001940.43","activity":"78981"}
+,{"year":"2013","month":"11","company":"Park Ridge Taxi and Livery","revenue":"34118.59","activity":"1236"}
+,{"year":"2013","month":"11","company":"T.A.S. - Payment Only","revenue":"0.00","activity":"8"}
+,{"year":"2013","month":"11","company":"Taxi Affiliation Services","revenue":"10492378.89","activity":"780105"}
+,{"year":"2013","month":"11","company":"Top Cab Affiliation","revenue":"86884.88","activity":"6452"}
+,{"year":"2013","month":"11","revenue":"11505017.44","activity":"827287"}
+,{"year":"2013","month":"12","company":"1085 - N and W Cab Co","revenue":"5570.90","activity":"559"}
+,{"year":"2013","month":"12","company":"2192 - Zeymane Corp","revenue":"4915.82","activity":"411"}
+,{"year":"2013","month":"12","company":"2241 - Manuel Alonso","revenue":"2953.85","activity":"99"}
+,{"year":"2013","month":"12","company":"2733 - Benny Jona","revenue":"4884.70","activity":"354"}
+,{"year":"2013","month":"12","company":"3620 - David K. Cab Corp.","revenue":"4332.45","activity":"224"}
+,{"year":"2013","month":"12","company":"3623-Arrington Enterprises","revenue":"232.00","activity":"9"}
+,{"year":"2013","month":"12","company":"3669 - Jordan Taxi Inc","revenue":"36.76","activity":"9"}
+,{"year":"2013","month":"12","company":"3897 - Ilie Malec","revenue":"5921.35","activity":"326"}
+,{"year":"2013","month":"12","company":"4053 - Adwar H. Nikola","revenue":"5157.45","activity":"349"}
+,{"year":"2013","month":"12","company":"4615 - Tyrone Henderson","revenue":"2885.57","activity":"227"}
+,{"year":"2013","month":"12","company":"4787 - Reny Cab Co","revenue":"3896.79","activity":"392"}
+,{"year":"2013","month":"12","company":"5437 - Great American Cab Co","revenue":"1854.55","activity":"110"}
+,{"year":"2013","month":"12","company":"5776 - Mekonen Cab Company","revenue":"4853.00","activity":"408"}
+,{"year":"2013","month":"12","company":"5874 - Sergey Cab Corp.","revenue":"4832.70","activity":"273"}
+,{"year":"2013","month":"12","company":"5 Star Taxi","revenue":"19245.12","activity":"1624"}
+,{"year":"2013","month":"12","company":"6743 - Luhak Corp","revenue":"6682.02","activity":"542"}
+,{"year":"2013","month":"12","company":"American United","revenue":"425907.16","activity":"34052"}
+,{"year":"2013","month":"12","company":"Blue Ribbon Taxi Association Inc.","revenue":"2198262.87","activity":"181814"}
+,{"year":"2013","month":"12","company":"C & D Cab Co Inc","revenue":"4953.25","activity":"451"}
+,{"year":"2013","month":"12","company":"Chicago Elite Cab Corp.","revenue":"625.25","activity":"139"}
+,{"year":"2013","month":"12","company":"Chicago Elite Cab Corp. (Chicago Carriag","revenue":"2636212.26","activity":"143139"}
+,{"year":"2013","month":"12","company":"Chicago Medallion Management","revenue":"66147.96","activity":"5983"}
+,{"year":"2013","month":"12","company":"Choice Taxi Association","revenue":"1691318.83","activity":"132857"}
+,{"year":"2013","month":"12","company":"Dispatch Taxi Affiliation","revenue":"2934986.16","activity":"240079"}
+,{"year":"2013","month":"12","company":"Flash Cab","revenue":"1448877.76","activity":"116584"}
+,{"year":"2013","month":"12","company":"KOAM Taxi Association","revenue":"486299.23","activity":"37864"}
+,{"year":"2013","month":"12","company":"Northwest Management LLC","revenue":"960454.02","activity":"78936"}
+,{"year":"2013","month":"12","company":"Park Ridge Taxi and Livery","revenue":"30984.31","activity":"1126"}
+,{"year":"2013","month":"12","company":"T.A.S. - Payment Only","revenue":"0.00","activity":"8"}
+,{"year":"2013","month":"12","company":"Taxi Affiliation Services","revenue":"10602306.76","activity":"805342"}
+,{"year":"2013","month":"12","company":"Top Cab Affiliation","revenue":"98569.84","activity":"7697"}
+,{"year":"2013","month":"12","revenue":"11526912.67","activity":"855200"}]

@@ -3,9 +3,23 @@ library(ggplot2)
 library(gganimate)
 library(janitor)
 library(lubridate)
+library(rjson)
 
-#Get workspace: load("./data/companies_time_workspace.RData")
+#Get workspace: 
+load("./olav_used_files/data/companies_time_workspace.RData")
 
+
+revenue_month <- fromJSON(file = "./data/2013_company_revenue_month.json")
+
+"https://data.cityofchicago.org/resource/wrvz-psew.json?
+    $select=date_extract_y(trip_start_timestamp) as year,
+            date_extract_m(trip_start_timestamp) as month,
+            company,sum(trip_total) as revenue,count(*) as activity
+    &$where=year=2013
+    &$group=year,month,company"
+
+
+  
 #Setup
 taxi_trips <- read_csv("./data/taxi_trips_2020.csv") %>%
   clean_names() %>%
@@ -15,6 +29,7 @@ taxi_trips <- read_csv("./data/taxi_trips_2020.csv") %>%
   mutate(
     trip_end_timestamp = mdy_hms(trip_end_timestamp),
     trip_start_timestamp = mdy_hms(trip_start_timestamp),
+    year = as.intger(year(trip_start_timestamp)),
     month = as.integer(month(trip_start_timestamp)),
     season = case_when(
       month %% 12 <= 2 ~ "Winter",
@@ -74,7 +89,7 @@ activity_days_in_season +
 
 #-------------------------------------------------------------------------------
 
-#Time series of how each company has grown
+#Time series of how each company has grown (don't think we need to use this)
 
 taxi_trips_companies <- taxi_trips %>%
   group_by(month, company) %>%
@@ -99,7 +114,24 @@ trips_per_company +
 
 #-------------------------------------------------------------------------------
 
+#Bar chart race of company revenue per month
 
 
 
+trips_per_company <- ggplot(
+  data = taxi_trips_companies,
+  mapping = aes(x = revenue, group = company, 
+                color = as.factor(company), fill = as.factor(company))
+) +
+  geom_tile(mapping = aes(y = revenue), show.legend = FALSE, alpha = 0.7) + 
+  scale_color_viridis_d() + 
+  scale_size(range = c(2, 12)) + 
+  labs(x = "Revenue", y = "Number of trips")
+
+
+trips_per_company + transition_states(month, transition_length = 4, state_length = 1) +
+  view_follow(fixed_x = TRUE)  +
+  labs(title = 'GDP per Year : {closest_state}',
+       subtitle  =  "Top 10 Countries",
+       caption  = "GDP in Billions USD | Data Source: World Bank Data")
 

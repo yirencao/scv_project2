@@ -1,0 +1,858 @@
+[{"year":"2016","month":"1","company":"0694 - 59280 Chinesco Trans Inc","revenue":"3933.75","activity":"286"}
+,{"year":"2016","month":"1","company":"1085 - 72312 N and W Cab Co","revenue":"2804.98","activity":"267"}
+,{"year":"2016","month":"1","company":"1247 - 72807 Daniel Ayertey","revenue":"3403.26","activity":"249"}
+,{"year":"2016","month":"1","company":"2092 - 61288 Sbeih company","revenue":"4923.90","activity":"277"}
+,{"year":"2016","month":"1","company":"2192 - 73487 Zeymane Corp","revenue":"3645.30","activity":"274"}
+,{"year":"2016","month":"1","company":"2241 - 44667 Manuel Alonso","revenue":"2932.30","activity":"71"}
+,{"year":"2016","month":"1","company":"2733 - 74600 Benny Jona","revenue":"2044.67","activity":"123"}
+,{"year":"2016","month":"1","company":"2809 - 95474 C & D Cab Co Inc.","revenue":"5061.25","activity":"309"}
+,{"year":"2016","month":"1","company":"2823 - 73307 Seung Lee","revenue":"3744.90","activity":"116"}
+,{"year":"2016","month":"1","company":"3011 - 66308 JBL Cab Inc.","revenue":"5737.59","activity":"424"}
+,{"year":"2016","month":"1","company":"303 Taxi","revenue":"665260.88","activity":"83173"}
+,{"year":"2016","month":"1","company":"303 Taxi Waukegan","revenue":"2817.16","activity":"299"}
+,{"year":"2016","month":"1","company":"3094 - 24059 G.L.B. Cab Co","revenue":"3068.95","activity":"342"}
+,{"year":"2016","month":"1","company":"3141 - 87803 Zip Cab","revenue":"5205.73","activity":"459"}
+,{"year":"2016","month":"1","company":"3152 - 97284 Crystal Abernathy","revenue":"2879.92","activity":"257"}
+,{"year":"2016","month":"1","company":"3201 - C&D Cab Co Inc","revenue":"5641.41","activity":"460"}
+,{"year":"2016","month":"1","company":"3556 - 36214 RC Andrews Cab","revenue":"1548.75","activity":"123"}
+,{"year":"2016","month":"1","company":"3620 - 52292 David K. Cab Corp.","revenue":"3371.27","activity":"119"}
+,{"year":"2016","month":"1","company":"3623 - 72222 Arrington Enterprises","revenue":"4471.60","activity":"237"}
+,{"year":"2016","month":"1","company":"3669 - 85800 Jordan Taxi Inc","revenue":"1801.45","activity":"49"}
+,{"year":"2016","month":"1","company":"4053 - 40193 Adwar H. Nikola","revenue":"5319.51","activity":"146"}
+,{"year":"2016","month":"1","company":"4197 - 41842 Royal Star","revenue":"5099.39","activity":"353"}
+,{"year":"2016","month":"1","company":"4615 - 83503 Tyrone Henderson","revenue":"2553.38","activity":"194"}
+,{"year":"2016","month":"1","company":"4623 - 27290 Jay Kim","revenue":"5424.00","activity":"167"}
+,{"year":"2016","month":"1","company":"4787 - 56058 Reny Cab Co","revenue":"2634.88","activity":"237"}
+,{"year":"2016","month":"1","company":"5006 - 39261 Salifu Bawa","revenue":"3617.07","activity":"341"}
+,{"year":"2016","month":"1","company":"5062 - 34841 Sam Mestas","revenue":"905.06","activity":"92"}
+,{"year":"2016","month":"1","company":"5074 - 54002 Ahzmi Inc","revenue":"6345.05","activity":"244"}
+,{"year":"2016","month":"1","company":"5129 - 87128","revenue":"7140.92","activity":"563"}
+,{"year":"2016","month":"1","company":"5724 - 75306 KYVI Cab Inc","revenue":"4643.15","activity":"373"}
+,{"year":"2016","month":"1","company":"585 - 88805 Valley Cab Co","revenue":"3066.47","activity":"111"}
+,{"year":"2016","month":"1","company":"5874 - 73628 Sergey Cab Corp.","revenue":"4692.95","activity":"245"}
+,{"year":"2016","month":"1","company":"5997 - 65283 AW Services Inc.","revenue":"3995.09","activity":"221"}
+,{"year":"2016","month":"1","company":"5 Star Taxi","revenue":"56954.72","activity":"4247"}
+,{"year":"2016","month":"1","company":"6057 - 24657 Richard Addo","revenue":"2050.40","activity":"115"}
+,{"year":"2016","month":"1","company":"6488 - 83287 Zuha Taxi","revenue":"3128.07","activity":"244"}
+,{"year":"2016","month":"1","company":"6574 - Babylon Express Inc.","revenue":"5654.15","activity":"380"}
+,{"year":"2016","month":"1","company":"6742 - 83735 Tasha ride inc","revenue":"3438.90","activity":"191"}
+,{"year":"2016","month":"1","company":"6743 - 78771 Luhak Corp","revenue":"5385.01","activity":"469"}
+,{"year":"2016","month":"1","company":"6747 - Mueen Abdalla","revenue":"5842.35","activity":"345"}
+,{"year":"2016","month":"1","company":"American United","revenue":"844085.14","activity":"58674"}
+,{"year":"2016","month":"1","company":"American United Cab Association","revenue":"59.45","activity":"3"}
+,{"year":"2016","month":"1","company":"Blue Diamond","revenue":"289699.65","activity":"21246"}
+,{"year":"2016","month":"1","company":"Blue Ribbon Taxi Association Inc.","revenue":"1498289.07","activity":"105952"}
+,{"year":"2016","month":"1","company":"Checker Taxi","revenue":"425604.64","activity":"30628"}
+,{"year":"2016","month":"1","company":"Chicago Elite Cab Corp. (Chicago Carriag","revenue":"2446617.84","activity":"123576"}
+,{"year":"2016","month":"1","company":"Chicago Medallion Leasing INC","revenue":"75868.75","activity":"5591"}
+,{"year":"2016","month":"1","company":"Chicago Medallion Management","revenue":"38319.75","activity":"3274"}
+,{"year":"2016","month":"1","company":"Choice Taxi Association","revenue":"1460999.70","activity":"90882"}
+,{"year":"2016","month":"1","company":"Dispatch Taxi Affiliation","revenue":"1992497.31","activity":"130638"}
+,{"year":"2016","month":"1","company":"Flash Cab","revenue":"4990620.77","activity":"347793"}
+,{"year":"2016","month":"1","company":"KOAM Taxi Association","revenue":"430856.64","activity":"29011"}
+,{"year":"2016","month":"1","company":"Metro Group","revenue":"113213.02","activity":"11223"}
+,{"year":"2016","month":"1","company":"Norshore Cab","revenue":"141400.64","activity":"15012"}
+,{"year":"2016","month":"1","company":"Northwest Management LLC","revenue":"555326.21","activity":"41155"}
+,{"year":"2016","month":"1","company":"Suburban Dispatch LLC","revenue":"264357.60","activity":"10216"}
+,{"year":"2016","month":"1","company":"T.A.S. - Payment Only","revenue":"121821.34","activity":"6452"}
+,{"year":"2016","month":"1","company":"Taxi Affiliation Services","revenue":"7471769.47","activity":"489823"}
+,{"year":"2016","month":"1","company":"Top Cab Affiliation","revenue":"397566.18","activity":"27691"}
+,{"year":"2016","month":"1","company":"Yellow Cab","revenue":"3235976.37","activity":"231241"}
+,{"year":"2016","month":"1","revenue":"9759128.25","activity":"633139"}
+,{"year":"2016","month":"2","company":"0118 - 42111 Godfrey S.Awir","revenue":"2687.50","activity":"172"}
+,{"year":"2016","month":"2","company":"0694 - 59280 Chinesco Trans Inc","revenue":"4055.40","activity":"284"}
+,{"year":"2016","month":"2","company":"1085 - 72312 N and W Cab Co","revenue":"4068.95","activity":"386"}
+,{"year":"2016","month":"2","company":"1247 - 72807 Daniel Ayertey","revenue":"4641.11","activity":"317"}
+,{"year":"2016","month":"2","company":"2092 - 61288 Sbeih company","revenue":"5508.30","activity":"381"}
+,{"year":"2016","month":"2","company":"2192 - 73487 Zeymane Corp","revenue":"3489.50","activity":"305"}
+,{"year":"2016","month":"2","company":"2241 - 44667 Manuel Alonso","revenue":"4132.25","activity":"96"}
+,{"year":"2016","month":"2","company":"2733 - 74600 Benny Jona","revenue":"3765.69","activity":"211"}
+,{"year":"2016","month":"2","company":"2809 - 95474 C & D Cab Co Inc.","revenue":"4844.41","activity":"288"}
+,{"year":"2016","month":"2","company":"2823 - 73307 Seung Lee","revenue":"4932.51","activity":"143"}
+,{"year":"2016","month":"2","company":"3011 - 66308 JBL Cab Inc.","revenue":"6149.04","activity":"485"}
+,{"year":"2016","month":"2","company":"303 Taxi","revenue":"674792.13","activity":"85003"}
+,{"year":"2016","month":"2","company":"303 Taxi Waukegan","revenue":"2045.66","activity":"216"}
+,{"year":"2016","month":"2","company":"3094 - 24059 G.L.B. Cab Co","revenue":"2466.85","activity":"252"}
+,{"year":"2016","month":"2","company":"3141 - 87803 Zip Cab","revenue":"4171.65","activity":"412"}
+,{"year":"2016","month":"2","company":"3152 - 97284 Crystal Abernathy","revenue":"3980.60","activity":"348"}
+,{"year":"2016","month":"2","company":"3201 - C&D Cab Co Inc","revenue":"3866.93","activity":"321"}
+,{"year":"2016","month":"2","company":"3556 - 36214 RC Andrews Cab","revenue":"1704.39","activity":"111"}
+,{"year":"2016","month":"2","company":"3620 - 52292 David K. Cab Corp.","revenue":"2649.80","activity":"91"}
+,{"year":"2016","month":"2","company":"3623 - 72222 Arrington Enterprises","revenue":"4999.05","activity":"279"}
+,{"year":"2016","month":"2","company":"3669 - 85800 Jordan Taxi Inc","revenue":"5118.80","activity":"127"}
+,{"year":"2016","month":"2","company":"4053 - 40193 Adwar H. Nikola","revenue":"4850.71","activity":"173"}
+,{"year":"2016","month":"2","company":"4197 - 41842 Royal Star","revenue":"5371.51","activity":"286"}
+,{"year":"2016","month":"2","company":"4615 - 83503 Tyrone Henderson","revenue":"3055.96","activity":"257"}
+,{"year":"2016","month":"2","company":"4623 - 27290 Jay Kim","revenue":"4893.60","activity":"194"}
+,{"year":"2016","month":"2","company":"4787 - 56058 Reny Cab Co","revenue":"2959.25","activity":"252"}
+,{"year":"2016","month":"2","company":"5006 - 39261 Salifu Bawa","revenue":"3707.96","activity":"328"}
+,{"year":"2016","month":"2","company":"5062 - 34841 Sam Mestas","revenue":"603.05","activity":"63"}
+,{"year":"2016","month":"2","company":"5074 - 54002 Ahzmi Inc","revenue":"5939.05","activity":"253"}
+,{"year":"2016","month":"2","company":"5129 - 87128","revenue":"6942.90","activity":"517"}
+,{"year":"2016","month":"2","company":"5724 - 75306 KYVI Cab Inc","revenue":"4711.70","activity":"371"}
+,{"year":"2016","month":"2","company":"585 - 88805 Valley Cab Co","revenue":"5337.05","activity":"358"}
+,{"year":"2016","month":"2","company":"5874 - 73628 Sergey Cab Corp.","revenue":"4910.85","activity":"266"}
+,{"year":"2016","month":"2","company":"5997 - 65283 AW Services Inc.","revenue":"4625.40","activity":"222"}
+,{"year":"2016","month":"2","company":"5 Star Taxi","revenue":"69994.98","activity":"4953"}
+,{"year":"2016","month":"2","company":"6574 - Babylon Express Inc.","revenue":"6798.48","activity":"477"}
+,{"year":"2016","month":"2","company":"6742 - 83735 Tasha ride inc","revenue":"4588.51","activity":"296"}
+,{"year":"2016","month":"2","company":"6743 - 78771 Luhak Corp","revenue":"7539.90","activity":"595"}
+,{"year":"2016","month":"2","company":"6747 - Mueen Abdalla","revenue":"6011.76","activity":"395"}
+,{"year":"2016","month":"2","company":"American United","revenue":"824686.83","activity":"56570"}
+,{"year":"2016","month":"2","company":"American United Cab Association","revenue":"40.00","activity":"1"}
+,{"year":"2016","month":"2","company":"Blue Diamond","revenue":"312141.29","activity":"22610"}
+,{"year":"2016","month":"2","company":"Blue Ribbon Taxi Association Inc.","revenue":"1551743.06","activity":"107397"}
+,{"year":"2016","month":"2","company":"Checker Taxi","revenue":"429562.23","activity":"30514"}
+,{"year":"2016","month":"2","company":"Chicago Elite Cab Corp. (Chicago Carriag","revenue":"2735698.71","activity":"136096"}
+,{"year":"2016","month":"2","company":"Chicago Medallion Leasing INC","revenue":"93336.47","activity":"6748"}
+,{"year":"2016","month":"2","company":"Chicago Medallion Management","revenue":"58335.56","activity":"4818"}
+,{"year":"2016","month":"2","company":"Choice Taxi Association","revenue":"1576382.80","activity":"96540"}
+,{"year":"2016","month":"2","company":"Dispatch Taxi Affiliation","revenue":"2172733.09","activity":"139427"}
+,{"year":"2016","month":"2","company":"Flash Cab","revenue":"5196185.15","activity":"353973"}
+,{"year":"2016","month":"2","company":"KOAM Taxi Association","revenue":"439982.40","activity":"29278"}
+,{"year":"2016","month":"2","company":"Metro Group","revenue":"112066.83","activity":"11178"}
+,{"year":"2016","month":"2","company":"Norshore Cab","revenue":"135891.55","activity":"14776"}
+,{"year":"2016","month":"2","company":"Northwest Management LLC","revenue":"656422.80","activity":"47232"}
+,{"year":"2016","month":"2","company":"Suburban Dispatch LLC","revenue":"247675.84","activity":"9556"}
+,{"year":"2016","month":"2","company":"T.A.S. - Payment Only","revenue":"109178.33","activity":"5635"}
+,{"year":"2016","month":"2","company":"Taxi Affiliation Services","revenue":"7506190.22","activity":"488014"}
+,{"year":"2016","month":"2","company":"Top Cab Affiliation","revenue":"379188.48","activity":"25538"}
+,{"year":"2016","month":"2","company":"Yellow Cab","revenue":"3388986.92","activity":"236463"}
+,{"year":"2016","month":"2","revenue":"9910131.27","activity":"645626"}
+,{"year":"2016","month":"3","company":"0118 - 42111 Godfrey S.Awir","revenue":"9031.94","activity":"550"}
+,{"year":"2016","month":"3","company":"0694 - 59280 Chinesco Trans Inc","revenue":"5211.72","activity":"414"}
+,{"year":"2016","month":"3","company":"1085 - 72312 N and W Cab Co","revenue":"4486.93","activity":"440"}
+,{"year":"2016","month":"3","company":"1247 - 72807 Daniel Ayertey","revenue":"5497.91","activity":"351"}
+,{"year":"2016","month":"3","company":"2092 - 61288 Sbeih company","revenue":"6408.25","activity":"442"}
+,{"year":"2016","month":"3","company":"2192 - 73487 Zeymane Corp","revenue":"5052.23","activity":"262"}
+,{"year":"2016","month":"3","company":"2241 - 44667 Manuel Alonso","revenue":"5160.00","activity":"112"}
+,{"year":"2016","month":"3","company":"2733 - 74600 Benny Jona","revenue":"6793.86","activity":"405"}
+,{"year":"2016","month":"3","company":"2809 - 95474 C & D Cab Co Inc.","revenue":"4533.97","activity":"295"}
+,{"year":"2016","month":"3","company":"2823 - 73307 Seung Lee","revenue":"5655.48","activity":"163"}
+,{"year":"2016","month":"3","company":"3011 - 66308 JBL Cab Inc.","revenue":"7362.06","activity":"500"}
+,{"year":"2016","month":"3","company":"303 Taxi","revenue":"676401.79","activity":"85705"}
+,{"year":"2016","month":"3","company":"303 Taxi Waukegan","revenue":"1222.00","activity":"130"}
+,{"year":"2016","month":"3","company":"3094 - 24059 G.L.B. Cab Co","revenue":"3301.20","activity":"373"}
+,{"year":"2016","month":"3","company":"3141 - 87803 Zip Cab","revenue":"5221.55","activity":"493"}
+,{"year":"2016","month":"3","company":"3152 - 97284 Crystal Abernathy","revenue":"4768.01","activity":"399"}
+,{"year":"2016","month":"3","company":"3201 - C&D Cab Co Inc","revenue":"5165.25","activity":"394"}
+,{"year":"2016","month":"3","company":"3556 - 36214 RC Andrews Cab","revenue":"1643.06","activity":"101"}
+,{"year":"2016","month":"3","company":"3620 - 52292 David K. Cab Corp.","revenue":"4400.53","activity":"173"}
+,{"year":"2016","month":"3","company":"3623 - 72222 Arrington Enterprises","revenue":"5469.65","activity":"310"}
+,{"year":"2016","month":"3","company":"3669 - 85800 Jordan Taxi Inc","revenue":"2902.57","activity":"77"}
+,{"year":"2016","month":"3","company":"4053 - 40193 Adwar H. Nikola","revenue":"4900.28","activity":"183"}
+,{"year":"2016","month":"3","company":"4197 - 41842 Royal Star","revenue":"6764.96","activity":"345"}
+,{"year":"2016","month":"3","company":"4615 - 83503 Tyrone Henderson","revenue":"3385.47","activity":"261"}
+,{"year":"2016","month":"3","company":"4623 - 27290 Jay Kim","revenue":"5984.10","activity":"265"}
+,{"year":"2016","month":"3","company":"4787 - 56058 Reny Cab Co","revenue":"3163.83","activity":"271"}
+,{"year":"2016","month":"3","company":"5006 - 39261 Salifu Bawa","revenue":"5047.73","activity":"388"}
+,{"year":"2016","month":"3","company":"5062 - 34841 Sam Mestas","revenue":"1054.10","activity":"99"}
+,{"year":"2016","month":"3","company":"5074 - 54002 Ahzmi Inc","revenue":"6475.63","activity":"344"}
+,{"year":"2016","month":"3","company":"5129 - 87128","revenue":"9616.02","activity":"640"}
+,{"year":"2016","month":"3","company":"5724 - 75306 KYVI Cab Inc","revenue":"5198.33","activity":"432"}
+,{"year":"2016","month":"3","company":"585 - 88805 Valley Cab Co","revenue":"6261.77","activity":"457"}
+,{"year":"2016","month":"3","company":"5874 - 73628 Sergey Cab Corp.","revenue":"5731.72","activity":"341"}
+,{"year":"2016","month":"3","company":"5997 - 65283 AW Services Inc.","revenue":"3819.73","activity":"153"}
+,{"year":"2016","month":"3","company":"5 Star Taxi","revenue":"85516.26","activity":"5519"}
+,{"year":"2016","month":"3","company":"6057 - 24657 Richard Addo","revenue":"187.80","activity":"18"}
+,{"year":"2016","month":"3","company":"6574 - Babylon Express Inc.","revenue":"6899.81","activity":"470"}
+,{"year":"2016","month":"3","company":"6742 - 83735 Tasha ride inc","revenue":"4845.28","activity":"282"}
+,{"year":"2016","month":"3","company":"6743 - 78771 Luhak Corp","revenue":"5999.32","activity":"460"}
+,{"year":"2016","month":"3","company":"6747 - Mueen Abdalla","revenue":"6853.33","activity":"389"}
+,{"year":"2016","month":"3","company":"American United","revenue":"846265.48","activity":"57355"}
+,{"year":"2016","month":"3","company":"Blue Diamond","revenue":"347382.05","activity":"23770"}
+,{"year":"2016","month":"3","company":"Blue Ribbon Taxi Association Inc.","revenue":"1876360.38","activity":"126024"}
+,{"year":"2016","month":"3","company":"Checker Taxi","revenue":"489130.44","activity":"33744"}
+,{"year":"2016","month":"3","company":"Chicago Elite Cab Corp. (Chicago Carriag","revenue":"3237926.08","activity":"155378"}
+,{"year":"2016","month":"3","company":"Chicago Medallion Leasing INC","revenue":"256017.29","activity":"19043"}
+,{"year":"2016","month":"3","company":"Chicago Medallion Management","revenue":"63380.29","activity":"5120"}
+,{"year":"2016","month":"3","company":"Choice Taxi Association","revenue":"1830657.85","activity":"108716"}
+,{"year":"2016","month":"3","company":"Dispatch Taxi Affiliation","revenue":"2658699.54","activity":"166770"}
+,{"year":"2016","month":"3","company":"Flash Cab","revenue":"5811002.24","activity":"389268"}
+,{"year":"2016","month":"3","company":"KOAM Taxi Association","revenue":"503601.05","activity":"32029"}
+,{"year":"2016","month":"3","company":"Metro Group","revenue":"120258.89","activity":"11386"}
+,{"year":"2016","month":"3","company":"Norshore Cab","revenue":"136018.26","activity":"14953"}
+,{"year":"2016","month":"3","company":"Northwest Management LLC","revenue":"803762.21","activity":"55955"}
+,{"year":"2016","month":"3","company":"Suburban Dispatch LLC","revenue":"299691.84","activity":"10851"}
+,{"year":"2016","month":"3","company":"T.A.S. - Payment Only","revenue":"116279.10","activity":"6070"}
+,{"year":"2016","month":"3","company":"Taxi Affiliation Services","revenue":"8475552.62","activity":"533021"}
+,{"year":"2016","month":"3","company":"Top Cab Affiliation","revenue":"398563.94","activity":"25544"}
+,{"year":"2016","month":"3","company":"Yellow Cab","revenue":"3738075.81","activity":"252971"}
+,{"year":"2016","month":"3","revenue":"11521803.59","activity":"719761"}
+,{"year":"2016","month":"4","company":"0118 - 42111 Godfrey S.Awir","revenue":"9756.77","activity":"518"}
+,{"year":"2016","month":"4","company":"0694 - 59280 Chinesco Trans Inc","revenue":"4698.72","activity":"362"}
+,{"year":"2016","month":"4","company":"1085 - 72312 N and W Cab Co","revenue":"4808.32","activity":"436"}
+,{"year":"2016","month":"4","company":"1247 - 72807 Daniel Ayertey","revenue":"5750.38","activity":"348"}
+,{"year":"2016","month":"4","company":"2092 - 61288 Sbeih company","revenue":"6438.65","activity":"412"}
+,{"year":"2016","month":"4","company":"2192 - 73487 Zeymane Corp","revenue":"4632.18","activity":"179"}
+,{"year":"2016","month":"4","company":"2241 - 44667 Manuel Alonso","revenue":"3956.95","activity":"111"}
+,{"year":"2016","month":"4","company":"2733 - 74600 Benny Jona","revenue":"7447.23","activity":"363"}
+,{"year":"2016","month":"4","company":"2809 - 95474 C & D Cab Co Inc.","revenue":"4077.52","activity":"243"}
+,{"year":"2016","month":"4","company":"2823 - 73307 Seung Lee","revenue":"4702.61","activity":"127"}
+,{"year":"2016","month":"4","company":"3011 - 66308 JBL Cab Inc.","revenue":"4905.78","activity":"315"}
+,{"year":"2016","month":"4","company":"303 Taxi","revenue":"643410.39","activity":"82185"}
+,{"year":"2016","month":"4","company":"303 Taxi Waukegan","revenue":"1514.09","activity":"155"}
+,{"year":"2016","month":"4","company":"3094 - 24059 G.L.B. Cab Co","revenue":"4320.35","activity":"364"}
+,{"year":"2016","month":"4","company":"3141 - 87803 Zip Cab","revenue":"5850.53","activity":"485"}
+,{"year":"2016","month":"4","company":"3152 - 97284 Crystal Abernathy","revenue":"4525.73","activity":"416"}
+,{"year":"2016","month":"4","company":"3201 - C&D Cab Co Inc","revenue":"9498.11","activity":"703"}
+,{"year":"2016","month":"4","company":"3556 - 36214 RC Andrews Cab","revenue":"1470.45","activity":"87"}
+,{"year":"2016","month":"4","company":"3620 - 52292 David K. Cab Corp.","revenue":"3879.32","activity":"155"}
+,{"year":"2016","month":"4","company":"3623 - 72222 Arrington Enterprises","revenue":"4154.77","activity":"192"}
+,{"year":"2016","month":"4","company":"4053 - 40193 Adwar H. Nikola","revenue":"4777.10","activity":"151"}
+,{"year":"2016","month":"4","company":"4197 - 41842 Royal Star","revenue":"5811.10","activity":"288"}
+,{"year":"2016","month":"4","company":"4615 - 83503 Tyrone Henderson","revenue":"2727.81","activity":"213"}
+,{"year":"2016","month":"4","company":"4623 - 27290 Jay Kim","revenue":"6227.61","activity":"318"}
+,{"year":"2016","month":"4","company":"4732 - Maude Lamy","revenue":"68.02","activity":"10"}
+,{"year":"2016","month":"4","company":"4787 - 56058 Reny Cab Co","revenue":"2497.50","activity":"211"}
+,{"year":"2016","month":"4","company":"5006 - 39261 Salifu Bawa","revenue":"4110.82","activity":"337"}
+,{"year":"2016","month":"4","company":"5062 - 34841 Sam Mestas","revenue":"1081.10","activity":"91"}
+,{"year":"2016","month":"4","company":"5074 - 54002 Ahzmi Inc","revenue":"6180.75","activity":"283"}
+,{"year":"2016","month":"4","company":"5129 - 87128","revenue":"9531.14","activity":"609"}
+,{"year":"2016","month":"4","company":"5724 - 75306 KYVI Cab Inc","revenue":"5036.50","activity":"374"}
+,{"year":"2016","month":"4","company":"585 - 88805 Valley Cab Co","revenue":"4192.15","activity":"313"}
+,{"year":"2016","month":"4","company":"5874 - 73628 Sergey Cab Corp.","revenue":"5584.45","activity":"244"}
+,{"year":"2016","month":"4","company":"5997 - 65283 AW Services Inc.","revenue":"4255.16","activity":"206"}
+,{"year":"2016","month":"4","company":"5 Star Taxi","revenue":"93696.36","activity":"6004"}
+,{"year":"2016","month":"4","company":"6057 - 24657 Richard Addo","revenue":"3097.90","activity":"178"}
+,{"year":"2016","month":"4","company":"6574 - Babylon Express Inc.","revenue":"6352.81","activity":"454"}
+,{"year":"2016","month":"4","company":"6742 - 83735 Tasha ride inc","revenue":"4782.95","activity":"301"}
+,{"year":"2016","month":"4","company":"6743 - 78771 Luhak Corp","revenue":"8409.86","activity":"655"}
+,{"year":"2016","month":"4","company":"6747 - Mueen Abdalla","revenue":"5201.15","activity":"302"}
+,{"year":"2016","month":"4","company":"American United","revenue":"853790.26","activity":"55529"}
+,{"year":"2016","month":"4","company":"Blue Diamond","revenue":"370341.34","activity":"25095"}
+,{"year":"2016","month":"4","company":"Blue Ribbon Taxi Association Inc.","revenue":"2007919.57","activity":"131031"}
+,{"year":"2016","month":"4","company":"Checker Taxi","revenue":"514976.39","activity":"34488"}
+,{"year":"2016","month":"4","company":"Chicago Elite Cab Corp. (Chicago Carriag","revenue":"3343734.93","activity":"153014"}
+,{"year":"2016","month":"4","company":"Chicago Medallion Leasing INC","revenue":"304107.80","activity":"21960"}
+,{"year":"2016","month":"4","company":"Chicago Medallion Management","revenue":"72903.50","activity":"5353"}
+,{"year":"2016","month":"4","company":"Choice Taxi Association","revenue":"1876788.73","activity":"105990"}
+,{"year":"2016","month":"4","company":"Dispatch Taxi Affiliation","revenue":"2749629.75","activity":"167308"}
+,{"year":"2016","month":"4","company":"Flash Cab","revenue":"6335270.61","activity":"413583"}
+,{"year":"2016","month":"4","company":"KOAM Taxi Association","revenue":"540946.58","activity":"32452"}
+,{"year":"2016","month":"4","company":"Metro Group","revenue":"121723.55","activity":"11369"}
+,{"year":"2016","month":"4","company":"Norshore Cab","revenue":"142310.95","activity":"14785"}
+,{"year":"2016","month":"4","company":"Northwest Management LLC","revenue":"791816.40","activity":"52780"}
+,{"year":"2016","month":"4","company":"Suburban Dispatch LLC","revenue":"286235.59","activity":"10807"}
+,{"year":"2016","month":"4","company":"T.A.S. - Payment Only","revenue":"122988.04","activity":"6363"}
+,{"year":"2016","month":"4","company":"Taxi Affiliation Services","revenue":"8468147.88","activity":"521856"}
+,{"year":"2016","month":"4","company":"Top Cab Affiliation","revenue":"423420.22","activity":"26641"}
+,{"year":"2016","month":"4","company":"Yellow Cab","revenue":"3924757.21","activity":"257825"}
+,{"year":"2016","month":"4","revenue":"11564848.48","activity":"706392"}
+,{"year":"2016","month":"5","company":"0118 - 42111 Godfrey S.Awir","revenue":"9031.00","activity":"496"}
+,{"year":"2016","month":"5","company":"0694 - 59280 Chinesco Trans Inc","revenue":"3784.05","activity":"264"}
+,{"year":"2016","month":"5","company":"1085 - 72312 N and W Cab Co","revenue":"5080.46","activity":"505"}
+,{"year":"2016","month":"5","company":"1247 - 72807 Daniel Ayertey","revenue":"5793.50","activity":"373"}
+,{"year":"2016","month":"5","company":"2092 - 61288 Sbeih company","revenue":"6401.75","activity":"356"}
+,{"year":"2016","month":"5","company":"2192 - 73487 Zeymane Corp","revenue":"4141.45","activity":"207"}
+,{"year":"2016","month":"5","company":"2241 - 44667 Manuel Alonso","revenue":"4319.35","activity":"105"}
+,{"year":"2016","month":"5","company":"2733 - 74600 Benny Jona","revenue":"7660.49","activity":"350"}
+,{"year":"2016","month":"5","company":"2809 - 95474 C & D Cab Co Inc.","revenue":"3932.70","activity":"267"}
+,{"year":"2016","month":"5","company":"2823 - 73307 Lee Express Inc","revenue":"3130.00","activity":"94"}
+,{"year":"2016","month":"5","company":"2823 - 73307 Seung Lee","revenue":"2227.35","activity":"67"}
+,{"year":"2016","month":"5","company":"3011 - 66308 JBL Cab Inc.","revenue":"6451.39","activity":"425"}
+,{"year":"2016","month":"5","company":"303 Taxi","revenue":"669666.33","activity":"83060"}
+,{"year":"2016","month":"5","company":"303 Taxi Waukegan","revenue":"6.40","activity":"1"}
+,{"year":"2016","month":"5","company":"3094 - 24059 G.L.B. Cab Co","revenue":"3776.01","activity":"329"}
+,{"year":"2016","month":"5","company":"3141 - 87803 Zip Cab","revenue":"6311.68","activity":"527"}
+,{"year":"2016","month":"5","company":"3152 - 97284 Crystal Abernathy","revenue":"4311.50","activity":"359"}
+,{"year":"2016","month":"5","company":"3201 - C&D Cab Co Inc","revenue":"2458.99","activity":"198"}
+,{"year":"2016","month":"5","company":"3201 - CD Cab Co Inc","revenue":"7007.45","activity":"530"}
+,{"year":"2016","month":"5","company":"3319 - CD Cab Co","revenue":"3723.74","activity":"246"}
+,{"year":"2016","month":"5","company":"3556 - 36214 RC Andrews Cab","revenue":"1875.32","activity":"99"}
+,{"year":"2016","month":"5","company":"3620 - 52292 David K. Cab Corp.","revenue":"3835.37","activity":"121"}
+,{"year":"2016","month":"5","company":"3623 - 72222 Arrington Enterprises","revenue":"5627.40","activity":"184"}
+,{"year":"2016","month":"5","company":"4053 - 40193 Adwar H. Nikola","revenue":"4953.95","activity":"160"}
+,{"year":"2016","month":"5","company":"4197 - 41842 Royal Star","revenue":"6774.32","activity":"360"}
+,{"year":"2016","month":"5","company":"4615 - 83503 Tyrone Henderson","revenue":"2877.66","activity":"237"}
+,{"year":"2016","month":"5","company":"4623 - 27290 Jay Kim","revenue":"6110.57","activity":"335"}
+,{"year":"2016","month":"5","company":"4787 - 56058 Reny Cab Co","revenue":"3031.47","activity":"234"}
+,{"year":"2016","month":"5","company":"5006 - 39261 Salifu Bawa","revenue":"3350.41","activity":"274"}
+,{"year":"2016","month":"5","company":"5062 - 34841 Sam Mestas","revenue":"2279.25","activity":"175"}
+,{"year":"2016","month":"5","company":"5074 - 54002 Ahzmi Inc","revenue":"6382.40","activity":"313"}
+,{"year":"2016","month":"5","company":"5129 - 87128","revenue":"10125.78","activity":"633"}
+,{"year":"2016","month":"5","company":"5724 - 75306 KYVI Cab Inc","revenue":"4482.12","activity":"345"}
+,{"year":"2016","month":"5","company":"585 - 88805 Valley Cab Co","revenue":"1802.71","activity":"127"}
+,{"year":"2016","month":"5","company":"5874 - 73628 Sergey Cab Corp.","revenue":"5143.84","activity":"206"}
+,{"year":"2016","month":"5","company":"5997 - 65283 AW Services Inc.","revenue":"4532.32","activity":"183"}
+,{"year":"2016","month":"5","company":"5 Star Taxi","revenue":"109821.34","activity":"6712"}
+,{"year":"2016","month":"5","company":"6057 - 24657 Richard Addo","revenue":"1692.90","activity":"102"}
+,{"year":"2016","month":"5","company":"6574 - Babylon Express Inc.","revenue":"7556.45","activity":"505"}
+,{"year":"2016","month":"5","company":"6742 - 83735 Tasha ride inc","revenue":"5125.05","activity":"268"}
+,{"year":"2016","month":"5","company":"6743 - 78771 Luhak Corp","revenue":"7350.76","activity":"507"}
+,{"year":"2016","month":"5","company":"6747 - Mueen Abdalla","revenue":"6439.20","activity":"361"}
+,{"year":"2016","month":"5","company":"American United","revenue":"829180.30","activity":"52011"}
+,{"year":"2016","month":"5","company":"Blue Diamond","revenue":"381943.28","activity":"24508"}
+,{"year":"2016","month":"5","company":"Blue Ribbon Taxi Association Inc.","revenue":"2143130.64","activity":"134298"}
+,{"year":"2016","month":"5","company":"Checker Taxi","revenue":"508287.04","activity":"32379"}
+,{"year":"2016","month":"5","company":"Chicago Elite Cab Corp. (Chicago Carriag","revenue":"3402219.73","activity":"144930"}
+,{"year":"2016","month":"5","company":"Chicago Medallion Leasing INC","revenue":"333552.69","activity":"23656"}
+,{"year":"2016","month":"5","company":"Chicago Medallion Management","revenue":"74167.32","activity":"5114"}
+,{"year":"2016","month":"5","company":"Choice Taxi Association","revenue":"1888402.52","activity":"102889"}
+,{"year":"2016","month":"5","company":"Dispatch Taxi Affiliation","revenue":"2803778.84","activity":"165865"}
+,{"year":"2016","month":"5","company":"Flash Cab","revenue":"6606417.49","activity":"419082"}
+,{"year":"2016","month":"5","company":"KOAM Taxi Association","revenue":"553312.97","activity":"32610"}
+,{"year":"2016","month":"5","company":"Metro Group","revenue":"115152.26","activity":"10569"}
+,{"year":"2016","month":"5","company":"Norshore Cab","revenue":"140246.92","activity":"14239"}
+,{"year":"2016","month":"5","company":"Northwest Management LLC","revenue":"812677.00","activity":"53546"}
+,{"year":"2016","month":"5","company":"Suburban Dispatch LLC","revenue":"326696.86","activity":"11998"}
+,{"year":"2016","month":"5","company":"T.A.S. - Payment Only","revenue":"101500.32","activity":"4883"}
+,{"year":"2016","month":"5","company":"Taxi Affiliation Services","revenue":"8796315.36","activity":"528469"}
+,{"year":"2016","month":"5","company":"Top Cab Affiliation","revenue":"454680.59","activity":"27166"}
+,{"year":"2016","month":"5","company":"Yellow Cab","revenue":"4318810.31","activity":"271852"}
+,{"year":"2016","month":"5","revenue":"12059742.82","activity":"697899"}
+,{"year":"2016","month":"6","company":"0118 - 42111 Godfrey S.Awir","revenue":"8777.53","activity":"489"}
+,{"year":"2016","month":"6","company":"0694 - 59280 Chinesco Trans Inc","revenue":"3132.60","activity":"212"}
+,{"year":"2016","month":"6","company":"1085 - 72312 N and W Cab Co","revenue":"5122.05","activity":"476"}
+,{"year":"2016","month":"6","company":"1247 - 72807 Daniel Ayertey","revenue":"5892.55","activity":"364"}
+,{"year":"2016","month":"6","company":"2092 - 61288 Sbeih company","revenue":"6615.50","activity":"396"}
+,{"year":"2016","month":"6","company":"2192 - 73487 Zeymane Corp","revenue":"5031.75","activity":"224"}
+,{"year":"2016","month":"6","company":"2241 - 44667 Manuel Alonso","revenue":"4630.40","activity":"114"}
+,{"year":"2016","month":"6","company":"24 Seven Taxi","revenue":"484203.02","activity":"26337"}
+,{"year":"2016","month":"6","company":"2733 - 74600 Benny Jona","revenue":"7587.48","activity":"322"}
+,{"year":"2016","month":"6","company":"2809 - 95474 C & D Cab Co Inc.","revenue":"6937.61","activity":"390"}
+,{"year":"2016","month":"6","company":"2823 - 73307 Lee Express Inc","revenue":"6083.32","activity":"217"}
+,{"year":"2016","month":"6","company":"3011 - 66308 JBL Cab Inc.","revenue":"6685.55","activity":"407"}
+,{"year":"2016","month":"6","company":"303 Taxi","revenue":"661758.14","activity":"76190"}
+,{"year":"2016","month":"6","company":"3094 - 24059 G.L.B. Cab Co","revenue":"3773.56","activity":"323"}
+,{"year":"2016","month":"6","company":"3141 - 87803 Zip Cab","revenue":"5742.26","activity":"470"}
+,{"year":"2016","month":"6","company":"3152 - 97284 Crystal Abernathy","revenue":"5028.52","activity":"434"}
+,{"year":"2016","month":"6","company":"3201 - CD Cab Co Inc","revenue":"7408.09","activity":"359"}
+,{"year":"2016","month":"6","company":"3319 - CD Cab Co","revenue":"10383.59","activity":"629"}
+,{"year":"2016","month":"6","company":"3556 - 36214 RC Andrews Cab","revenue":"953.15","activity":"58"}
+,{"year":"2016","month":"6","company":"3591 - 63480 Chuks Cab","revenue":"1713.45","activity":"138"}
+,{"year":"2016","month":"6","company":"3620 - 52292 David K. Cab Corp.","revenue":"5290.08","activity":"191"}
+,{"year":"2016","month":"6","company":"3623 - 72222 Arrington Enterprises","revenue":"5502.48","activity":"237"}
+,{"year":"2016","month":"6","company":"4053 - 40193 Adwar H. Nikola","revenue":"5099.70","activity":"205"}
+,{"year":"2016","month":"6","company":"4197 - 41842 Royal Star","revenue":"6676.51","activity":"325"}
+,{"year":"2016","month":"6","company":"4615 - 83503 Tyrone Henderson","revenue":"3415.83","activity":"273"}
+,{"year":"2016","month":"6","company":"4623 - 27290 Jay Kim","revenue":"6220.40","activity":"336"}
+,{"year":"2016","month":"6","company":"4732 - Maude Lamy","revenue":"38.75","activity":"9"}
+,{"year":"2016","month":"6","company":"4787 - 56058 Reny Cab Co","revenue":"3800.18","activity":"278"}
+,{"year":"2016","month":"6","company":"5006 - 39261 Salifu Bawa","revenue":"4212.51","activity":"295"}
+,{"year":"2016","month":"6","company":"5062 - 34841 Sam Mestas","revenue":"1539.05","activity":"138"}
+,{"year":"2016","month":"6","company":"5074 - 54002 Ahzmi Inc","revenue":"6917.48","activity":"327"}
+,{"year":"2016","month":"6","company":"5129 - 87128","revenue":"10357.21","activity":"590"}
+,{"year":"2016","month":"6","company":"5724 - 75306 KYVI Cab Inc","revenue":"5657.65","activity":"419"}
+,{"year":"2016","month":"6","company":"585 - 88805 Valley Cab Co","revenue":"3812.45","activity":"366"}
+,{"year":"2016","month":"6","company":"5874 - 73628 Sergey Cab Corp.","revenue":"5483.73","activity":"232"}
+,{"year":"2016","month":"6","company":"5997 - 65283 AW Services Inc.","revenue":"2515.65","activity":"123"}
+,{"year":"2016","month":"6","company":"5 Star Taxi","revenue":"111546.85","activity":"6699"}
+,{"year":"2016","month":"6","company":"6057 - 24657 Richard Addo","revenue":"3317.71","activity":"222"}
+,{"year":"2016","month":"6","company":"6574 - Babylon Express Inc.","revenue":"6750.38","activity":"481"}
+,{"year":"2016","month":"6","company":"6742 - 83735 Tasha ride inc","revenue":"5527.17","activity":"305"}
+,{"year":"2016","month":"6","company":"6743 - 78771 Luhak Corp","revenue":"8738.65","activity":"600"}
+,{"year":"2016","month":"6","company":"6747 - Mueen Abdalla","revenue":"7013.55","activity":"428"}
+,{"year":"2016","month":"6","company":"American United","revenue":"768651.04","activity":"48825"}
+,{"year":"2016","month":"6","company":"Blue Diamond","revenue":"366736.68","activity":"23251"}
+,{"year":"2016","month":"6","company":"Blue Ribbon Taxi Association Inc.","revenue":"2163162.00","activity":"135842"}
+,{"year":"2016","month":"6","company":"Checker Taxi","revenue":"589651.24","activity":"37292"}
+,{"year":"2016","month":"6","company":"Checker Taxi Affiliation","revenue":"196.71","activity":"56"}
+,{"year":"2016","month":"6","company":"Chicago Carriage Cab Corp","revenue":"552701.29","activity":"35391"}
+,{"year":"2016","month":"6","company":"Chicago Elite Cab Corp. (Chicago Carriag","revenue":"3179508.54","activity":"133129"}
+,{"year":"2016","month":"6","company":"Chicago Independents","revenue":"393559.86","activity":"19118"}
+,{"year":"2016","month":"6","company":"Chicago Medallion Leasing INC","revenue":"331125.76","activity":"22465"}
+,{"year":"2016","month":"6","company":"Chicago Medallion Management","revenue":"74928.68","activity":"5220"}
+,{"year":"2016","month":"6","company":"Chicago Star Taxicab","revenue":"3307.74","activity":"160"}
+,{"year":"2016","month":"6","company":"Chicago Taxicab","revenue":"387916.25","activity":"20225"}
+,{"year":"2016","month":"6","company":"Choice Taxi Association","revenue":"1913525.60","activity":"104171"}
+,{"year":"2016","month":"6","company":"City Service","revenue":"2703430.18","activity":"155227"}
+,{"year":"2016","month":"6","company":"Dispatch Taxi Affiliation","revenue":"2711039.55","activity":"161734"}
+,{"year":"2016","month":"6","company":"Flash Cab","revenue":"6585491.26","activity":"408920"}
+,{"year":"2016","month":"6","company":"Globe Taxi","revenue":"1309881.65","activity":"76942"}
+,{"year":"2016","month":"6","company":"Gold Coast Taxi","revenue":"194629.92","activity":"10632"}
+,{"year":"2016","month":"6","company":"KOAM Taxi Association","revenue":"549995.94","activity":"31524"}
+,{"year":"2016","month":"6","company":"Leonard Cab Co","revenue":"40806.29","activity":"2648"}
+,{"year":"2016","month":"6","company":"Medallion Leasin","revenue":"1353547.16","activity":"80758"}
+,{"year":"2016","month":"6","company":"Metro Group","revenue":"104228.40","activity":"8860"}
+,{"year":"2016","month":"6","company":"Metro Jet Taxi A","revenue":"55690.03","activity":"2714"}
+,{"year":"2016","month":"6","company":"Norshore Cab","revenue":"129188.88","activity":"12765"}
+,{"year":"2016","month":"6","company":"Northwest Management LLC","revenue":"760281.85","activity":"48620"}
+,{"year":"2016","month":"6","company":"Nova Taxi Affiliation Llc","revenue":"37513.30","activity":"2745"}
+,{"year":"2016","month":"6","company":"Patriot Taxi Dba Peace Taxi Associat","revenue":"734571.23","activity":"46144"}
+,{"year":"2016","month":"6","company":"Peace Taxi Assoc","revenue":"35359.43","activity":"2259"}
+,{"year":"2016","month":"6","company":"Service Taxi Association","revenue":"114052.57","activity":"6257"}
+,{"year":"2016","month":"6","company":"Setare Inc","revenue":"64278.89","activity":"4570"}
+,{"year":"2016","month":"6","company":"Suburban Dispatch LLC","revenue":"373357.96","activity":"13585"}
+,{"year":"2016","month":"6","company":"Sun Taxi","revenue":"2335676.48","activity":"133403"}
+,{"year":"2016","month":"6","company":"T.A.S. - Payment Only","revenue":"78861.07","activity":"3670"}
+,{"year":"2016","month":"6","company":"Taxi Affiliation Services","revenue":"8704181.03","activity":"520033"}
+,{"year":"2016","month":"6","company":"Taxi Affiliation Service Yellow","revenue":"5479.97","activity":"424"}
+,{"year":"2016","month":"6","company":"Top Cab Affiliation","revenue":"463438.46","activity":"26618"}
+,{"year":"2016","month":"6","company":"Yellow Cab","revenue":"4397816.45","activity":"274992"}
+,{"year":"2016","month":"6","revenue":"1679057.25","activity":"99071"}
+,{"year":"2016","month":"7","company":"0118 - 42111 Godfrey S.Awir","revenue":"8650.50","activity":"572"}
+,{"year":"2016","month":"7","company":"1085 - 72312 N and W Cab Co","revenue":"1785.57","activity":"165"}
+,{"year":"2016","month":"7","company":"1247 - 72807 Daniel Ayertey","revenue":"6320.81","activity":"402"}
+,{"year":"2016","month":"7","company":"2092 - 61288 Sbeih company","revenue":"5276.25","activity":"323"}
+,{"year":"2016","month":"7","company":"2192 - 73487 Zeymane Corp","revenue":"3965.21","activity":"178"}
+,{"year":"2016","month":"7","company":"2241 - 44667 Manuel Alonso","revenue":"4129.10","activity":"112"}
+,{"year":"2016","month":"7","company":"24 Seven Taxi","revenue":"519467.17","activity":"29640"}
+,{"year":"2016","month":"7","company":"2733 - 74600 Benny Jona","revenue":"7132.96","activity":"334"}
+,{"year":"2016","month":"7","company":"2809 - 95474 C & D Cab Co Inc.","revenue":"7679.52","activity":"424"}
+,{"year":"2016","month":"7","company":"2823 - 73307 Lee Express Inc","revenue":"4215.14","activity":"132"}
+,{"year":"2016","month":"7","company":"3011 - 66308 JBL Cab Inc.","revenue":"5263.17","activity":"315"}
+,{"year":"2016","month":"7","company":"303 Taxi","revenue":"614964.87","activity":"68633"}
+,{"year":"2016","month":"7","company":"303 Taxi Waukegan","revenue":"651.12","activity":"67"}
+,{"year":"2016","month":"7","company":"3094 - 24059 G.L.B. Cab Co","revenue":"3500.95","activity":"350"}
+,{"year":"2016","month":"7","company":"3141 - 87803 Zip Cab","revenue":"5673.71","activity":"457"}
+,{"year":"2016","month":"7","company":"3152 - 97284 Crystal Abernathy","revenue":"4378.02","activity":"372"}
+,{"year":"2016","month":"7","company":"3201 - CD Cab Co Inc","revenue":"4674.83","activity":"372"}
+,{"year":"2016","month":"7","company":"3319 - CD Cab Co","revenue":"8570.22","activity":"555"}
+,{"year":"2016","month":"7","company":"3556 - 36214 RC Andrews Cab","revenue":"1322.92","activity":"83"}
+,{"year":"2016","month":"7","company":"3591 - 63480 Chuks Cab","revenue":"7534.19","activity":"633"}
+,{"year":"2016","month":"7","company":"3620 - 52292 David K. Cab Corp.","revenue":"3928.54","activity":"158"}
+,{"year":"2016","month":"7","company":"3623 - 72222 Arrington Enterprises","revenue":"4602.10","activity":"200"}
+,{"year":"2016","month":"7","company":"4053 - 40193 Adwar H. Nikola","revenue":"5083.51","activity":"158"}
+,{"year":"2016","month":"7","company":"4197 - 41842 Royal Star","revenue":"6507.95","activity":"348"}
+,{"year":"2016","month":"7","company":"4615 - 83503 Tyrone Henderson","revenue":"2489.45","activity":"208"}
+,{"year":"2016","month":"7","company":"4623 - 27290 Jay Kim","revenue":"5597.96","activity":"295"}
+,{"year":"2016","month":"7","company":"4732 - Maude Lamy","revenue":"6.50","activity":"2"}
+,{"year":"2016","month":"7","company":"4787 - 56058 Reny Cab Co","revenue":"1687.05","activity":"137"}
+,{"year":"2016","month":"7","company":"5006 - 39261 Salifu Bawa","revenue":"3739.12","activity":"281"}
+,{"year":"2016","month":"7","company":"5062 - 34841 Sam Mestas","revenue":"939.85","activity":"79"}
+,{"year":"2016","month":"7","company":"5074 - 54002 Ahzmi Inc","revenue":"6304.55","activity":"292"}
+,{"year":"2016","month":"7","company":"5129 - 87128","revenue":"7773.55","activity":"468"}
+,{"year":"2016","month":"7","company":"5724 - 75306 KYVI Cab Inc","revenue":"4383.45","activity":"326"}
+,{"year":"2016","month":"7","company":"585 - 88805 Valley Cab Co","revenue":"3634.30","activity":"252"}
+,{"year":"2016","month":"7","company":"5874 - 73628 Sergey Cab Corp.","revenue":"5208.43","activity":"220"}
+,{"year":"2016","month":"7","company":"5997 - 65283 AW Services Inc.","revenue":"3102.02","activity":"139"}
+,{"year":"2016","month":"7","company":"5 Star Taxi","revenue":"97816.97","activity":"6096"}
+,{"year":"2016","month":"7","company":"6057 - 24657 Richard Addo","revenue":"3182.40","activity":"219"}
+,{"year":"2016","month":"7","company":"6574 - Babylon Express Inc.","revenue":"5945.10","activity":"380"}
+,{"year":"2016","month":"7","company":"6742 - 83735 Tasha ride inc","revenue":"4930.60","activity":"278"}
+,{"year":"2016","month":"7","company":"6743 - 78771 Luhak Corp","revenue":"8843.40","activity":"496"}
+,{"year":"2016","month":"7","company":"6747 - Mueen Abdalla","revenue":"5582.45","activity":"298"}
+,{"year":"2016","month":"7","company":"American United","revenue":"674958.66","activity":"43530"}
+,{"year":"2016","month":"7","company":"American United Taxi Affiliation","revenue":"1016.77","activity":"67"}
+,{"year":"2016","month":"7","company":"Blue Diamond","revenue":"346950.23","activity":"22810"}
+,{"year":"2016","month":"7","company":"Blue Ribbon Taxi Association Inc.","revenue":"1895246.72","activity":"122889"}
+,{"year":"2016","month":"7","company":"Checker Taxi","revenue":"539833.73","activity":"35258"}
+,{"year":"2016","month":"7","company":"Checker Taxi Affiliation","revenue":"26109.52","activity":"1401"}
+,{"year":"2016","month":"7","company":"Chicago Carriage Cab Corp","revenue":"2665897.67","activity":"166663"}
+,{"year":"2016","month":"7","company":"Chicago Elite Cab Corp. (Chicago Carriag","revenue":"1546792.39","activity":"64193"}
+,{"year":"2016","month":"7","company":"Chicago Independents","revenue":"385512.14","activity":"20313"}
+,{"year":"2016","month":"7","company":"Chicago Medallion Leasing INC","revenue":"293369.92","activity":"20238"}
+,{"year":"2016","month":"7","company":"Chicago Medallion Management","revenue":"68478.73","activity":"4907"}
+,{"year":"2016","month":"7","company":"Chicago Star Taxicab","revenue":"3272.09","activity":"141"}
+,{"year":"2016","month":"7","company":"Chicago Taxicab","revenue":"385580.94","activity":"19967"}
+,{"year":"2016","month":"7","company":"Choice Taxi Association","revenue":"1713717.13","activity":"95909"}
+,{"year":"2016","month":"7","company":"City Service","revenue":"2812665.81","activity":"166064"}
+,{"year":"2016","month":"7","company":"Dispatch Taxi Affiliation","revenue":"2424991.96","activity":"144885"}
+,{"year":"2016","month":"7","company":"Flash Cab","revenue":"5713458.94","activity":"368065"}
+,{"year":"2016","month":"7","company":"Globe Taxi","revenue":"1431959.26","activity":"85470"}
+,{"year":"2016","month":"7","company":"Gold Coast Taxi","revenue":"207189.90","activity":"11591"}
+,{"year":"2016","month":"7","company":"KOAM Taxi Association","revenue":"494209.76","activity":"28910"}
+,{"year":"2016","month":"7","company":"Leonard Cab Co","revenue":"38394.84","activity":"2613"}
+,{"year":"2016","month":"7","company":"Medallion Leasin","revenue":"1434533.14","activity":"88914"}
+,{"year":"2016","month":"7","company":"Metro Group","revenue":"95647.61","activity":"8341"}
+,{"year":"2016","month":"7","company":"Metro Jet Taxi A","revenue":"62523.21","activity":"3024"}
+,{"year":"2016","month":"7","company":"Norshore Cab","revenue":"89477.22","activity":"9201"}
+,{"year":"2016","month":"7","company":"Northwest Management LLC","revenue":"590676.76","activity":"38719"}
+,{"year":"2016","month":"7","company":"Nova Taxi Affiliation Llc","revenue":"78840.52","activity":"6354"}
+,{"year":"2016","month":"7","company":"Patriot Taxi Dba Peace Taxi Associat","revenue":"786878.33","activity":"50554"}
+,{"year":"2016","month":"7","company":"Peace Taxi Assoc","revenue":"31910.95","activity":"1949"}
+,{"year":"2016","month":"7","company":"Service Taxi Association","revenue":"127017.34","activity":"7207"}
+,{"year":"2016","month":"7","company":"Setare Inc","revenue":"72788.93","activity":"5116"}
+,{"year":"2016","month":"7","company":"Suburban Dispatch LLC","revenue":"359141.92","activity":"12706"}
+,{"year":"2016","month":"7","company":"Sun Taxi","revenue":"2409431.64","activity":"142316"}
+,{"year":"2016","month":"7","company":"T.A.S. - Payment Only","revenue":"77192.18","activity":"3715"}
+,{"year":"2016","month":"7","company":"Taxi Affiliation Services","revenue":"7835966.93","activity":"478631"}
+,{"year":"2016","month":"7","company":"Taxi Affiliation Service Yellow","revenue":"97844.25","activity":"6110"}
+,{"year":"2016","month":"7","company":"Top Cab Affiliation","revenue":"425384.39","activity":"24161"}
+,{"year":"2016","month":"7","company":"Yellow Cab","revenue":"3932658.30","activity":"254923"}
+,{"year":"2016","month":"8","company":"0118 - 42111 Godfrey S.Awir","revenue":"7199.25","activity":"470"}
+,{"year":"2016","month":"8","company":"0694 - 59280 Chinesco Trans Inc","revenue":"3294.96","activity":"250"}
+,{"year":"2016","month":"8","company":"1085 - 72312 N and W Cab Co","revenue":"2465.45","activity":"239"}
+,{"year":"2016","month":"8","company":"1247 - 72807 Daniel Ayertey","revenue":"1738.85","activity":"84"}
+,{"year":"2016","month":"8","company":"2092 - 61288 Sbeih company","revenue":"5928.25","activity":"388"}
+,{"year":"2016","month":"8","company":"2192 - 73487 Zeymane Corp","revenue":"3808.57","activity":"216"}
+,{"year":"2016","month":"8","company":"2241 - 44667 Manuel Alonso","revenue":"4294.30","activity":"104"}
+,{"year":"2016","month":"8","company":"24 Seven Taxi","revenue":"469745.05","activity":"26665"}
+,{"year":"2016","month":"8","company":"2733 - 74600 Benny Jona","revenue":"6467.84","activity":"347"}
+,{"year":"2016","month":"8","company":"2809 - 95474 C & D Cab Co Inc.","revenue":"1408.35","activity":"82"}
+,{"year":"2016","month":"8","company":"2823 - 73307 Lee Express Inc","revenue":"3979.59","activity":"118"}
+,{"year":"2016","month":"8","company":"3011 - 66308 JBL Cab Inc.","revenue":"5126.61","activity":"328"}
+,{"year":"2016","month":"8","company":"303 Taxi","revenue":"644432.02","activity":"69375"}
+,{"year":"2016","month":"8","company":"3094 - 24059 G.L.B. Cab Co","revenue":"2561.65","activity":"226"}
+,{"year":"2016","month":"8","company":"3141 - 87803 Zip Cab","revenue":"4302.70","activity":"311"}
+,{"year":"2016","month":"8","company":"3152 - 97284 Crystal Abernathy","revenue":"4401.81","activity":"396"}
+,{"year":"2016","month":"8","company":"3201 - CD Cab Co Inc","revenue":"4177.33","activity":"367"}
+,{"year":"2016","month":"8","company":"3319 - CD Cab Co","revenue":"6134.40","activity":"373"}
+,{"year":"2016","month":"8","company":"3556 - 36214 RC Andrews Cab","revenue":"1798.00","activity":"100"}
+,{"year":"2016","month":"8","company":"3591 - 63480 Chuks Cab","revenue":"7406.73","activity":"660"}
+,{"year":"2016","month":"8","company":"3620 - 52292 David K. Cab Corp.","revenue":"3483.00","activity":"123"}
+,{"year":"2016","month":"8","company":"3623 - 72222 Arrington Enterprises","revenue":"4983.51","activity":"251"}
+,{"year":"2016","month":"8","company":"4053 - 40193 Adwar H. Nikola","revenue":"4430.52","activity":"153"}
+,{"year":"2016","month":"8","company":"4197 - 41842 Royal Star","revenue":"5719.09","activity":"309"}
+,{"year":"2016","month":"8","company":"4615 - 83503 Tyrone Henderson","revenue":"3405.55","activity":"262"}
+,{"year":"2016","month":"8","company":"4623 - 27290 Jay Kim","revenue":"5915.65","activity":"283"}
+,{"year":"2016","month":"8","company":"4787 - 56058 Reny Cab Co","revenue":"3384.25","activity":"272"}
+,{"year":"2016","month":"8","company":"5006 - 39261 Salifu Bawa","revenue":"3033.80","activity":"228"}
+,{"year":"2016","month":"8","company":"5062 - 34841 Sam Mestas","revenue":"949.56","activity":"87"}
+,{"year":"2016","month":"8","company":"5074 - 54002 Ahzmi Inc","revenue":"4749.45","activity":"214"}
+,{"year":"2016","month":"8","company":"5129 - 87128","revenue":"8739.95","activity":"564"}
+,{"year":"2016","month":"8","company":"5724 - 75306 KYVI Cab Inc","revenue":"5006.12","activity":"322"}
+,{"year":"2016","month":"8","company":"585 - 88805 Valley Cab Co","revenue":"1791.32","activity":"133"}
+,{"year":"2016","month":"8","company":"5874 - 73628 Sergey Cab Corp.","revenue":"5662.35","activity":"233"}
+,{"year":"2016","month":"8","company":"5997 - 65283 AW Services Inc.","revenue":"3846.80","activity":"188"}
+,{"year":"2016","month":"8","company":"5 Star Taxi","revenue":"99572.07","activity":"6150"}
+,{"year":"2016","month":"8","company":"6057 - 24657 Richard Addo","revenue":"2806.86","activity":"191"}
+,{"year":"2016","month":"8","company":"6574 - Babylon Express Inc.","revenue":"5068.95","activity":"263"}
+,{"year":"2016","month":"8","company":"6742 - 83735 Tasha ride inc","revenue":"4601.38","activity":"269"}
+,{"year":"2016","month":"8","company":"6743 - 78771 Luhak Corp","revenue":"7950.82","activity":"515"}
+,{"year":"2016","month":"8","company":"6747 - Mueen Abdalla","revenue":"5849.49","activity":"303"}
+,{"year":"2016","month":"8","company":"American United","revenue":"647603.85","activity":"41427"}
+,{"year":"2016","month":"8","company":"American United Taxi Affiliation","revenue":"11008.17","activity":"513"}
+,{"year":"2016","month":"8","company":"Blue Diamond","revenue":"366816.25","activity":"22904"}
+,{"year":"2016","month":"8","company":"Blue Ribbon Taxi Association Inc.","revenue":"1817908.19","activity":"118095"}
+,{"year":"2016","month":"8","company":"Checker Taxi","revenue":"509285.68","activity":"33933"}
+,{"year":"2016","month":"8","company":"Checker Taxi Affiliation","revenue":"94937.26","activity":"5889"}
+,{"year":"2016","month":"8","company":"Chicago Carriage Cab Corp","revenue":"4391311.52","activity":"269423"}
+,{"year":"2016","month":"8","company":"Chicago Elite Cab Corp. (Chicago Carriag","revenue":"250440.60","activity":"9124"}
+,{"year":"2016","month":"8","company":"Chicago Independents","revenue":"433163.59","activity":"19853"}
+,{"year":"2016","month":"8","company":"Chicago Medallion Leasing INC","revenue":"301134.41","activity":"19716"}
+,{"year":"2016","month":"8","company":"Chicago Medallion Management","revenue":"70682.61","activity":"5110"}
+,{"year":"2016","month":"8","company":"Chicago Star Taxicab","revenue":"3912.99","activity":"151"}
+,{"year":"2016","month":"8","company":"Chicago Taxicab","revenue":"360748.12","activity":"19491"}
+,{"year":"2016","month":"8","company":"Choice Taxi Association","revenue":"1575331.55","activity":"89159"}
+,{"year":"2016","month":"8","company":"City Service","revenue":"2707031.48","activity":"160113"}
+,{"year":"2016","month":"8","company":"Dispatch Taxi Affiliation","revenue":"2189012.52","activity":"133076"}
+,{"year":"2016","month":"8","company":"Flash Cab","revenue":"5570283.74","activity":"358848"}
+,{"year":"2016","month":"8","company":"Globe Taxi","revenue":"1410192.16","activity":"83777"}
+,{"year":"2016","month":"8","company":"Gold Coast Taxi","revenue":"208956.92","activity":"11403"}
+,{"year":"2016","month":"8","company":"KOAM Taxi Association","revenue":"480797.05","activity":"27666"}
+,{"year":"2016","month":"8","company":"Leonard Cab Co","revenue":"37024.69","activity":"2691"}
+,{"year":"2016","month":"8","company":"Medallion Leasin","revenue":"1366497.75","activity":"83004"}
+,{"year":"2016","month":"8","company":"Metro Group","revenue":"94801.90","activity":"8809"}
+,{"year":"2016","month":"8","company":"Metro Jet Taxi A","revenue":"60729.94","activity":"2940"}
+,{"year":"2016","month":"8","company":"Norshore Cab","revenue":"84097.82","activity":"8736"}
+,{"year":"2016","month":"8","company":"Northwest Management LLC","revenue":"510300.83","activity":"34572"}
+,{"year":"2016","month":"8","company":"Nova Taxi Affiliation Llc","revenue":"92114.02","activity":"7327"}
+,{"year":"2016","month":"8","company":"Patriot Taxi Dba Peace Taxi Associat","revenue":"715788.19","activity":"46445"}
+,{"year":"2016","month":"8","company":"Peace Taxi Assoc","revenue":"34482.38","activity":"2212"}
+,{"year":"2016","month":"8","company":"Service Taxi Association","revenue":"113774.95","activity":"6217"}
+,{"year":"2016","month":"8","company":"Setare Inc","revenue":"72059.91","activity":"5158"}
+,{"year":"2016","month":"8","company":"Suburban Dispatch LLC","revenue":"282407.69","activity":"10769"}
+,{"year":"2016","month":"8","company":"Sun Taxi","revenue":"2304208.24","activity":"136614"}
+,{"year":"2016","month":"8","company":"T.A.S. - Payment Only","revenue":"79417.50","activity":"3822"}
+,{"year":"2016","month":"8","company":"Taxi Affiliation Services","revenue":"6991198.64","activity":"434340"}
+,{"year":"2016","month":"8","company":"Taxi Affiliation Service Yellow","revenue":"417303.55","activity":"25308"}
+,{"year":"2016","month":"8","company":"Top Cab Affiliation","revenue":"404479.43","activity":"24056"}
+,{"year":"2016","month":"8","company":"Yellow Cab","revenue":"3738017.17","activity":"244791"}
+,{"year":"2016","month":"9","company":"0118 - 42111 Godfrey S.Awir","revenue":"8204.93","activity":"456"}
+,{"year":"2016","month":"9","company":"0694 - 59280 Chinesco Trans Inc","revenue":"4932.43","activity":"338"}
+,{"year":"2016","month":"9","company":"1085 - 72312 N and W Cab Co","revenue":"4999.60","activity":"459"}
+,{"year":"2016","month":"9","company":"2092 - 61288 Sbeih company","revenue":"6177.05","activity":"400"}
+,{"year":"2016","month":"9","company":"2192 - 73487 Zeymane Corp","revenue":"3649.07","activity":"237"}
+,{"year":"2016","month":"9","company":"2241 - 44667 Manuel Alonso","revenue":"2489.50","activity":"63"}
+,{"year":"2016","month":"9","company":"24 Seven Taxi","revenue":"501342.89","activity":"27055"}
+,{"year":"2016","month":"9","company":"2733 - 74600 Benny Jona","revenue":"5105.29","activity":"232"}
+,{"year":"2016","month":"9","company":"2809 - 95474 C & D Cab Co Inc.","revenue":"6612.86","activity":"323"}
+,{"year":"2016","month":"9","company":"2823 - 73307 Lee Express Inc","revenue":"4683.60","activity":"140"}
+,{"year":"2016","month":"9","company":"3011 - 66308 JBL Cab Inc.","revenue":"5993.98","activity":"365"}
+,{"year":"2016","month":"9","company":"303 Taxi","revenue":"605706.51","activity":"72260"}
+,{"year":"2016","month":"9","company":"3094 - 24059 G.L.B. Cab Co","revenue":"3890.47","activity":"295"}
+,{"year":"2016","month":"9","company":"3141 - 87803 Zip Cab","revenue":"3074.38","activity":"197"}
+,{"year":"2016","month":"9","company":"3152 - 97284 Crystal Abernathy","revenue":"4095.92","activity":"337"}
+,{"year":"2016","month":"9","company":"3201 - CD Cab Co Inc","revenue":"4782.44","activity":"385"}
+,{"year":"2016","month":"9","company":"3319 - CD Cab Co","revenue":"7098.22","activity":"510"}
+,{"year":"2016","month":"9","company":"3556 - 36214 RC Andrews Cab","revenue":"1363.97","activity":"97"}
+,{"year":"2016","month":"9","company":"3591 - 63480 Chuks Cab","revenue":"7043.07","activity":"597"}
+,{"year":"2016","month":"9","company":"3620 - 52292 David K. Cab Corp.","revenue":"4749.35","activity":"191"}
+,{"year":"2016","month":"9","company":"3623 - 72222 Arrington Enterprises","revenue":"4703.10","activity":"206"}
+,{"year":"2016","month":"9","company":"3669 - 85800 Jordan Taxi Inc","revenue":"3153.01","activity":"86"}
+,{"year":"2016","month":"9","company":"4053 - 40193 Adwar H. Nikola","revenue":"4500.39","activity":"178"}
+,{"year":"2016","month":"9","company":"4197 - 41842 Royal Star","revenue":"6596.66","activity":"294"}
+,{"year":"2016","month":"9","company":"4615 - 83503 Tyrone Henderson","revenue":"1351.40","activity":"110"}
+,{"year":"2016","month":"9","company":"4623 - 27290 Jay Kim","revenue":"5759.14","activity":"250"}
+,{"year":"2016","month":"9","company":"4787 - 56058 Reny Cab Co","revenue":"3809.20","activity":"318"}
+,{"year":"2016","month":"9","company":"5006 - 39261 Salifu Bawa","revenue":"2522.25","activity":"182"}
+,{"year":"2016","month":"9","company":"5062 - 34841 Sam Mestas","revenue":"665.15","activity":"55"}
+,{"year":"2016","month":"9","company":"5074 - 54002 Ahzmi Inc","revenue":"5413.99","activity":"232"}
+,{"year":"2016","month":"9","company":"5129 - 87128","revenue":"9060.13","activity":"506"}
+,{"year":"2016","month":"9","company":"5724 - 75306 KYVI Cab Inc","revenue":"4898.78","activity":"358"}
+,{"year":"2016","month":"9","company":"585 - 88805 Valley Cab Co","revenue":"5747.45","activity":"429"}
+,{"year":"2016","month":"9","company":"5874 - 73628 Sergey Cab Corp.","revenue":"5304.15","activity":"205"}
+,{"year":"2016","month":"9","company":"5997 - 65283 AW Services Inc.","revenue":"3815.56","activity":"179"}
+,{"year":"2016","month":"9","company":"5 Star Taxi","revenue":"86970.54","activity":"4982"}
+,{"year":"2016","month":"9","company":"6057 - 24657 Richard Addo","revenue":"3096.69","activity":"188"}
+,{"year":"2016","month":"9","company":"6574 - Babylon Express Inc.","revenue":"7017.85","activity":"364"}
+,{"year":"2016","month":"9","company":"6742 - 83735 Tasha ride inc","revenue":"374.10","activity":"18"}
+,{"year":"2016","month":"9","company":"6743 - 78771 Luhak Corp","revenue":"8620.88","activity":"585"}
+,{"year":"2016","month":"9","company":"6747 - Mueen Abdalla","revenue":"5682.62","activity":"325"}
+,{"year":"2016","month":"9","company":"American United","revenue":"651251.21","activity":"40257"}
+,{"year":"2016","month":"9","company":"American United Taxi Affiliation","revenue":"15435.44","activity":"669"}
+,{"year":"2016","month":"9","company":"Blue Diamond","revenue":"401450.88","activity":"24122"}
+,{"year":"2016","month":"9","company":"Blue Ribbon Taxi Association Inc.","revenue":"1716082.00","activity":"108756"}
+,{"year":"2016","month":"9","company":"Checker Taxi","revenue":"480978.57","activity":"31289"}
+,{"year":"2016","month":"9","company":"Checker Taxi Affiliation","revenue":"250564.08","activity":"13025"}
+,{"year":"2016","month":"9","company":"Chicago Carriage Cab Corp","revenue":"4710261.71","activity":"271973"}
+,{"year":"2016","month":"9","company":"Chicago Independents","revenue":"458329.68","activity":"20365"}
+,{"year":"2016","month":"9","company":"Chicago Medallion Leasing INC","revenue":"353087.44","activity":"21257"}
+,{"year":"2016","month":"9","company":"Chicago Medallion Management","revenue":"105032.23","activity":"6988"}
+,{"year":"2016","month":"9","company":"Chicago Star Taxicab","revenue":"4064.47","activity":"158"}
+,{"year":"2016","month":"9","company":"Chicago Taxicab","revenue":"395297.23","activity":"20535"}
+,{"year":"2016","month":"9","company":"Choice Taxi Association","revenue":"1657424.22","activity":"89183"}
+,{"year":"2016","month":"9","company":"City Service","revenue":"2743966.82","activity":"155668"}
+,{"year":"2016","month":"9","company":"Dispatch Taxi Affiliation","revenue":"2306664.33","activity":"135176"}
+,{"year":"2016","month":"9","company":"Flash Cab","revenue":"5357044.77","activity":"332130"}
+,{"year":"2016","month":"9","company":"Globe Taxi","revenue":"1405884.97","activity":"81995"}
+,{"year":"2016","month":"9","company":"Gold Coast Taxi","revenue":"199904.01","activity":"10598"}
+,{"year":"2016","month":"9","company":"KOAM Taxi Association","revenue":"476417.36","activity":"26210"}
+,{"year":"2016","month":"9","company":"Leonard Cab Co","revenue":"36106.70","activity":"2653"}
+,{"year":"2016","month":"9","company":"Medallion Leasin","revenue":"1300771.34","activity":"75797"}
+,{"year":"2016","month":"9","company":"Metro Group","revenue":"84206.20","activity":"8616"}
+,{"year":"2016","month":"9","company":"Metro Jet Taxi A","revenue":"65191.32","activity":"3110"}
+,{"year":"2016","month":"9","company":"Norshore Cab","revenue":"75215.65","activity":"7827"}
+,{"year":"2016","month":"9","company":"Northwest Management LLC","revenue":"503129.39","activity":"31415"}
+,{"year":"2016","month":"9","company":"Nova Taxi Affiliation Llc","revenue":"124754.31","activity":"9206"}
+,{"year":"2016","month":"9","company":"Patriot Taxi Dba Peace Taxi Associat","revenue":"695792.04","activity":"44099"}
+,{"year":"2016","month":"9","company":"Patriot Trans Inc","revenue":"888.12","activity":"85"}
+,{"year":"2016","month":"9","company":"Peace Taxi Assoc","revenue":"36172.82","activity":"2250"}
+,{"year":"2016","month":"9","company":"Service Taxi Association","revenue":"122897.75","activity":"6466"}
+,{"year":"2016","month":"9","company":"Setare Inc","revenue":"69264.34","activity":"4559"}
+,{"year":"2016","month":"9","company":"Suburban Dispatch LLC","revenue":"289768.45","activity":"10815"}
+,{"year":"2016","month":"9","company":"Sun Taxi","revenue":"2290715.12","activity":"129200"}
+,{"year":"2016","month":"9","company":"T.A.S. - Payment Only","revenue":"75315.90","activity":"3587"}
+,{"year":"2016","month":"9","company":"Taxi Affiliation Services","revenue":"6401667.20","activity":"385898"}
+,{"year":"2016","month":"9","company":"Taxi Affiliation Service Yellow","revenue":"1149294.33","activity":"51546"}
+,{"year":"2016","month":"9","company":"Top Cab Affiliation","revenue":"409831.98","activity":"23232"}
+,{"year":"2016","month":"9","company":"Yellow Cab","revenue":"3584952.65","activity":"227348"}
+,{"year":"2016","month":"10","company":"0118 - 42111 Godfrey S.Awir","revenue":"8888.85","activity":"511"}
+,{"year":"2016","month":"10","company":"0694 - 59280 Chinesco Trans Inc","revenue":"4443.58","activity":"336"}
+,{"year":"2016","month":"10","company":"1085 - 72312 N and W Cab Co","revenue":"5651.09","activity":"490"}
+,{"year":"2016","month":"10","company":"2092 - 61288 Sbeih company","revenue":"6477.75","activity":"383"}
+,{"year":"2016","month":"10","company":"2192 - 73487 Zeymane Corp","revenue":"4412.65","activity":"241"}
+,{"year":"2016","month":"10","company":"2241 - 44667 - Felman Corp, Manuel Alonso","revenue":"2472.10","activity":"66"}
+,{"year":"2016","month":"10","company":"2241 - 44667 Manuel Alonso","revenue":"1125.55","activity":"32"}
+,{"year":"2016","month":"10","company":"24 Seven Taxi","revenue":"521860.19","activity":"28174"}
+,{"year":"2016","month":"10","company":"2733 - 74600 Benny Jona","revenue":"5456.39","activity":"219"}
+,{"year":"2016","month":"10","company":"2809 - 95474 C & D Cab Co Inc.","revenue":"5980.90","activity":"308"}
+,{"year":"2016","month":"10","company":"2823 - 73307 Lee Express Inc","revenue":"4904.70","activity":"151"}
+,{"year":"2016","month":"10","company":"3011 - 66308 JBL Cab Inc.","revenue":"5577.46","activity":"406"}
+,{"year":"2016","month":"10","company":"303 Taxi","revenue":"624593.27","activity":"73807"}
+,{"year":"2016","month":"10","company":"3094 - 24059 G.L.B. Cab Co","revenue":"3372.72","activity":"294"}
+,{"year":"2016","month":"10","company":"3141 - 87803 Zip Cab","revenue":"6218.68","activity":"486"}
+,{"year":"2016","month":"10","company":"3152 - 97284 Crystal Abernathy","revenue":"3714.81","activity":"323"}
+,{"year":"2016","month":"10","company":"3201 - CD Cab Co Inc","revenue":"2511.20","activity":"189"}
+,{"year":"2016","month":"10","company":"3556 - 36214 RC Andrews Cab","revenue":"1209.70","activity":"75"}
+,{"year":"2016","month":"10","company":"3591 - 63480 Chuks Cab","revenue":"7342.38","activity":"620"}
+,{"year":"2016","month":"10","company":"3620 - 52292 David K. Cab Corp.","revenue":"4176.85","activity":"148"}
+,{"year":"2016","month":"10","company":"3623 - 72222 Arrington Enterprises","revenue":"3824.53","activity":"179"}
+,{"year":"2016","month":"10","company":"3669 - 85800 Jordan Taxi Inc","revenue":"3823.72","activity":"91"}
+,{"year":"2016","month":"10","company":"4053 - 40193 Adwar H. Nikola","revenue":"4785.27","activity":"179"}
+,{"year":"2016","month":"10","company":"4197 - 41842 Royal Star","revenue":"6307.21","activity":"297"}
+,{"year":"2016","month":"10","company":"4615 - 83503 Tyrone Henderson","revenue":"3317.90","activity":"274"}
+,{"year":"2016","month":"10","company":"4623 - 27290 Jay Kim","revenue":"5973.60","activity":"314"}
+,{"year":"2016","month":"10","company":"4787 - 56058 Reny Cab Co","revenue":"3840.60","activity":"304"}
+,{"year":"2016","month":"10","company":"5006 - 39261 Salifu Bawa","revenue":"4626.17","activity":"321"}
+,{"year":"2016","month":"10","company":"5062 - 34841 Sam Mestas","revenue":"828.22","activity":"73"}
+,{"year":"2016","month":"10","company":"5074 - 54002 Ahzmi Inc","revenue":"5483.85","activity":"242"}
+,{"year":"2016","month":"10","company":"5129 - 87128","revenue":"8540.81","activity":"544"}
+,{"year":"2016","month":"10","company":"5724 - 75306 KYVI Cab Inc","revenue":"5092.89","activity":"378"}
+,{"year":"2016","month":"10","company":"585 - 88805 Valley Cab Co","revenue":"5930.91","activity":"464"}
+,{"year":"2016","month":"10","company":"5874 - 73628 Sergey Cab Corp.","revenue":"5086.81","activity":"263"}
+,{"year":"2016","month":"10","company":"5997 - 65283 AW Services Inc.","revenue":"4779.46","activity":"186"}
+,{"year":"2016","month":"10","company":"5 Star Taxi","revenue":"90607.57","activity":"5420"}
+,{"year":"2016","month":"10","company":"6057 - 24657 Richard Addo","revenue":"2143.85","activity":"162"}
+,{"year":"2016","month":"10","company":"6574 - Babylon Express Inc.","revenue":"4267.52","activity":"210"}
+,{"year":"2016","month":"10","company":"6742 - 83735 Tasha ride inc","revenue":"5839.04","activity":"339"}
+,{"year":"2016","month":"10","company":"6743 - 78771 Luhak Corp","revenue":"8605.36","activity":"518"}
+,{"year":"2016","month":"10","company":"6747 - Mueen Abdalla","revenue":"5587.42","activity":"323"}
+,{"year":"2016","month":"10","company":"American United","revenue":"736953.72","activity":"44715"}
+,{"year":"2016","month":"10","company":"American United Cab Association","revenue":"20.00","activity":"1"}
+,{"year":"2016","month":"10","company":"American United Taxi Affiliation","revenue":"15651.44","activity":"684"}
+,{"year":"2016","month":"10","company":"Blue Diamond","revenue":"410465.65","activity":"26328"}
+,{"year":"2016","month":"10","company":"Blue Ribbon Taxi Association Inc.","revenue":"1763792.35","activity":"112294"}
+,{"year":"2016","month":"10","company":"Checker Taxi","revenue":"497428.70","activity":"32859"}
+,{"year":"2016","month":"10","company":"Checker Taxi Affiliation","revenue":"418654.95","activity":"21969"}
+,{"year":"2016","month":"10","company":"Chicago Carriage Cab Corp","revenue":"5025001.95","activity":"286393"}
+,{"year":"2016","month":"10","company":"Chicago Independents","revenue":"434285.17","activity":"22693"}
+,{"year":"2016","month":"10","company":"Chicago Medallion Leasing INC","revenue":"393877.75","activity":"23794"}
+,{"year":"2016","month":"10","company":"Chicago Medallion Management","revenue":"146192.99","activity":"9676"}
+,{"year":"2016","month":"10","company":"Chicago Star Taxicab","revenue":"4160.86","activity":"187"}
+,{"year":"2016","month":"10","company":"Chicago Taxicab","revenue":"423559.36","activity":"22157"}
+,{"year":"2016","month":"10","company":"Choice Taxi Association","revenue":"1731465.02","activity":"92321"}
+,{"year":"2016","month":"10","company":"City Service","revenue":"2898247.18","activity":"161241"}
+,{"year":"2016","month":"10","company":"Dispatch Taxi Affiliation","revenue":"2518488.23","activity":"147404"}
+,{"year":"2016","month":"10","company":"Flash Cab","revenue":"6100097.35","activity":"377697"}
+,{"year":"2016","month":"10","company":"Globe Taxi","revenue":"1485714.91","activity":"87612"}
+,{"year":"2016","month":"10","company":"Gold Coast Taxi","revenue":"204367.04","activity":"10890"}
+,{"year":"2016","month":"10","company":"KOAM Taxi Association","revenue":"483741.62","activity":"26894"}
+,{"year":"2016","month":"10","company":"Leonard Cab Co","revenue":"28202.20","activity":"2152"}
+,{"year":"2016","month":"10","company":"Medallion Leasin","revenue":"1447326.74","activity":"81165"}
+,{"year":"2016","month":"10","company":"Metro Group","revenue":"92123.22","activity":"9482"}
+,{"year":"2016","month":"10","company":"Metro Jet Taxi A","revenue":"72369.12","activity":"3557"}
+,{"year":"2016","month":"10","company":"Norshore Cab","revenue":"83333.31","activity":"8807"}
+,{"year":"2016","month":"10","company":"Northwest Management LLC","revenue":"714005.16","activity":"44713"}
+,{"year":"2016","month":"10","company":"Nova Taxi Affiliation Llc","revenue":"328282.11","activity":"21872"}
+,{"year":"2016","month":"10","company":"Patriot Taxi Dba Peace Taxi Associat","revenue":"767162.41","activity":"48216"}
+,{"year":"2016","month":"10","company":"Patriot Trans Inc","revenue":"7604.05","activity":"451"}
+,{"year":"2016","month":"10","company":"Peace Taxi Assoc","revenue":"39950.69","activity":"2534"}
+,{"year":"2016","month":"10","company":"Service Taxi Association","revenue":"130085.03","activity":"7159"}
+,{"year":"2016","month":"10","company":"Setare Inc","revenue":"75583.75","activity":"4489"}
+,{"year":"2016","month":"10","company":"Suburban Dispatch LLC","revenue":"295484.51","activity":"11005"}
+,{"year":"2016","month":"10","company":"Sun Taxi","revenue":"2456836.13","activity":"138036"}
+,{"year":"2016","month":"10","company":"T.A.S. - Payment Only","revenue":"63938.87","activity":"3021"}
+,{"year":"2016","month":"10","company":"Taxi Affiliation Services","revenue":"6024705.27","activity":"359256"}
+,{"year":"2016","month":"10","company":"Taxi Affiliation Service Yellow","revenue":"2191385.90","activity":"98607"}
+,{"year":"2016","month":"10","company":"Top Cab Affiliation","revenue":"425255.68","activity":"23809"}
+,{"year":"2016","month":"10","company":"Yellow Cab","revenue":"3638166.57","activity":"231302"}
+,{"year":"2016","month":"11","company":"0118 - 42111 Godfrey S.Awir","revenue":"7804.35","activity":"421"}
+,{"year":"2016","month":"11","company":"0694 - 59280 Chinesco Trans Inc","revenue":"3485.86","activity":"247"}
+,{"year":"2016","month":"11","company":"1085 - 72312 N and W Cab Co","revenue":"5166.48","activity":"471"}
+,{"year":"2016","month":"11","company":"2092 - 61288 Sbeih company","revenue":"5526.00","activity":"297"}
+,{"year":"2016","month":"11","company":"2192 - 73487 Zeymane Corp","revenue":"4025.30","activity":"229"}
+,{"year":"2016","month":"11","company":"2241 - 44667 - Felman Corp, Manuel Alonso","revenue":"3699.95","activity":"91"}
+,{"year":"2016","month":"11","company":"24 Seven Taxi","revenue":"443988.71","activity":"24184"}
+,{"year":"2016","month":"11","company":"2733 - 74600 Benny Jona","revenue":"5110.31","activity":"196"}
+,{"year":"2016","month":"11","company":"2809 - 95474 C & D Cab Co Inc.","revenue":"5172.20","activity":"261"}
+,{"year":"2016","month":"11","company":"2823 - 73307 Lee Express Inc","revenue":"4436.15","activity":"136"}
+,{"year":"2016","month":"11","company":"3011 - 66308 JBL Cab Inc.","revenue":"4956.06","activity":"297"}
+,{"year":"2016","month":"11","company":"303 Taxi","revenue":"561463.96","activity":"69281"}
+,{"year":"2016","month":"11","company":"3094 - 24059 G.L.B. Cab Co","revenue":"2990.65","activity":"238"}
+,{"year":"2016","month":"11","company":"3141 - 87803 Zip Cab","revenue":"7092.61","activity":"489"}
+,{"year":"2016","month":"11","company":"3152 - 97284 Crystal Abernathy","revenue":"2993.70","activity":"267"}
+,{"year":"2016","month":"11","company":"3201 - CD Cab Co Inc","revenue":"4731.79","activity":"363"}
+,{"year":"2016","month":"11","company":"3556 - 36214 RC Andrews Cab","revenue":"1868.25","activity":"108"}
+,{"year":"2016","month":"11","company":"3591 - 63480 Chuks Cab","revenue":"2805.49","activity":"239"}
+,{"year":"2016","month":"11","company":"3620 - 52292 David K. Cab Corp.","revenue":"2953.35","activity":"102"}
+,{"year":"2016","month":"11","company":"3623 - 72222 Arrington Enterprises","revenue":"4348.08","activity":"213"}
+,{"year":"2016","month":"11","company":"3669 - 85800 Jordan Taxi Inc","revenue":"3533.05","activity":"84"}
+,{"year":"2016","month":"11","company":"4053 - 40193 Adwar H. Nikola","revenue":"4218.80","activity":"143"}
+,{"year":"2016","month":"11","company":"4197 - 41842 Royal Star","revenue":"5678.69","activity":"240"}
+,{"year":"2016","month":"11","company":"4615 - 83503 Tyrone Henderson","revenue":"2867.72","activity":"229"}
+,{"year":"2016","month":"11","company":"4623 - 27290 Jay Kim","revenue":"5254.49","activity":"241"}
+,{"year":"2016","month":"11","company":"4787 - 56058 Reny Cab Co","revenue":"2868.45","activity":"220"}
+,{"year":"2016","month":"11","company":"5006 - 39261 Salifu Bawa","revenue":"3682.68","activity":"257"}
+,{"year":"2016","month":"11","company":"5062 - 34841 Sam Mestas","revenue":"962.15","activity":"79"}
+,{"year":"2016","month":"11","company":"5074 - 54002 Ahzmi Inc","revenue":"5349.81","activity":"253"}
+,{"year":"2016","month":"11","company":"5129 - 87128","revenue":"7004.65","activity":"483"}
+,{"year":"2016","month":"11","company":"5724 - 75306 KYVI Cab Inc","revenue":"4663.57","activity":"282"}
+,{"year":"2016","month":"11","company":"585 - 88805 Valley Cab Co","revenue":"3376.79","activity":"279"}
+,{"year":"2016","month":"11","company":"5874 - 73628 Sergey Cab Corp.","revenue":"4192.44","activity":"213"}
+,{"year":"2016","month":"11","company":"5997 - 65283 AW Services Inc.","revenue":"4082.06","activity":"181"}
+,{"year":"2016","month":"11","company":"5 Star Taxi","revenue":"84245.57","activity":"4942"}
+,{"year":"2016","month":"11","company":"6057 - 24657 Richard Addo","revenue":"1703.80","activity":"106"}
+,{"year":"2016","month":"11","company":"6574 - Babylon Express Inc.","revenue":"5892.06","activity":"366"}
+,{"year":"2016","month":"11","company":"6742 - 83735 Tasha ride inc","revenue":"3639.87","activity":"218"}
+,{"year":"2016","month":"11","company":"6743 - 78771 Luhak Corp","revenue":"8383.00","activity":"461"}
+,{"year":"2016","month":"11","company":"6747 - Mueen Abdalla","revenue":"4223.51","activity":"254"}
+,{"year":"2016","month":"11","company":"American United","revenue":"589756.46","activity":"37421"}
+,{"year":"2016","month":"11","company":"American United Taxi Affiliation","revenue":"13969.25","activity":"550"}
+,{"year":"2016","month":"11","company":"Blue Diamond","revenue":"446951.30","activity":"26569"}
+,{"year":"2016","month":"11","company":"Blue Ribbon Taxi Association Inc.","revenue":"1513094.61","activity":"96900"}
+,{"year":"2016","month":"11","company":"Checker Taxi","revenue":"403975.85","activity":"27329"}
+,{"year":"2016","month":"11","company":"Checker Taxi Affiliation","revenue":"427536.29","activity":"24857"}
+,{"year":"2016","month":"11","company":"Chicago Carriage Cab Corp","revenue":"3986669.53","activity":"227448"}
+,{"year":"2016","month":"11","company":"Chicago Independents","revenue":"376651.41","activity":"19470"}
+,{"year":"2016","month":"11","company":"Chicago Medallion Leasing INC","revenue":"342933.83","activity":"20422"}
+,{"year":"2016","month":"11","company":"Chicago Medallion Management","revenue":"128291.78","activity":"8881"}
+,{"year":"2016","month":"11","company":"Chicago Star Taxicab","revenue":"3257.24","activity":"147"}
+,{"year":"2016","month":"11","company":"Chicago Taxicab","revenue":"385351.01","activity":"20621"}
+,{"year":"2016","month":"11","company":"Choice Taxi Association","revenue":"1440000.52","activity":"78879"}
+,{"year":"2016","month":"11","company":"City Service","revenue":"2420384.80","activity":"139889"}
+,{"year":"2016","month":"11","company":"Dispatch Taxi Affiliation","revenue":"2205873.64","activity":"131541"}
+,{"year":"2016","month":"11","company":"Flash Cab","revenue":"5406890.67","activity":"341782"}
+,{"year":"2016","month":"11","company":"Globe Taxi","revenue":"1276950.17","activity":"76186"}
+,{"year":"2016","month":"11","company":"Gold Coast Taxi","revenue":"185380.39","activity":"10239"}
+,{"year":"2016","month":"11","company":"KOAM Taxi Association","revenue":"402563.92","activity":"22658"}
+,{"year":"2016","month":"11","company":"Leonard Cab Co","revenue":"28494.06","activity":"2116"}
+,{"year":"2016","month":"11","company":"Medallion Leasin","revenue":"1320503.32","activity":"71227"}
+,{"year":"2016","month":"11","company":"Metro Group","revenue":"89105.50","activity":"9417"}
+,{"year":"2016","month":"11","company":"Metro Jet Taxi A","revenue":"60065.43","activity":"3273"}
+,{"year":"2016","month":"11","company":"Norshore Cab","revenue":"89291.44","activity":"9797"}
+,{"year":"2016","month":"11","company":"Northwest Management LLC","revenue":"635417.73","activity":"40847"}
+,{"year":"2016","month":"11","company":"Nova Taxi Affiliation Llc","revenue":"464620.83","activity":"32254"}
+,{"year":"2016","month":"11","company":"Patriot Taxi Dba Peace Taxi Associat","revenue":"670524.39","activity":"42786"}
+,{"year":"2016","month":"11","company":"Patriot Trans Inc","revenue":"15776.09","activity":"586"}
+,{"year":"2016","month":"11","company":"Peace Taxi Assoc","revenue":"30769.48","activity":"1953"}
+,{"year":"2016","month":"11","company":"Service Taxi Association","revenue":"109000.97","activity":"6203"}
+,{"year":"2016","month":"11","company":"Setare Inc","revenue":"68127.90","activity":"3827"}
+,{"year":"2016","month":"11","company":"Suburban Dispatch LLC","revenue":"257454.83","activity":"9679"}
+,{"year":"2016","month":"11","company":"Sun Taxi","revenue":"2095901.65","activity":"121472"}
+,{"year":"2016","month":"11","company":"T.A.S. - Payment Only","revenue":"46911.23","activity":"2206"}
+,{"year":"2016","month":"11","company":"Taxi Affiliation Services","revenue":"4652162.17","activity":"284194"}
+,{"year":"2016","month":"11","company":"Taxi Affiliation Service Yellow","revenue":"2327139.81","activity":"118555"}
+,{"year":"2016","month":"11","company":"Top Cab Affiliation","revenue":"363182.52","activity":"20839"}
+,{"year":"2016","month":"11","company":"Yellow Cab","revenue":"2900907.60","activity":"187656"}
+,{"year":"2016","month":"12","company":"0118 - 42111 Godfrey S.Awir","revenue":"7389.72","activity":"494"}
+,{"year":"2016","month":"12","company":"0694 - 59280 Chinesco Trans Inc","revenue":"2845.37","activity":"227"}
+,{"year":"2016","month":"12","company":"1085 - 72312 N and W Cab Co","revenue":"4602.10","activity":"431"}
+,{"year":"2016","month":"12","company":"2092 - 61288 Sbeih company","revenue":"4811.75","activity":"401"}
+,{"year":"2016","month":"12","company":"2192 - 73487 Zeymane Corp","revenue":"3549.49","activity":"224"}
+,{"year":"2016","month":"12","company":"2241 - 44667 - Felman Corp, Manuel Alonso","revenue":"2328.20","activity":"53"}
+,{"year":"2016","month":"12","company":"24 Seven Taxi","revenue":"375958.05","activity":"24904"}
+,{"year":"2016","month":"12","company":"2733 - 74600 Benny Jona","revenue":"4329.60","activity":"213"}
+,{"year":"2016","month":"12","company":"2809 - 95474 C & D Cab Co Inc.","revenue":"4928.80","activity":"214"}
+,{"year":"2016","month":"12","company":"2823 - 73307 Lee Express Inc","revenue":"3271.91","activity":"112"}
+,{"year":"2016","month":"12","company":"3011 - 66308 JBL Cab Inc.","revenue":"5770.33","activity":"426"}
+,{"year":"2016","month":"12","company":"303 Taxi","revenue":"534528.00","activity":"66127"}
+,{"year":"2016","month":"12","company":"3094 - 24059 G.L.B. Cab Co","revenue":"2634.40","activity":"222"}
+,{"year":"2016","month":"12","company":"3141 - 87803 Zip Cab","revenue":"3506.85","activity":"237"}
+,{"year":"2016","month":"12","company":"3152 - 97284 Crystal Abernathy","revenue":"2457.50","activity":"224"}
+,{"year":"2016","month":"12","company":"3201 - CD Cab Co Inc","revenue":"4198.53","activity":"315"}
+,{"year":"2016","month":"12","company":"3556 - 36214 RC Andrews Cab","revenue":"1660.15","activity":"83"}
+,{"year":"2016","month":"12","company":"3591 - 63480 Chuks Cab","revenue":"3140.10","activity":"300"}
+,{"year":"2016","month":"12","company":"3620 - 52292 David K. Cab Corp.","revenue":"1937.20","activity":"70"}
+,{"year":"2016","month":"12","company":"3623 - 72222 Arrington Enterprises","revenue":"3844.97","activity":"231"}
+,{"year":"2016","month":"12","company":"3669 - 85800 Jordan Taxi Inc","revenue":"3504.50","activity":"79"}
+,{"year":"2016","month":"12","company":"4053 - 40193 Adwar H. Nikola","revenue":"3611.55","activity":"129"}
+,{"year":"2016","month":"12","company":"4197 - 41842 Royal Star","revenue":"5132.98","activity":"232"}
+,{"year":"2016","month":"12","company":"4615 - 83503 Tyrone Henderson","revenue":"2956.12","activity":"198"}
+,{"year":"2016","month":"12","company":"4623 - 27290 Jay Kim","revenue":"4491.53","activity":"231"}
+,{"year":"2016","month":"12","company":"4787 - 56058 Reny Cab Co","revenue":"2496.90","activity":"204"}
+,{"year":"2016","month":"12","company":"5006 - 39261 Salifu Bawa","revenue":"3729.73","activity":"331"}
+,{"year":"2016","month":"12","company":"5062 - 34841 Sam Mestas","revenue":"1159.60","activity":"93"}
+,{"year":"2016","month":"12","company":"5074 - 54002 Ahzmi Inc","revenue":"3676.10","activity":"157"}
+,{"year":"2016","month":"12","company":"5129 - 87128","revenue":"2359.45","activity":"174"}
+,{"year":"2016","month":"12","company":"5724 - 75306 KYVI Cab Inc","revenue":"1344.10","activity":"127"}
+,{"year":"2016","month":"12","company":"585 - 88805 Valley Cab Co","revenue":"4548.62","activity":"377"}
+,{"year":"2016","month":"12","company":"5874 - 73628 Sergey Cab Corp.","revenue":"4493.85","activity":"243"}
+,{"year":"2016","month":"12","company":"5997 - 65283 AW Services Inc.","revenue":"1658.10","activity":"85"}
+,{"year":"2016","month":"12","company":"5 Star Taxi","revenue":"43821.27","activity":"2620"}
+,{"year":"2016","month":"12","company":"6057 - 24657 Richard Addo","revenue":"2168.70","activity":"161"}
+,{"year":"2016","month":"12","company":"6574 - Babylon Express Inc.","revenue":"4710.62","activity":"333"}
+,{"year":"2016","month":"12","company":"6742 - 83735 Tasha ride inc","revenue":"2989.68","activity":"192"}
+,{"year":"2016","month":"12","company":"6743 - 78771 Luhak Corp","revenue":"6793.72","activity":"546"}
+,{"year":"2016","month":"12","company":"6747 - Mueen Abdalla","revenue":"4681.87","activity":"302"}
+,{"year":"2016","month":"12","company":"American United","revenue":"457945.97","activity":"32194"}
+,{"year":"2016","month":"12","company":"American United Taxi Affiliation","revenue":"10512.23","activity":"547"}
+,{"year":"2016","month":"12","company":"Blue Cab Co","revenue":"189.64","activity":"14"}
+,{"year":"2016","month":"12","company":"Blue Diamond","revenue":"393856.44","activity":"28417"}
+,{"year":"2016","month":"12","company":"Blue Ribbon Taxi Association Inc.","revenue":"1289834.73","activity":"93750"}
+,{"year":"2016","month":"12","company":"Checker Taxi","revenue":"372350.52","activity":"27212"}
+,{"year":"2016","month":"12","company":"Checker Taxi Affiliation","revenue":"368874.29","activity":"26026"}
+,{"year":"2016","month":"12","company":"Chicago Carriage Cab Corp","revenue":"3367222.43","activity":"220082"}
+,{"year":"2016","month":"12","company":"Chicago Independents","revenue":"327982.73","activity":"19090"}
+,{"year":"2016","month":"12","company":"Chicago Medallion Leasing INC","revenue":"257515.67","activity":"17491"}
+,{"year":"2016","month":"12","company":"Chicago Medallion Management","revenue":"135814.16","activity":"10409"}
+,{"year":"2016","month":"12","company":"Chicago Star Taxicab","revenue":"2034.62","activity":"103"}
+,{"year":"2016","month":"12","company":"Chicago Taxicab","revenue":"331768.53","activity":"22088"}
+,{"year":"2016","month":"12","company":"Choice Taxi Association","revenue":"1226583.53","activity":"80377"}
+,{"year":"2016","month":"12","company":"City Service","revenue":"2083047.46","activity":"140445"}
+,{"year":"2016","month":"12","company":"Dispatch Taxi Affiliation","revenue":"1791086.12","activity":"121450"}
+,{"year":"2016","month":"12","company":"Flash Cab","revenue":"4811485.01","activity":"333942"}
+,{"year":"2016","month":"12","company":"Globe Taxi","revenue":"1137407.32","activity":"75330"}
+,{"year":"2016","month":"12","company":"Gold Coast Taxi","revenue":"168887.80","activity":"10728"}
+,{"year":"2016","month":"12","company":"KOAM Taxi Association","revenue":"286944.58","activity":"19310"}
+,{"year":"2016","month":"12","company":"Leonard Cab Co","revenue":"20817.31","activity":"1713"}
+,{"year":"2016","month":"12","company":"Medallion Leasin","revenue":"1167533.67","activity":"68964"}
+,{"year":"2016","month":"12","company":"Metro Group","revenue":"85289.84","activity":"8971"}
+,{"year":"2016","month":"12","company":"Metro Jet Taxi A","revenue":"50712.69","activity":"3347"}
+,{"year":"2016","month":"12","company":"Norshore Cab","revenue":"108117.07","activity":"11747"}
+,{"year":"2016","month":"12","company":"Northwest Management LLC","revenue":"487050.22","activity":"36394"}
+,{"year":"2016","month":"12","company":"Nova Taxi Affiliation Llc","revenue":"459269.00","activity":"35340"}
+,{"year":"2016","month":"12","company":"Patriot Taxi Dba Peace Taxi Associat","revenue":"580439.42","activity":"41643"}
+,{"year":"2016","month":"12","company":"Patriot Trans Inc","revenue":"14066.26","activity":"599"}
+,{"year":"2016","month":"12","company":"Peace Taxi Assoc","revenue":"21844.85","activity":"1537"}
+,{"year":"2016","month":"12","company":"Service Taxi Association","revenue":"94671.55","activity":"6174"}
+,{"year":"2016","month":"12","company":"Setare Inc","revenue":"64986.34","activity":"4294"}
+,{"year":"2016","month":"12","company":"Suburban Dispatch LLC","revenue":"223633.83","activity":"8630"}
+,{"year":"2016","month":"12","company":"Sun Taxi","revenue":"1874278.54","activity":"126219"}
+,{"year":"2016","month":"12","company":"T.A.S. - Payment Only","revenue":"38968.77","activity":"2038"}
+,{"year":"2016","month":"12","company":"Taxi Affiliation Services","revenue":"3602549.40","activity":"251555"}
+,{"year":"2016","month":"12","company":"Taxi Affiliation Service Yellow","revenue":"2376249.57","activity":"133853"}
+,{"year":"2016","month":"12","company":"Top Cab Affiliation","revenue":"323143.40","activity":"21043"}
+,{"year":"2016","month":"12","company":"Yellow Cab","revenue":"2271599.05","activity":"168223"}]
