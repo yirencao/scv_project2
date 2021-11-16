@@ -1,0 +1,358 @@
+---
+title: "yiren_shiny"
+author: "yiren"
+date: "14/11/2021"
+output: 
+  html_document:
+    code_folding: hide
+runtime: shiny
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r, include = FALSE}
+pacman::p_load(tidyverse, pacman, ggmap, janitor, sf, mapview, leaflet, rgdal, RColorBrewer, ggplot2, data.table, readr, qqplotr, GGally, lubridate, raster, spData, spDataLarge, tmap, osmdata, gifski, jsonlite, zoo,gganimate,plotly)
+```
+
+
+
+```{r, include = FALSE}
+load("yiren_total_count.RData")
+df_total_count <- df_total_count %>% mutate(count = as.numeric(count), date = ym) %>% dplyr::select(-ym)
+```
+
+
+
+```{r Data function1, echo=FALSE, warning=FALSE, include=FALSE}
+data_selection <- function(df_total_count, zone){
+  my_data <- df_total_count %>%
+    filter(pickup_community_area == zone)
+  
+  trip_zone <- my_data %>%
+    dplyr::select(date, trip_total, count) %>%
+    group_by(date) %>%
+    summarise(taxi_revenue = sum(trip_total), number_of_trips = sum(count), average_revenue = taxi_revenue/number_of_trips) # add avg
+
+
+  return(trip_zone)
+}
+
+data_selection(df_total_count, 77)
+```
+
+
+```{r, include=FALSE}
+plot_zone <- function(df_total_count, zone, choice){
+  # parse zone
+  zone_num <- strsplit(zone, ",")[[1]][1]
+  
+  #parse choice
+  if (choice == "trip_total") {
+    p <- ggplot(data = data_selection(df_total_count, zone_num),
+              aes(x = date, y = taxi_revenue))
+  } else if (choice == "count") {
+    p <- ggplot(data = data_selection(df_total_count, zone_num),
+              aes(x = date, y = number_of_trips))
+  } else {
+    p <- ggplot(data = data_selection(df_total_count, zone_num),
+              aes(x = date, y = average_revenue))
+  }
+   p <- p + geom_line(size=0.4, color = "#0C7BDC") +
+     geom_smooth(
+              ) +
+    labs(x = "Date")  +
+    scale_y_continuous(n.breaks = 10,
+                       expand = expansion(mult = c(.02, .02))) +
+    theme(axis.text.x = element_text(angle = 45)) +
+     ggtitle(zone)
+
+  p <- ggplotly(p)
+  return(p)
+}
+
+# plot_zone(df_total_count, '40, Washington Park', "average")
+# 
+# ggplot(data = data_selection(df_total_count, 12, average),
+#               aes(x = date, y = average)) +geom_line(size=0.4)
+```
+
+
+
+```{r, include = FALSE}
+# Defining the UI
+ui <- fluidPage(
+  
+  sidebarPanel(
+    selectInput("choice", label = "Options: ",
+              choices = c("trip_total", "count", "average"), selected = "trip_total"),
+    
+    selectInput("zone", label = "Select Zone: ",
+              choices = c('1, Rogers Park', '2, West Ridge', '3, Uptown', '4, Lincoln Square', '5, North Center', '6, Lake View', '7, Lincoln Park', '8, Near North Side', '9, Edison Park', '10, Norwood Park', '11, Jefferson Park', '12, Forest Glen', '13, North Park', '14, Albany Park', '15, Portage Park', '16, Irving Park', '17, Dunning', '18, Montclare', '19, Belmont Cragin', '20, Hermosa', '21, Avondale', '22, Logan Square', '23, Humboldt Park', '24, West Town', '25, Austin', '26, West Garfield Park', '27, East Garfield Park', '28, Near West Side', '29, North Lawndale', '30, South Lawndale', '31, Lower West Side', '32, The Loop', '33, Near South Side', '34, Armour Square', '35, Douglas', '36, Oakland', '37, Fuller Park', '38, Grand Boulevard', '39, Kenwood', '40, Washington Park', '41, Hyde Park', '42, Woodlawn', '43, South Shore', '44, Chatham', '45, Avalon Park', '46, South Chicago', '47, Burnside', '48, Calumet Heights', '49, Roseland', '50, Pullman', '51, South Deering', '52, East Side', '53, West Pullman', '54, Riverdale', '55, Hegewisch', '56, Garfield Ridge', '57, Archer Heights', '58, Brighton Park', '59, McKinley Park', '60, Bridgeport', '61, New City', '62, West Elsdon', '63, Gage Park', '64, Clearing', '65, West Lawn', '66, Chicago Lawn', '67, West Englewood', '68, Englewood', '69, Greater Grand Crossing', '70, Ashburn', '71, Auburn Gresham', '72, Beverly', '73, Washington Heights', '74, Mount Greenwood', '75, Morgan Park', "76, O'Hare Airport", '77, Edgewater'), selected = "32, The Loop")
+  ),
+  
+  # Main panel for displaying outputs
+  mainPanel(
+    plotlyOutput("plot")
+  )
+)
+```
+
+
+```{r}
+# Defining the server
+server = function(input, output) {
+  output$plot <- renderPlotly(plot_zone(df_total_count, input$zone, input$choice))
+}
+```
+
+## Chicago Taxi Trip Changes from 2013 to 2021
+
+### Number of Trips and Total Revenue Changes throughout years
+
+```{r, echo = FALSE, warning = FALSE, message = FALSE}
+load("simple plots.RData")
+
+sum_year = sum_year %>% mutate(date = ym) %>% select(-ym)
+count_year = count_year %>% mutate(date = ym, count = trip_total) %>% select(-ym)
+
+ggplotly(sum_year %>% ggplot(aes(x = date , y=trip_total)) + geom_line() + geom_smooth() + ggtitle("Total Revenue of Taxi Trips"))
+ggplotly(count_year %>% ggplot(aes(x = date , y=count)) + geom_line() + geom_smooth() + ggtitle("Number of Taxi Trips"))
+
+
+
+```
+
+From the plots above, we spot very similar trends for both total revenue and number of taxi trips. Hence, while looking into this variable, we focus on the number of taxi trips.
+
+
+
+### Animation for Number of Taxi Trip on Chicago Map
+
+```{r, echo = FALSE}
+knitr::include_graphics("trips_by_year.gif")
+```
+
+
+
+### Reason Behind the Trend
+
+To look for the reason behind the trend we find above, we search for relevant outside data, investigate them and keep the useful information for our analysis.
+
+Our taxi dataset records rides since 2013 and so we strive to gain outside datasets starting from the same or earlier dates. However, this goal is hard to achieve. For instance, Uber has available stock data only after May 2019 while Lyft has stock data even later.
+
+
+```{r, echo = FALSE, warning = FALSE, message = FALSE}
+uber = read_csv("./data/stock_uber.csv")
+uber$Date = as.Date(uber$Date, format = "%d/%m/%Y")
+uber$company = "uber"
+uber = uber %>% mutate(Open = as.numeric(substr(Open, 2, nchar(Open)))) %>% select(Date, Open, company)
+
+# ggplotly(uber %>% ggplot(aes(x = Date, y = Open)) + geom_smooth() + ggtitle("Uber Stock"))
+
+lyft = read_csv("./data/stock_lyft.csv")
+lyft$Date = as.Date(lyft$Date, format = "%d/%m/%Y")
+lyft$company = "lyft"
+lyft = lyft %>% mutate(Open = as.numeric(substr(Open, 2, nchar(Open)))) %>% select(Date, Open, company)
+
+uber_lyft = uber %>% full_join(lyft, by = c("Date","Open", "company"))
+
+# ggplotly(lyft %>% ggplot(aes(x = Date, y = Open, group)) + geom_smooth() + ggtitle("Lyft Stock"))
+
+ggplotly(uber_lyft %>% ggplot(aes(x = Date, y = Open, group = company, color = company)) + geom_smooth() +
+  scale_color_viridis_d() +
+  labs(x = "Date", y = "Open") +
+  theme(legend.position = "top") +
+  ggtitle("Stock of Two Major Ridehailing App Companies in US"))
+
+# source: https://www.businessofapps.com/data/uber-statistics/
+year = 2016:2020
+booking = c(19, 45, 50, 65, 57)
+uber_gloss_booking = data.frame(year, booking)
+
+ggplotly(uber_gloss_booking %>% ggplot(aes(x = year, y = booking)) + geom_line() + ggtitle("Uber Gross Booking") + ylab("Booking ($bn)"))
+# 
+# years = 2014:2020
+# valuation = c(18, 51, 63, 48, 72, 82, 46)
+# uber_valuation = data.frame(years, valuation)
+# 
+# ggplotly(uber_valuation %>% ggplot(aes(x = years, y = valuation)) + geom_line() + ggtitle("Uber Valuation") + ylab("Uber Valuation ($bn)"))
+
+
+# Source: https://www.businessofapps.com/data/taxi-app-market/
+years = 2015:2020
+revenue = c(3.7, 7.2, 9.9, 12.3, 14.7, 5.1)
+us_taxi = data.frame(years, revenue)
+
+ggplotly(us_taxi %>% ggplot(aes(x = years, y = revenue)) + geom_line() + ggtitle("US Ridehailing Revenue") + ylab("Total Revenue ($bn)"))
+
+
+```
+
+US ridehailing revenue might be a good explanation of why the year 2015 gives the peak of normal taxi trips. Before 2015, there was no data, whereas we know that its revenue should be less than 3.7 million based on the development of ridehailings. Hence we would say the increasing prosperity of US ridehailing app industry might be the main factor for the shrinking number of taxi trips in Chicago since 2015.
+
+The world was hited by Covid-19 in 2020 which might be the main reason why we see such a significant drop in April 2020. 
+
+## What about each zone in Chicago?
+We create a shiny app which allows you to dive into each zone and look at their changes.
+
+```{r shinyApp1, echo=FALSE, warning=FALSE}
+shinyApp(ui = ui, server = server)
+```
+
+
+### Interactive Map for Total Number of Taxi Trips Since 2013
+
+```{r, echo = FALSE, warning = FALSE, message = FALSE}
+# # run the cell load("yiren_total_count.RData") first
+# zone_total_count = df_total_count %>% group_by(pickup_community_area) %>% summarise(total_count = sum(count))
+# 
+# zone_total_count
+
+#Register API key to google
+register_google(key="AIzaSyBT6yzDKV_DGcFGK9E-cXu0zNUD4WTJOZA")
+            
+#Get location of chicago
+chicago <- geocode("Chicago, IL")
+
+#Make leaflet map with chicago center -> make sure the maps are calculated at runtime
+chicago_leaflet <- leaflet() %>% 
+  setView(lng=chicago$lon, lat=chicago$lat, zoom=10) %>%
+  addProviderTiles(providers$CartoDB.Positron) 
+
+load("yiren_total_count_polygon_leaflet.RData")
+
+pal1 <- colorBin("Oranges",bins=4, domain =log10(zone_total_count$total_count), )
+
+labels <- sprintf(
+  "%s <strong>%s</strong><br/>%g trips",
+  zone_total_count$pickup_community_area, zone_total_count$community_name, zone_total_count$total_count
+) %>% lapply(htmltools::HTML)
+
+#Make the map
+chicago_leaflet %>%
+  addPolygons(data=zone_total_count,
+              fillColor=~pal1(log10(zone_total_count$total_count)),
+              color="lightgrey",
+              weight=2,
+              fillOpacity=0.8,
+              highlightOptions = highlightOptions(
+                weight=3,
+                opacity=2,
+                color="Oranges",
+                bringToFront=TRUE),
+              label=labels,
+              labelOptions=labelOptions(
+                style = list("font-weight" = "normal", padding = "3px 8px"),
+                textsize = "15px",
+                direction = "auto")) %>%
+  
+  addLegend("bottomright",
+            pal = pal1,
+            values = log10(zone_total_count$total_count),
+            title = "Total Number of Taxi Trips Since 2013",
+            opacity = 0.8,
+            labFormat = leaflet::labelFormat(
+              transform = function(x) 10^(x)))
+
+```
+
+
+
+### Applying PCA to Explain the difference among zones
+
+We would like to use PCA to reduce the dimensionality as well as acquire the classification power of our data. We perform log on our `count_taxi_trips` variance first since it has great variance compared to other variables and will dominate without logrithmic transformation.
+
+```{r, echo = FALSE}
+knitr::include_graphics("./1.png")
+```
+
+As shown above, when we have 3 principle components, most of the variation will be explained.
+
+```{r, echo = FALSE}
+knitr::include_graphics("./2.png")
+```
+
+When PC1 increases, population, density, log_count and per_capita_income gets higher.
+When PC2 increases, per_capita_income gets higher, hardship_index gets lower.
+To classify zones based on the result, we apply k-means clustering.
+
+```{r, echo = FALSE}
+knitr::include_graphics("./5.png")
+```
+
+
+<em>&#8544;: Red cluster. we have zones Near North Side, Lake View, Lincoln Park and West Town, where they have high per_capita_income, density, and population, which can be the main reason why it gives the highest log_count, the indicator of number of taxi trips. Geographically, they also can be found in the interactive map above that they are located adjacent to each other.<br>
+&#8545;: Blue cluster. it has high per_capita_income and low population.<br>
+&#8546;: Purple cluster. it is the opposite to the blue one, with high population and low per_capita_income. Both of them have reasonable good amount of taxi trips.<br>
+&#8547;: Green cluster. they have low per_capita_income and low population, hence low number of taxi trips.</em>
+
+
+This finding indicates that both per_capita_income and population contribute to the number of taxi trips in the zone.
+
+
+
+
+```{r, echo = FALSE, warning = FALSE, message = FALSE}
+load("df_temp_cluster.RData")
+
+cluster = zone_total_count %>% inner_join(df_temp, by = "pickup_community_area")
+
+pal2 <- colorBin("Dark2",bins=c(1,2,3,4,5), domain =cluster$cluster)
+
+labels <- sprintf(
+  "%s <strong>%s</strong><br/>cluster %d",
+  cluster$pickup_community_area, cluster$community_name, cluster$cluster
+) %>% lapply(htmltools::HTML)
+
+legend_label <- c("Cluster 1", "Cluster 2", "Cluster 3", "Cluster 4")
+
+#
+
+#Make the map
+chicago_leaflet %>%
+  addPolygons(data=cluster,
+              fillColor=~pal2(cluster),
+              color="lightgrey",
+              weight=2,
+              fillOpacity=0.8,
+              highlightOptions = highlightOptions(
+                weight=3,
+                opacity=2,
+                color="Oranges",
+                bringToFront=TRUE),
+              label=labels,
+              labelOptions=labelOptions(
+                style = list("font-weight" = "normal", padding = "3px 8px"),
+                textsize = "15px",
+                direction = "auto")) %>%
+  
+  addLegend("bottomright",
+            pal = pal2,
+            values = cluster,
+            title = "K-means Clustering",
+            opacity = 0.8,
+            # labFormat = leaflet::labelFormat(
+            #   transform = function(x) (x)))
+            labFormat = function(type, cuts, p) {
+              paste0(legend_label)
+            })
+            
+```
+- Cluster 1. High Trip Num, high population and high income
+- Cluster 2. Middle Trip Num, Low population and high income
+- Cluster 3. Low Trip Num, low population and low income
+- Cluster 4. Middle Trip Num, high population and low income
+
+
+
+### Relationship Between Taxi Trips and Ridehailing Trips
+Since the ridehailing trip data in Chicago starts from November 2018, we are only able to explore their relationship since then, which sets a restriction on our investigation. However, it will still be interesting to know the two variables change throughout the years and interact with each other.
+
+
+
+
+
+
