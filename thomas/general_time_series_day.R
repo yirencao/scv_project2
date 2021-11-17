@@ -28,13 +28,7 @@ library(shinyWidgets)
 #trips <- slice_sample(taxi_trips,n=500000)
 
 # Load the sample date
-load("trips_sample.RData")
-trips <- trips_thomas
-rm(trips_thomas)
-
-# Adding dates for trip_start
-date <- as.Date(trips$trip_start_timestamp,format = "%m/%d/%Y")
-trips <- cbind(trips,date)
+load("to_use.RData")
 
 # Adding dates for months only, years only, and day-month only
 date_month <- format(trips$date, "%m")
@@ -55,7 +49,7 @@ data_selection <- function(trips, start, end, choice){
       select(date_year, trip_total) %>%
       mutate(trip_total = as.numeric(trip_total)) %>%
       group_by(date_year) %>%
-      summarise(trip_total = mean(trip_total))
+      summarise(trip_total = sum(trip_total))
   } else if (choice == "day") {
     my_data <- trips %>%
       filter(date >= start & date <= end)
@@ -63,7 +57,7 @@ data_selection <- function(trips, start, end, choice){
       select(date, trip_total) %>%
       mutate(trip_total = as.numeric(trip_total)) %>%
       group_by(date) %>%
-      summarise(trip_total = mean(trip_total))
+      summarise(trip_total = trip_total)
   } else {
     my_data <- trips %>%
       filter(month_year >= start & month_year <= end)
@@ -71,7 +65,7 @@ data_selection <- function(trips, start, end, choice){
       select(month_year, trip_total) %>%
       mutate(trip_total = as.numeric(trip_total)) %>%
       group_by(month_year) %>%
-      summarise(trip_total = mean(trip_total))
+      summarise(trip_total = sum(trip_total))
   }
   return(trip_date)
 }
@@ -81,9 +75,11 @@ time_serie <- function(trips, choice, dates_m, dates_y, dates_d){
     start <- dates_d[1]
     end <- dates_d[2]
     p <- ggplot(data = data_selection(trips, start, end, choice),
-                aes(x = date, y = trip_total)) +
-      geom_line(size=0.4) +
-      labs(x = "Date") +
+                aes(x = date, y = trip_total, group = 1,
+                    text = paste('Date :', date,
+                                 '<br>Total revenue : $',  round(trip_total,digits = 0)))) +
+      geom_line(size=0.4,color = "blue") +
+      labs(x = "Date", y = "Total revenue") +
       scale_x_date(expand = expansion(mult = c(.02, .02))) +
       scale_y_continuous(n.breaks = 10, 
                          expand = expansion(mult = c(.02, .02))) +
@@ -93,9 +89,12 @@ time_serie <- function(trips, choice, dates_m, dates_y, dates_d){
     start <- dates_y[1]
     end <- dates_y[2]
     p <- ggplot(data = data_selection(trips, start, end, choice),
-                aes(x = date_year, y = trip_total, group=1)) +
-      geom_line(size=0.4) +
-      labs(x = "Date") +
+                aes(x = date_year, y = trip_total, group=1,
+                    text = paste('Year :', date_year,
+                                 '<br>Total revenue : $', round(trip_total / 1000000,
+                                                                digits = 3), 'M'))) +
+      geom_line(size=0.4,color = "blue") +
+      labs(x = "Date", y = "Total revenue") +
       scale_x_discrete(expand = expansion(mult = c(.02, .02))) +
       scale_y_continuous(n.breaks = 10, 
                          expand = expansion(mult = c(.02, .02))) +
@@ -104,58 +103,67 @@ time_serie <- function(trips, choice, dates_m, dates_y, dates_d){
     start <- dates_m[1]
     end <- dates_m[2]
     p <- ggplot(data = data_selection(trips, start, end, choice),
-                aes(x = month_year, y = trip_total)) +
-      geom_line(size=0.4) +
-      labs(x = "Date") +
+                aes(x = month_year, y = trip_total, group=1,
+                    text = paste('Date :', format(month_year,"%Y-%m"),
+                                 '<br>Total revenue : $', round(trip_total / 1000000,
+                                                                digits = 3), 'M'))) +
+      geom_line(size=0.4,color = "blue") +
+      labs(x = "Date", y = "Total revenue") +
       scale_x_date(expand = expansion(mult = c(.02, .02))) +
       scale_y_continuous(n.breaks = 10, 
                          expand = expansion(mult = c(.02, .02))) +
       theme(axis.text.x = element_text(angle = 45))
   }
   
-  p <- ggplotly(p)
+  p <- ggplotly(p + geom_smooth(size = 0.5,color = "red"), dynamicTicks = TRUE, tooltip = c("text")) %>%
+    layout(hovermode = "x")
+  p <- p %>%
+    style(hoverinfo = "skip", traces = 3)
   return(p)
 }
 #################
 
 # Defining the UI
 ui <- fluidPage(
-  sidebarPanel(
-    selectInput(inputId = "choice",
-                label = "Choose if you want to visualize by day, month or year:",
-                choices = c("Day"="day","Month"="month","Year"="year"),
-                selected = "month"),
-    conditionalPanel(
-      condition = "input.choice == 'month'",
-      airMonthpickerInput(inputId = "dates_month", range = TRUE, dateFormat = "mm-yyyy",
-                          label = "Choose the interval of time you want to visualize :",
-                          minDate = "2013-01-01", maxDate = "2021-10-01",
-                          separator = "  to  ", value = "2013-01-01",
-                          view = "months", autoClose = TRUE)),
-    conditionalPanel(
-      condition = "input.choice == 'year'",
-      airYearpickerInput(inputId = "dates_year", range = TRUE, dateFormat = "yyyy",
-                         label = "Choose the interval of time you want to visualize :",
-                         minDate = "2013-01-01", maxDate = "2021-10-01",
-                         separator = "  to  ", value = "2013-01-01",
-                         view = "years", autoClose = TRUE, minView = "years")),
-    conditionalPanel(
-      condition = "input.choice == 'day'",
-      airDatepickerInput(inputId = "dates_day", range = TRUE, dateFormat = "mm-dd-yyyy",
-                         label = "Choose the interval of time you want to visualize :",
-                         minDate = "2013-01-01", maxDate = "2021-10-01",
-                         separator = "  to  ",
-                         value = "2013-01-01", autoClose = TRUE))
+  titlePanel(
+    h1("Total revenue per day, month or year", align = "center")
   ),
-  
-  # Main panel for displaying outputs
-  mainPanel(
-    # Hide errors
-    tags$style(type = "text/css",
-               ".shiny-output-error { visibility: hidden; }",
-               ".shiny-output-error:before { visibility: hidden; }"),
-    plotlyOutput("plot")
-    #verbatimTextOutput("res")
+  fluidRow(
+    column(6,
+           selectInput(inputId = "choice",
+                       label = "Choose if you want to visualize by day, month or year:",
+                       choices = c("Day"="day","Month"="month","Year"="year"),
+                       selected = "month")),
+    column(6,
+           conditionalPanel(
+             condition = "input.choice == 'month'",
+             airMonthpickerInput(inputId = "dates_month", range = TRUE, dateFormat = "mm-yyyy",
+                                 label = "Choose the interval of time you want to visualize :",
+                                 minDate = "2013-01-01", maxDate = "2021-10-01",
+                                 separator = "  to  ", value = c("2013-01-01","2021-10-01"),
+                                 view = "months", autoClose = TRUE)),
+           conditionalPanel(
+             condition = "input.choice == 'year'",
+             airYearpickerInput(inputId = "dates_year", range = TRUE, dateFormat = "yyyy",
+                                label = "Choose the interval of time you want to visualize :",
+                                minDate = "2013-01-01", maxDate = "2021-10-01",
+                                separator = "  to  ", value = c("2013-01-01","2021-10-01"),
+                                view = "years", autoClose = TRUE, minView = "years")),
+           conditionalPanel(
+             condition = "input.choice == 'day'",
+             airDatepickerInput(inputId = "dates_day", range = TRUE, dateFormat = "mm-dd-yyyy",
+                                label = "Choose the interval of time you want to visualize :",
+                                minDate = "2013-01-01", maxDate = "2021-10-01",
+                                separator = "  to  ",
+                                value = c("2013-01-01","2021-10-01"), autoClose = TRUE)))
+  ),
+  fluidRow(
+    column(12,
+           # Hide errors
+           tags$style(type = "text/css",
+                      ".shiny-output-error { visibility: hidden; }",
+                      ".shiny-output-error:before { visibility: hidden; }"),
+           plotlyOutput("plot"))
   )
 )
 
@@ -167,3 +175,4 @@ server = function(input, output) {
 }
 
 shinyApp(ui = ui, server = server)
+
