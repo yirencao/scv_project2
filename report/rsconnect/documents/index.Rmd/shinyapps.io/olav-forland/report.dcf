@@ -1,0 +1,13 @@
+name: report
+title: report
+username:
+account: olav-forland
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 5120156
+bundleId: 5263709
+url: https://olav-forland.shinyapps.io/report/
+when: 1637179474.30115
+lastSyncTime: 1637179474.30119
+asMultiple: FALSE
+asStatic: FALSE

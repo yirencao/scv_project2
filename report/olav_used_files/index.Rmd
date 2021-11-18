@@ -34,7 +34,7 @@ library(gifski)
 
 ```
 
-```{r Try to include app, include=TRUE}
+```{r Try to include app, include=TRUE, eval =FALSE}
 
 knitr::include_app("https://uberlu.shinyapps.io/Dropoff/")
 
@@ -43,9 +43,9 @@ knitr::include_app("https://uberlu.shinyapps.io/Dropoff/")
 ```{r Plot activity per season, echo=TRUE}
 theme_set(theme_bw())
 
-activity_days_in_season + 
-  geom_point() + 
-  transition_reveal(day)
+#activity_days_in_season + 
+#  geom_point() + 
+#  transition_reveal(day)
 
 ```
 
@@ -53,12 +53,14 @@ activity_days_in_season +
 ```{r Plot company growth, echo=TRUE}
 theme_set(theme_bw())
 
-trips_per_company + 
-  transition_time(month) + 
-  labs(title = "Month: {frame_time}")
+#trips_per_company + 
+#  transition_time(month) + 
+#  labs(title = "Month: {frame_time}")
+
+
 ```
 
-
+!["test"]("company_revenue.gif")
 
 
 
