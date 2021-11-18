@@ -260,6 +260,7 @@ chicago_leaflet %>%
 ```
 
 
+
 ### Applying PCA to Explain the difference among zones
 
 We would like to use PCA to reduce the dimensionality as well as acquire the classification power of our data. We perform log on our `count_taxi_trips` variance first since it has great variance compared to other variables and will dominate without logrithmic transformation.
@@ -282,14 +283,68 @@ To classify zones based on the result, we apply k-means clustering.
 knitr::include_graphics("./5.png")
 ```
 
-For the red cluster, we have zones Near North Side, Lake View, Lincoln Park and West Town, where they have high per_capita_income, density, and population, which can be the main reason why it gives the highest log_count, the indicator of number of taxi trips. Geographically, they also can be found in the interactive map above that they are located adjacent to each other.
 
-As for the blue cluster, it has high per_capita_income and low population, while the purple cluster is the opposite, with high population and low per_capita_income. Both of them have reasonable good amount of taxi trips.
+<em>&#8544;: Red cluster. we have zones Near North Side, Lake View, Lincoln Park and West Town, where they have high per_capita_income, density, and population, which can be the main reason why it gives the highest log_count, the indicator of number of taxi trips. Geographically, they also can be found in the interactive map above that they are located adjacent to each other.<br>
+&#8545;: Blue cluster. it has high per_capita_income and low population.<br>
+&#8546;: Purple cluster. it is the opposite to the blue one, with high population and low per_capita_income. Both of them have reasonable good amount of taxi trips.<br>
+&#8547;: Green cluster. they have low per_capita_income and low population, hence low number of taxi trips.</em>
+
 
 This finding indicates that both per_capita_income and population contribute to the number of taxi trips in the zone.
 
-As for the zones in green cluster, they have low per_capita_income and low population, hence low number of taxi trips.
 
+
+
+```{r, echo = FALSE, warning = FALSE, message = FALSE}
+load("df_temp_cluster.RData")
+
+cluster = zone_total_count %>% inner_join(df_temp, by = "pickup_community_area")
+
+pal2 <- colorBin(c("#ff6357", "#57baf4", "#7ed100", "#966fd6"),bins=c(1,2,3,4,5), domain =cluster$cluster) # red, blue, green, purple
+
+labels <- sprintf(
+  "%s <strong>%s</strong><br/>cluster %d",
+  cluster$pickup_community_area, cluster$community_name, cluster$cluster
+) %>% lapply(htmltools::HTML)
+
+legend_label <- c("Cluster 1", "Cluster 2", "Cluster 3", "Cluster 4")
+
+#
+
+#Make the map
+chicago_leaflet %>%
+  addPolygons(data=cluster,
+              fillColor=~pal2(cluster),
+              color="lightgrey",
+              weight=2,
+              fillOpacity=0.8,
+              highlightOptions = highlightOptions(
+                weight=3,
+                opacity=2,
+                color="Oranges",
+                bringToFront=TRUE),
+              label=labels,
+              labelOptions=labelOptions(
+                style = list("font-weight" = "normal", padding = "3px 8px"),
+                textsize = "15px",
+                direction = "auto")) %>%
+  
+  addLegend("bottomright",
+            pal = pal2,
+            values = cluster,
+            title = "K-means Clustering",
+            opacity = 0.8,
+            # labFormat = leaflet::labelFormat(
+            #   transform = function(x) (x)))
+            labFormat = function(type, cuts, p) {
+              paste0(legend_label)
+            })
+            
+```
+- Cluster 1. High Trip Num, high population and high income
+- Cluster 2. Middle Trip Num, Low population and high income
+- Cluster 3. Low Trip Num, low population and low income
+- Cluster 4. Middle Trip Num, high population and low income
 
 
 
