@@ -1,0 +1,27 @@
+---
+title: "Chicago Taxi Data Analysis"
+subtitle: "SCV Group"
+author: ""
+date: "27 Oct 2021"
+output:
+  xaringan::moon_reader:
+    css: ["default", "assets/sydney-fonts.css", "assets/sydney.css"]
+    self_contained: false 
+    seal: true 
+    includes:
+      in_header: "assets/mathjax-equation-numbers.html"
+    nature:
+      beforeInit: ["assets/remark-zoom.js", "https://platform.twitter.com/widgets.js"]
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: '16:9' # alternatives '16:9' or '4:3' or others e.g. 13:9
+      navigation:
+        scroll: false
+---
+class: title-slide,middle
+background-image: url("pikapika.svg"), url("assets/taxi.jpeg")
+background-position: 10% 90%, 100% 50%
+background-size: 100px, 100% 100%
+<!-- background-color: #0148A4 -->
+Hello!

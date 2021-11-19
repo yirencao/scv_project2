@@ -1,27 +1,263 @@
 ---
-title: "Chicago Taxi Data Analysis"
-subtitle: "SCV Group"
-author: ""
-date: "27 Oct 2021"
-output:
-  xaringan::moon_reader:
-    css: ["default", "assets/sydney-fonts.css", "assets/sydney.css"]
-    self_contained: false 
-    seal: true 
-    includes:
-      in_header: "assets/mathjax-equation-numbers.html"
-    nature:
-      beforeInit: ["assets/remark-zoom.js", "https://platform.twitter.com/widgets.js"]
-      highlightStyle: github
-      highlightLines: true
-      countIncrementalSlides: false
-      ratio: '16:9' # alternatives '16:9' or '4:3' or others e.g. 13:9
-      navigation:
-        scroll: false
+title: An investegation into the profitability of Chicago taxis
+author: Olav Førland
+output: 
+  html_document:
+    code_folding: hide
+    font-family: Times
+runtime: shiny
 ---
-class: title-slide,middle
-background-image: url("pikapika.svg"), url("assets/taxi.jpeg")
-background-position: 10% 90%, 100% 50%
-background-size: 100px, 100% 100%
-<!-- background-color: #0148A4 -->
-Hello!
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+#Naming the file index.Rmd and calling rsconnect::deployApp() posted the app succesfully on shiny server. 
+#It created folder named rsconnect which contains two folders: documents and shinyapps.io
+```
+
+```{r Include packages and workspace, include=FALSE, eval=TRUE}
+load("./data/chicago_maps_workspace.RData")
+load("./data/companies_time_workspace.RData")
+
+library(tidyverse)
+library(sf)
+library(leaflet)
+library(ggmap)
+library(mapview)
+library(rgdal)
+library(RColorBrewer)
+library(janitor)
+library(lubridate)
+library(boot)
+library(ggplot2)
+library(gganimate)
+library(gifski)
+
+```
+
+```{r Try to include app, include=TRUE}
+
+knitr::include_app("https://uberlu.shinyapps.io/Dropoff/")
+
+```
+
+```{r Plot activity per season, echo=TRUE}
+theme_set(theme_bw())
+
+activity_days_in_season + 
+  geom_point() + 
+  transition_reveal(day)
+
+```
+
+
+```{r Plot company growth, echo=TRUE}
+theme_set(theme_bw())
+
+trips_per_company + 
+  transition_time(month) + 
+  labs(title = "Month: {frame_time}")
+```
+
+
+
+
+
+```{r Prepare chicago map, include=FALSE, eval=TRUE}
+#Register API key to google
+register_google(key="AIzaSyBT6yzDKV_DGcFGK9E-cXu0zNUD4WTJOZA")
+            
+#Get location of chicago
+chicago <- geocode("Chicago, IL")
+
+#Make leaflet map with chicago center -> make sure the maps are calculated at runtime
+chicago_leaflet <- leaflet() %>% 
+  setView(lng=chicago$lon, lat=chicago$lat, zoom=10) %>%
+  addProviderTiles(providers$CartoDB.Positron) 
+```
+
+To visualize and highlight the differences between each area, we have used interactive maps provided by the leaflet library. We used [this](https://data.cityofchicago.org/Facilities-Geographic-Boundaries/Boundaries-Community-Areas-current-/cauq-8yn6) dataset provided by Chicago Data Portal to visualize the borders between community areas. We attribute a color to each area, which indicates the size of the difference relative to the other areas. Our goal was to get a clear understanding of how area and time of the day affects revenue in each area, and being able to communicate these findings as clearly as possible. 
+
+As a basis for this analysis we have plotted a map centered around Chicago. This was done by using the Leaflet library to extract a map over Chicago through Google's map-API. Thereafter we extracted `pickup_community_area`, `community_name` and `geometry` from the dataset of community borders. `pickup_community_area` is a discrete numerical variable uniquely identifying each area and community_name is a string variable which contains its corresponding name. geometry is a MultiPolygon object, which essentially is a list of coordinates representing the borders of each area. 
+
+
+We will first look into how total revenue is distributed among the areas. The relevant variables we will use are `pickup_community_area` and `trip_total`. `pickup_community_area` is identical to its corresponding variable in the area dataset. trip_total is a continuous numeric variable representing the entire cost of the taxi trip for the passenger. To indicate the total revenue in each area, we summarized every trip_total in each area. We then colored the areas in shades of blue representing the size of their respective revenues.  
+Since the revenue differences between areas often vary by several orders of magnitude, we made the bins logarithmic. We must then interpret the coloring as an indication of the order of magnitude of the revenue, not the exact revenue.   
+
+
+#### Total Revenue by Area
+```{r Plot trip total map, echo=TRUE}
+#Make the map
+chicago_leaflet %>%
+  addPolygons(data=areas_trip_total,
+              fillColor=~revenue_pal(log10(areas_trip_total$trip_total)),
+              color="lightgrey",
+              weight=2,
+              fillOpacity=0.8,
+              highlightOptions = highlightOptions(
+                weight=3,
+                opacity=2,
+                color="azure1",
+                bringToFront=TRUE),
+              label=label_trip_total,
+              labelOptions=labelOptions(
+                style = list("font-weight" = "normal", padding = "3px 8px"),
+                textsize = "15px",
+                direction = "auto")) %>%
+  
+  addLegend("bottomright",
+            pal = revenue_pal,
+            values = log10(areas_trip_total$trip_total),
+            title = "Trip total (in USD)",
+            opacity = 0.8,
+            labFormat = leaflet::labelFormat(
+              transform = function(x) 10^(x)))
+```
+
+From the map it is clear that a few areas generate a disproportionate amount of the revenue, with Loop, O'Hare and Near West Side being the most prominent. Does this imply that every driver should strive to spend as much time as possible in these areas?
+
+Not necessarily. The total revenue depends on several factors which differ between areas. For each area there are e.g. differences in population, movement of people and number of active taxis. Although an area generates the most money overall, it doesn't necessarily imply that each taxi driver is better off in that area. Just think of the large queues of taxis which are normal to see at airports - not exactly time efficient! 
+
+If we start by neglecting the variations of average trip time and revenue between areas, the average waiting time in each area will be a fairly good representation of how attractive the area is for each individual driver; as the drivers only earn money when having a passenger. We represent the average waiting time as the average time it takes from a taxi drops someone off in an area, until the same taxi picks someone else up in the same area. We  only consider pick-ups and drop-offs which happen in the same area. This is because taxis which travel from one area to another in between drop-off and pick-up will inflate the average time. This could potentially lead to the central areas getting higher averages, as taxi drivers are inclined to travel back to the city center after a drop-off. 
+
+We extract `taxi_id`, `trip_start_timestamp`, `trip_end_timestamp`, `pickup_community_area` and `dropoff_community_area` from our data set. `taxi_id` is an unique string identifier for each taxi and `pickup_community_area` and `dropoff_community_area` are identical to the previous description of `pickup_community_area`. `trip_start_timestamp` and `trip_end_time` stamp are date strings one the format **MM/DD/YYYY hh:mm:ss**, which indicates time of trip start and end. We note that the time stamps has been rounded to nearest 15 minute for privacy purposes. Therefore the result will not be 100% accurate, but it will give a good estimate of the true time to pickup. The results are shown below.  
+
+#### Average Waiting Time by Area
+```{r Plot waiting time map, include=TRUE, warning=FALSE, echo=TRUE}
+
+chicago_leaflet %>%
+  addPolygons(data=areas_pickup_time,
+              fillColor=~time_pal(areas_pickup_time$avg_pickup_time),
+              color="lightgrey",
+              weight=2,
+              fillOpacity=0.8,
+              highlightOptions = highlightOptions(
+                weight=3,
+                opacity=2,
+                color="azure1",
+                bringToFront=TRUE),
+              label=label_avg_pickup_time,
+              labelOptions=labelOptions(
+                style = list("font-weight" = "normal", padding = "3px 8px"),
+                textsize = "15px",
+                direction = "auto")) %>%
+  
+  addLegend("bottomright",
+            pal = time_pal,
+            labFormat = function(type, cuts, p) {  # To get custom labels
+              paste0(waiting_time_labels)
+            },
+            values = areas_pickup_time$avg_pickup_time,
+            title = "Average time between pickup and dropoff",
+            opacity = 0.8)
+
+```
+
+
+By considering average waiting time we get a fairly different picture. The revenue and activity plot previously pointed towards O'Hare and the central areas around Loop as the most attractive - or at least as generating the most money. We can now see that the taxis in these areas are more prone to waiting time, with O’Hare averaging 95 minutes between trips. This is probably an indication of higher competition. 
+
+However, none of these plots paint the whole picture on its own. Although the waiting time at O’Hare airport is large, a trip from the airport to the city center would generate much more revenue  than a trip from Loop to West Town. To take this into account we will go back to the factors we previously neglected; average trip total and average trip time. When combining these our goal is to get a measure of *expected* revenue per hour. 
+We can decompose revenue per hour into: 
+
+\begin{align} 
+\textit{revenue per hour} = \frac{\textit{revenue per trip}}{\textit{time per trip}}
+\end{align}
+
+We will further view the time per trip as not only the length of the trip, but the sum of trip time and waiting time. We then obtain:
+
+\begin{align}
+\textit{revenue per hour} = \frac{\textit{revenue per trip}}{\textit{waiting time + trip time}}
+\end{align}
+
+To obtain the expected revenue per hour for each area, we simply calculate the average of the three components by area and combine them. To measure the accuracy of our estimator we used the library boot to generate 1000 random samples from each area, and calculate the average hourly rate. Since the function boot.ci didn't work on the data set, we extracted a 95% confidence interval by sorting the sampled values in each area, and taking the 25th and 975th largest values. The obtained result and code for bootstrapping can be viewed below.  
+
+
+
+#### Expected Hourly Revenue by Area
+```{r Plot hourly salary, include=TRUE, warning=FALSE, echo=TRUE}
+
+
+chicago_leaflet %>%
+  addPolygons(data=areas_hourly_rate,
+              fillColor=~hourly_pal(areas_hourly_rate$hourly_rate),
+              color="lightgrey",
+              weight=2,
+              fillOpacity=0.8,
+              highlightOptions = highlightOptions(
+                weight=3,
+                opacity=2,
+                color="azure1",
+                bringToFront=TRUE),
+              label=label_avg_hourly_rate,
+              labelOptions=labelOptions(
+                style = list("font-weight" = "normal", padding = "3px 8px"),
+                textsize = "15px",
+                direction = "auto")) %>%
+  
+  addLegend("bottomright",
+            pal = hourly_pal,
+            labFormat = function(type, cuts, p) {  # To get custom labels
+              paste0(hourly_labels)
+            },
+            values = areas_hourly_rate$hourly_rate,
+            title = "Average hourly rate",
+            opacity = 0.8)
+
+```
+<em>95% confidence interval is shown when hovering over an area</em>
+
+##### Code used to generate confidence intervals by bootstrap method:
+```{r Bootstrapping, include=TRUE, warning=FALSE, echo=TRUE, eval=FALSE}
+bootstrap_hourly_rate <- dropoff_to_pickup %>%
+  mutate(waiting_time = (trip_start_timestamp - trip_end_timestamp)/60,
+         trip_time = trip_seconds/60) %>%
+  filter(pickup_community_area == dropoff_community_area) %>%
+  filter(waiting_time < 300) %>%##remove outliers which indicate end of workday
+  ungroup() %>%
+  select(pickup_community_area, waiting_time, trip_total, trip_time) %>%
+  group_by(pickup_community_area) %>%
+  arrange(pickup_community_area)
+
+
+boot_hourly_rate <- function(data, indices) {
+  d <- data[indices,] %>% #allows boot to extract sample
+    group_by(pickup_community_area) %>%
+    summarise(avg_trip_total = mean(trip_total), 
+              avg_trip_seconds = mean(trip_time),
+              waiting_time = mean(waiting_time)) %>%
+    mutate(hourly_rate = 60*avg_trip_total / (waiting_time + avg_trip_seconds))
+  
+  d$hourly_rate
+}
+
+res <- boot(data=bootstrap_hourly_rate, statistic=boot_hourly_rate, R=100)
+
+conf_int <- tibble(
+  lower_bound = numeric(),
+  upper_bound = numeric()
+)
+
+hourly_rate_boots <- as_tibble(res$t)
+
+for (col in hourly_rate_boots) {
+  len <- length(col)
+  indices = as.integer(c(len*0.025 + 1, len*0.975 + 1))
+  vals <- c(sort(col, partial=indices[1])[indices[1]],
+            sort(col, partial=indices[2])[indices[2]])
+  conf_int <- conf_int %>% add_row(lower_bound = vals[1], upper_bound = vals[2])
+}
+
+areas_hourly_rate <- areas %>%
+  inner_join(avg_hourly_rate, by="pickup_community_area") %>%
+  mutate(hourly_rate=as.integer(hourly_rate)) %>%
+  print()
+
+areas_hourly_rate <- areas_hourly_rate %>%
+  arrange(pickup_community_area) %>%
+  add_column(lower_bound = conf_int$lower_bound, upper_bound = conf_int$upper_bound) %>%
+  mutate(hourly_rate = (lower_bound + upper_bound) / 2) 
+```
+
+
+
+
+
