@@ -300,7 +300,7 @@ load("df_temp_cluster.RData")
 
 cluster = zone_total_count %>% inner_join(df_temp, by = "pickup_community_area")
 
-pal2 <- colorBin("Dark2",bins=c(1,2,3,4,5), domain =cluster$cluster)
+pal2 <- colorBin(c("#ff6357", "#57baf4", "#7ed100", "#966fd6"),bins=c(1,2,3,4,5), domain =cluster$cluster) # red, blue, green, purple
 
 labels <- sprintf(
   "%s <strong>%s</strong><br/>cluster %d",
