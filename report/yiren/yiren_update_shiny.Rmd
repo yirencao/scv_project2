@@ -1,0 +1,122 @@
+---
+title: "yiren_update_shiny"
+author: "yiren"
+date: "18/11/2021"
+output: html_document
+runtime: shiny
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r, include = FALSE}
+pacman::p_load(tidyverse, pacman, ggmap, janitor, sf, mapview, leaflet, rgdal, RColorBrewer, ggplot2, data.table, readr, qqplotr, GGally, lubridate, raster, spData, spDataLarge, tmap, osmdata, gifski, jsonlite, zoo,gganimate,plotly)
+```
+
+
+
+```{r, include = FALSE}
+load("yiren_total_count.RData")
+df_total_count <- df_total_count %>% mutate(count = as.numeric(count), date = ym) %>% dplyr::select(-ym)
+```
+
+
+
+```{r Data function1, echo=FALSE, warning=FALSE, include=FALSE}
+data_selection <- function(df_total_count, zone){
+  my_data <- df_total_count %>%
+    filter(pickup_community_area %in% zone)
+  
+  trip_zone <- my_data %>%
+    mutate(community = pickup_community_area) %>%
+    dplyr::select(date, trip_total, count, community) %>%
+    
+    group_by(date, community) %>%
+    
+    summarise(taxi_revenue = sum(trip_total), number_of_trips = sum(count), average_revenue = taxi_revenue/number_of_trips) # add avg
+
+
+  return(trip_zone)
+}
+
+# data_selection(df_total_count, 77)
+```
+
+
+```{r, include=FALSE}
+plot_zone <- function(df_total_count, zone, choice){
+  # parse zone
+  new_zones <- c()
+  for (single_zone in zone){
+    zone_num <- strsplit(single_zone, ",")[[1]][1]
+    new_zones <- c(new_zones, zone_num)
+  }
+  # print(new_zones)
+  
+  
+  #parse choice
+  if (choice == "trip_total") {
+    p <- ggplot(data = data_selection(df_total_count, new_zones),
+              aes(x = date, y = taxi_revenue,
+                  group = community,
+                  colour = community))
+  } else if (choice == "count") {
+    p <- ggplot(data = data_selection(df_total_count, new_zones),
+              aes(x = date, y = number_of_trips,
+                  group = community,
+                  colour = community))
+  } else {
+    p <- ggplot(data = data_selection(df_total_count, new_zones),
+              aes(x = date, y = average_revenue,
+                  group = community,
+                  colour = community))
+  }
+   p <- p + geom_line(size=0.4) +
+     
+    labs(x = "Date", y = "Number of Taxi Trips")  +
+    scale_y_continuous(n.breaks = 10,
+                       expand = expansion(mult = c(.02, .02))) +
+    theme(axis.text.x = element_text(angle = 45)) +
+     ggtitle(zone)
+
+  p <- ggplotly(p)
+  return(p)
+}
+
+```
+
+
+
+```{r, include = FALSE}
+# Defining the UI
+ui <- fluidPage(
+  
+  sidebarPanel(
+    selectInput("choice", label = "Options: ",
+              choices = c("trip_total", "count", "average"), selected = "count"),
+    
+    selectInput("zone", label = "Select Zone: ",
+              choices = c('1, Rogers Park', '2, West Ridge', '3, Uptown', '4, Lincoln Square', '5, North Center', '6, Lake View', '7, Lincoln Park', '8, Near North Side', '9, Edison Park', '10, Norwood Park', '11, Jefferson Park', '12, Forest Glen', '13, North Park', '14, Albany Park', '15, Portage Park', '16, Irving Park', '17, Dunning', '18, Montclare', '19, Belmont Cragin', '20, Hermosa', '21, Avondale', '22, Logan Square', '23, Humboldt Park', '24, West Town', '25, Austin', '26, West Garfield Park', '27, East Garfield Park', '28, Near West Side', '29, North Lawndale', '30, South Lawndale', '31, Lower West Side', '32, The Loop', '33, Near South Side', '34, Armour Square', '35, Douglas', '36, Oakland', '37, Fuller Park', '38, Grand Boulevard', '39, Kenwood', '40, Washington Park', '41, Hyde Park', '42, Woodlawn', '43, South Shore', '44, Chatham', '45, Avalon Park', '46, South Chicago', '47, Burnside', '48, Calumet Heights', '49, Roseland', '50, Pullman', '51, South Deering', '52, East Side', '53, West Pullman', '54, Riverdale', '55, Hegewisch', '56, Garfield Ridge', '57, Archer Heights', '58, Brighton Park', '59, McKinley Park', '60, Bridgeport', '61, New City', '62, West Elsdon', '63, Gage Park', '64, Clearing', '65, West Lawn', '66, Chicago Lawn', '67, West Englewood', '68, Englewood', '69, Greater Grand Crossing', '70, Ashburn', '71, Auburn Gresham', '72, Beverly', '73, Washington Heights', '74, Mount Greenwood', '75, Morgan Park', "76, O'Hare Airport", '77, Edgewater'), selected = c("32, The Loop", "76, O'Hare Airport"), multiple = TRUE)
+  ),
+  
+  # Main panel for displaying outputs
+  mainPanel(
+    plotlyOutput("plot")
+  )
+)
+```
+
+
+```{r, echo = FALSE}
+# Defining the server
+server = function(input, output) {
+  output$plot <- renderPlotly(plot_zone(df_total_count, input$zone, input$choice))
+}
+```
+
+
+```{r shinyApp1, echo=FALSE, warning=FALSE}
+shinyApp(ui = ui, server = server)
+```

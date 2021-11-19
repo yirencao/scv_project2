@@ -5,7 +5,7 @@ account: olav-forland
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 5120156
-bundleId: 5269961
+bundleId: 5271073
 url: https://olav-forland.shinyapps.io/report/
-when: 1637317000.18045
-lastSyncTime: 1637317000.18051
+when: 1637337089.93646
+lastSyncTime: 1637337089.93675
