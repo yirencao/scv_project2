@@ -1,0 +1,134 @@
+
+### Total Revenue by Area
+
+To visualize the and highlight the differences between each area we have used interactive maps provided by the leaflet library. We used [this](https://data.cityofchicago.org/Facilities-Geographic-Boundaries/Boundaries-Community-Areas-current-/cauq-8yn6) dataset provided by Chicago Data Portal to visualize the borders between community areas. We attribute a color to each area, which indicates the size of the difference relative to the other areas. Our goal was to get a clear understanding of how area and time of the day affects revenue in each area, and being able to communicate these findings as clearly as possible.
+
+As a basis for this analysis we have plotted a map centered around Chicago. This was done by using the `Leaflet` library to extract a map over Chicago through Google’s map API. Thereafter we extracted `pickup_community_area`, `community_name` and `geometry` from the dataset of community borders.
+
+We will first look into how total revenue is distributed among the areas. The relevant variables we will use are `pickup_community_area` and `trip_total.` To indicate the total revenue in each area, we summarized every `trip_total` in each area. We then colored the areas in shades of blue representing their respective revenues.
+Since the revenue differences between areas often vary by several orders of magnitude, we made the bins logarithmic. We must then interpret the coloring as an indication of the order of magnitude of the revenue, not the exact revenue.
+
+
+```{r Plot trip total map, echo=TRUE}
+#Make the map
+
+trip_total_map(chicago_leaflet, areas_trip_total, label_trip_total, revenue_pal)
+
+```
+
+From the map it is clear that a few areas generate a disproportionate amount of the revenue, with Loop, O'Hare and Near West Side being the most prominent. These areas have the darkest color on the map. O'Hare is the airport of Chicago, and is located north west of the more central areas Loop and Near West Side. 
+One might perhaps expect these numbers change throughout the day. We can visualize this by considering the following map.
+
+**TODO** ---Insert interactive time map---
+
+Does this imply that every driver should strive to spend as much time as possible in these areas?
+
+### Average Waiting Time by Area
+
+Not necessarily. The total revenue depends on several factors which differ between areas. For each area there are e.g. differences in population, movement of people and number of active taxis. Although an area generates the most money overall, it doesn't necessarily imply that each taxi driver is better off in that area. Just think of the large queues of taxis which are normal to see at airports - not exactly time efficient! 
+
+If we start by neglecting the variations of average trip time and revenue between areas, the average waiting time in each area will be a fairly good representation of how attractive the area is for each individual driver; as the drivers only earn money when having a passenger. We represent the average waiting time as the average time it takes from a taxi drops someone off in an area, until the same taxi picks someone else up in the same area. We only consider pick-ups and drop-offs which happen in the same area. This is because taxis which travel from one area to another in between drop-off and pick-up will inflate the average time. This could potentially lead to the central areas getting higher averages, as taxi drivers are inclined to travel back to the city center after a drop-off.
+
+We extract `taxi_id`, `trip_start_timestamp`, `trip_end_timestamp`, `pickup_community_area` and `dropoff_community_area` from our data set. We note that the time stamps has been rounded to nearest 15 minute for privacy purposes. Therefore the result will not be 100% accurate, but it will give a good estimate of the true time to pickup. The results are shown below.  
+
+```{r Plot waiting time map, include=TRUE, warning=FALSE, echo=TRUE}
+
+avg_waiting_time_map(chicago_leaflet, areas_pickup_time, label_avg_pickup_time, waiting_time_labels, time_pal)
+
+```
+
+By considering average waiting time we get a fairly different picture. The revenue and activity plot previously pointed towards the airport O'Hare and the central areas around Loop as the most attractive - or at least as generating the most money. We can now see that the taxis in these areas are more prone to waiting time, with O’Hare averaging 95 minutes between trips. This is probably an indication of higher competition. 
+
+However, none of these plots paint the whole picture on its own. Although the waiting time at O’Hare airport is large, a trip from the airport to the city center would generate much more revenue than a trip from Loop to West Town. To take this into account we will consider the factors we previously neglected; average trip total and average trip time. 
+
+### Expected Hourly Revenue by Area
+
+We now want to get a single number indicating the attractiveness of each area. That is, for each individual taxi driver, we want to provide an answer to the question: 
+"If I drive into this area to find a customer now, how much can I expect to earn per hour".
+We therefore want *expected hourly rate*. We first find a general expression for revenue per unit of time, before converting it to hours:
+
+\begin{align} 
+\textit{revenue per time} = \frac{\textit{revenue per trip}}{\textit{time per trip}}
+\end{align}
+
+Because the driver spends time waiting prior to each trip, we view *time per trip* as the sum of waiting time and trip time. We then obtain:
+
+\begin{align}
+\textit{revenue per time} = \frac{\textit{revenue per trip}}{\textit{waiting time per trip + driving time per trip}}
+\end{align}
+
+We then obtain the expected revenue per hour for each area by plugging in the average waiting time from earlier, followed by calculating average revenue per trip and driving time per trip for each area. To measure the accuracy of our estimator we used the library boot to generate 1000 random bootstrap samples from each area, and calculate the average hourly rate for each of them. Since the function boot.ci didn't work on the data set, we extracted a 95% confidence interval by sorting the sampled values in each area, and taking the 25th and 975th largest values(source for this method). The obtained result and code for bootstrapping can be viewed below.  
+
+
+```{r Plot hourly salary, include=TRUE, warning=FALSE, echo=TRUE}
+
+expected_hourly_rate_map(chicago_leaflet, areas_hourly_rate, label_avg_hourly_rate, hourly_pal, hourly_labels)
+
+```
+<em>&#8544;: 95% confidence interval is shown when hovering over an area<br>
+&#8545;: The estimator is represented as the bootstrapped average of the 25th and 75th quantile</em>
+
+##### Code used to generate confidence intervals by bootstrap method:
+```{r Bootstrapping, include=TRUE, warning=FALSE, echo=TRUE, eval=FALSE}
+
+#Dont't really need this here
+
+bootstrap_hourly_rate <- dropoff_to_pickup %>%
+  mutate(waiting_time = (trip_start_timestamp - trip_end_timestamp)/60,
+         trip_time = trip_seconds/60) %>%
+  filter(pickup_community_area == dropoff_community_area) %>%
+  filter(waiting_time < 300) %>%##remove outliers which indicate end of workday
+  ungroup() %>%
+  select(pickup_community_area, waiting_time, trip_total, trip_time) %>%
+  group_by(pickup_community_area) %>%
+  arrange(pickup_community_area)
+
+
+boot_hourly_rate <- function(data, indices) {
+  d <- data[indices,] %>% #allows boot to extract sample
+    group_by(pickup_community_area) %>%
+    summarise(avg_trip_total = mean(trip_total), 
+              avg_trip_seconds = mean(trip_time),
+              waiting_time = mean(waiting_time)) %>%
+    mutate(hourly_rate = 60*avg_trip_total / (waiting_time + avg_trip_seconds))
+  
+  d$hourly_rate
+}
+
+res <- boot(data=bootstrap_hourly_rate, statistic=boot_hourly_rate, R=100)
+
+conf_int <- tibble(
+  lower_bound = numeric(),
+  upper_bound = numeric()
+)
+
+hourly_rate_boots <- as_tibble(res$t)
+
+for (col in hourly_rate_boots) {
+  len <- length(col)
+  indices = as.integer(c(len*0.025 + 1, len*0.975 + 1))
+  vals <- c(sort(col, partial=indices[1])[indices[1]],
+            sort(col, partial=indices[2])[indices[2]])
+  conf_int <- conf_int %>% add_row(lower_bound = vals[1], upper_bound = vals[2])
+}
+
+areas_hourly_rate <- areas %>%
+  inner_join(avg_hourly_rate, by="pickup_community_area") %>%
+  mutate(hourly_rate=as.integer(hourly_rate)) %>%
+  print()
+
+areas_hourly_rate <- areas_hourly_rate %>%
+  arrange(pickup_community_area) %>%
+  add_column(lower_bound = conf_int$lower_bound, upper_bound = conf_int$upper_bound) %>%
+  mutate(hourly_rate = (lower_bound + upper_bound) / 2) 
+```
+
+
+The bootstrapped confidence intervals give us a good measure of the uncertainty in each area. By not only considering our estimator, but the uncertainty of our measurements as well, we obtain a more representative model of expected revenue. We observe for example that there are great differences between the sizes of the confidence intervals. The central areas around Loop have for example very tight confidence intervals, which is due to much activity, i.e. many samples. On the other hand, there also exist areas with huge confidence intervals.
+
+The model also reveals interesting patterns. The areas with the highest expected hourly rate often has the largest confidence intervals. However, in the category below, i.e. 35 - 40 \$, you find many areas with expected hourly rate close to 40$, which also have tight confidence intervals. Even more interestingly these areas do not coincide with the areas with the most activity.
+
+These findings indicate that it is not necessarily the most active areas which will earn the taxi drivers the most money. To assess the strength of this hypothesize we would need to test it on more data from different years. An idea for further development would be to calculate the expectations for each hour of the day as well. By combining more data with this segmentation, the model could have real practical value.
+
+
+
