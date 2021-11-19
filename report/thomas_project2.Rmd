@@ -1,0 +1,57 @@
+---
+title: "Taxi trips Chicago"
+author: "Thomas"
+date: "11/19/2021"
+output: html_document
+runtime: shiny
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r Libraries, echo = FALSE, include = FALSE}
+library(knitr)
+library(rmarkdown)
+library(shiny)
+library(tidyverse)
+library(janitor)
+library(sf)
+library(rgdal)
+library(RColorBrewer)
+library(lubridate)
+library(plotly)
+library(reshape2)
+library(shinyWidgets)
+```
+
+## Exploratory analysis of the total revenue
+
+In the following plot, we can visualize the total revenue of taxi services in Chicago between 2013 and 2021. This total has been calculated by the sum of all trips for which the company of the taxi, the beginning start time and the revenue of the trip had been recorded. There is the possibility to visualize it by days (sum for all day), by month (sum for all month), or by year (sum for all year).
+
+The first thing that we can see is the big drop in 2020, which is the beginning of the COVID-19 pandemic. Looking for day summation and zooming for the 2020 year, we can see that the drop is around 10th of march, and that the revenue have been divided by 5.
+We can see that the revenue is gently going up since the beginning of 2021 but is still not the one it was between 2016 and 2018 (almost 4 times more than 2021).
+
+Looking at years summation, the total revenue was increasing until 2017 (~ \$ 453 M), but after that year it has been decreasing linearly until COVID-19 arrived.
+
+<iframe src ="https://uberlu.shinyapps.io/time_series_dmy/" height=600px width=100% />
+
+## Comparison of total revenue between each years
+
+The next plot is here to compare the total revenue by day or month between years. The calculation have been made as the previous plots.
+
+Visualizing by months, we can see that months with higher revenue have been from June to October. We can see that the monthly total revenue seems to behave similarly between each year, globally increasing from January to June and then decreasing from October to December.
+
+Looking at daily revenue is quiet interesting because it seems that it has the same up and down pattern along the years, e.g., a drop at the beginning of July which is really visible looking at the all year, note that the 4 July is Independence Day which is a federal holiday in United States. The revenue oscillates generally by \$ 200'000 to \$ 400'000 between days which for some days is one third of the daily revenue.
+
+<iframe src ="https://uberlu.shinyapps.io/time_series_comparison/" height=600px width=100% />
+
+## Comparison of total revenue between 30 companies
+
+In this part we will be able to visualize the total revenue per day, month or year for the thirty companies that made the most revenue between 2013 and 2021.
+
+We can see that some companies have an almost constant revenue over the years, e.g., 'Blue Ribbon Taxi Association Inc.', and others that made a lot of revenue but are not anymore in busines, e.g., '303 Taxi'. But those which are not any more in business still made enough revenue to be in the top 30. We can see that some of these have made a quiet mig revenue as soon as they enter the taxi services, e.g. '303 Taxi' with ~ \$ 2.3 M in 2016. It may be due to a change of name for these taxi companies which could already have a fleet of vehicles and clients. For comparison, 'Flash Cab' which is the taxi company with the most revenue begin in 2013 with a really small revenue and grow in almost one year.
+
+<iframe src ="https://uberlu.shinyapps.io/time_series_companies/" height=600px width=100% />
+
+
