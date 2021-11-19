@@ -37,6 +37,7 @@ monthly_revenue_company <- monthly_revenue_company %>%
          revenue = as.integer(revenue), activity = as.integer(activity),
          company = sub(".*-", "", company),
          company = sub("\\(.*", "", company),
+         company = 
          season = case_when(
            month %% 12 <= 2 ~ "Winter",
            month <= 5 ~ "Spring",
@@ -184,9 +185,37 @@ number_of_companies_plot <- ggplot(
 
 show(number_of_companies_plot)
 
-ggsave(file = "number_of_companies.png", dpi = 100, width = 9, height = 6)
+ggsave(file = "number_of_companies.png", dpi = 75, width = 5, height = 3)
 
+revenue_per_company <- monthly_revenue_company %>%
+  group_by(company) %>%
+  summarise(revenue = sum(revenue)) %>%
+  arrange(desc(revenue)) 
 
+other_companies <- revenue_per_company[-(1:10),] %>% 
+  summarise(revenue = sum(revenue)) %>% print()
+
+top10companies <- revenue_per_company %>%
+  head(10) %>% 
+  add_row(company = "Other", revenue = pull(other_companies[1, 1])) %>%
+  mutate(share = revenue / sum(revenue),
+         company = paste0(company, ", ", as.character(scales::percent(round(share,2))))) %>%
+  print()
+  
+
+pie_chart <- top10companies %>%
+  ggplot(mapping = aes(x = "", y = share, fill = reorder(company, -share))) +
+  geom_bar(width = 1, stat = "identity", color = "white") +
+  coord_polar("y", start = 0) +
+  scale_color_viridis_d() +
+  labs(x = "", y = "") +
+  scale_fill_discrete(name = "Company, Market share") +
+  theme(axis.ticks = element_blank(), 
+        axis.text.y = element_blank(),
+        axis.text.x = element_blank()) %>%
+  show()
+
+ggsave(file = "company_market_share.png", dpi = 75, width = 7, height = 6)
 
 #---------------#---------------#---------------#---------------#---------------
 #Bar chart race of company revenue per month DONE
@@ -240,8 +269,8 @@ revenue_per_company <- ggplot(
 
 anim <- revenue_per_company + transition_states(date, transition_length = 4, state_length = 1) +
   view_follow(fixed_x = TRUE) +
-  labs(title = 'Total revenue at date {closest_state}',
-       subtitle  =  "Top 10 Earning Companies",
+  labs(title = 'Total revenue in month {closest_state}',
+       subtitle  =  "Top 7 Earning Companies",
        caption  = "Total Revenue in Thousand USD")
 
 animate(anim, 1000, fps = 20,  width = 1200, height = 1000,
