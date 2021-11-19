@@ -1,0 +1,295 @@
+---
+title: "report2_ts_analysis"
+author: "Daryna"
+date: "11/16/2021"
+output: html_document
+---
+
+```{r echo = FALSE, message = FALSE , warning = FALSE}
+# Set working directory
+setwd("~/Desktop/EPFL/Stat Vis and Comp/project 2/total data")
+```
+
+
+```{r echo = FALSE, message = FALSE , warning = FALSE}
+# Load packages 
+library(rjson)
+library(RJSONIO)
+library(jsonlite)
+library(ggplot2)
+library(dplyr)
+library(car)
+library(ggplot2)
+library(zoo)
+library(lubridate)
+library(scales)
+library(plotly)
+library(knitr)
+library(xtable)
+library(jtools)
+library(ggfortify)
+library(MASS)
+library(qqplotr)
+```
+
+
+```{r echo = FALSE, message = FALSE , warning = FALSE}
+# Load the data by years 
+data_2013 <- as.data.frame(fromJSON(txt = "2013count.json")) 
+data_2014 <- as.data.frame(fromJSON(txt = "2014count.json")) 
+data_2015 <- as.data.frame(fromJSON(txt = "2015count.json")) 
+data_2016 <- as.data.frame(fromJSON(txt = "2016count.json")) 
+data_2017 <- as.data.frame(fromJSON(txt = "2017count.json")) 
+data_2018 <- as.data.frame(fromJSON(txt = "2018count.json")) 
+data_2019 <- as.data.frame(fromJSON(txt = "2019count.json")) 
+data_2020 <- as.data.frame(fromJSON(txt = "2020count.json")) 
+data_2021 <- as.data.frame(fromJSON(txt = "2021count.json")) 
+```
+
+
+```{r echo = FALSE, message = FALSE , warning = FALSE}
+# ind the data
+data <- rbind(data_2013,data_2014,data_2015,data_2016,data_2017,data_2018,data_2019,data_2020,data_2021)
+```
+
+
+```{r echo = FALSE, message = FALSE , warning = FALSE}
+# Delete rows with rows with missing information for pickup 
+data <- data[!is.na(data$pickup_community_area), ]
+```
+
+
+```{r echo = FALSE, message = FALSE , warning = FALSE}
+# Convert data columns into correct type
+data <- data %>%
+  mutate(count = as.numeric(count), pickup_community_area = as.factor(pickup_community_area),
+         month = as.numeric(month), year = as.numeric(year))
+
+data$ym<- as.yearmon(paste(data$year, data$month, sep="-"))
+```
+
+```{r echo = FALSE, message = FALSE , warning = FALSE}
+# Get the frequency of trips per year and month
+count_by_year <- data %>% 
+  group_by(year) %>% 
+  summarise(across(count, sum))
+
+```
+
+
+This barchart represents the number of taxi trips made in Chicago per year. We see that the in 2014 the frequency of taxis was at its peak and is decreasing since. 
+```{r echo = FALSE, message = FALSE , warning = FALSE}
+p <- ggplot(count_by_year, aes(x=as.factor(year), y=count)) + 
+  geom_bar(stat="identity",  width=.8, fill="tomato3") + scale_y_continuous(labels =comma) + theme_bw() + labs(title = "Frequency of taxi trips per year") + xlab("Year")
+ggplotly(p)
+```
+
+
+## Hint of seasonality
+Through the plot below we can study the monthly behaviour of taxi frequencies for each year. We notice that between 2013 and 2019 the taxi trips frequency follow a similar behaviour, this may suggest that seasonality may have an influence on the taxi trips frequency. For example, every March, May and October the taxi frequency increased and the fequency seems to decrease for the months of June, July and November. However, We notice that years 2020 and 2021 seem to have a different pattern than the rest of the months.
+```{r echo = FALSE, message = FALSE , warning = FALSE}
+p<- ggplot(data, aes(x = strftime(ym,'%m'), color = strftime(ym,'%Y'), group = strftime(ym,'%Y'), y = count)) +
+  stat_summary(fun.y = mean, geom = "point") +
+  stat_summary(fun.y = mean, geom = "line") + theme_bw() + labs(title = "Monthly frequency of taxi trips per year", col = "Year") + xlab("Month")
+
+ggplotly(p)
+```
+
+In order to see the monthly effect on the taxi trips frequency we can plot the frequency through a heatmap and see its changes over the years and months.
+```{r echo = FALSE, message = FALSE , warning = FALSE}
+# get the dataset of drequencies grouped by month and year
+heatmap <- data %>% 
+  group_by(year, month) %>% 
+  summarise(across(count, sum))
+```
+
+In this plot, the high frequency is visualized by a a dark colour and the low frequency by a bright colour. In this plot, we can compare the frequency by year and by month. We notice that there may be a monthly (seasonal) effect on the taxi frequency as March and October seem to have a darker pattern over the years.
+```{r echo = FALSE, message = FALSE , warning = FALSE}
+p <- ggplot(heatmap, aes(x=as.factor(year), y=as.factor(month))) + geom_tile(aes(fill=count)) + scale_fill_gradient(low="white", high="blue") + scale_y_discrete(limits = rev(levels(as.factor(heatmap$month)))) + xlab("Year") + ylab("Month") + labs(title = "Heatmap of  frequency of taxi trips per year and month") + theme_bw()
+
+ggplotly(p)
+
+```
+
+
+## Time series analysis
+
+```{r echo = FALSE, message = FALSE , warning = FALSE}
+by_y_m <- data %>% 
+  group_by(ym) %>% 
+  summarise(across(count, sum))
+dim(by_y_m)
+
+by_y_m <- by_y_m[order(by_y_m$ym),] 
+
+number_of_taxis <- by_y_m['count']
+
+```
+To explore in in more details the relationship between time and taxi frequency we decide to analyze the value of taxi trips frequency as time series. Without any estimation we notice that there's a downward trend after the year of 2014.
+```{r}
+p <- ggplot(by_y_m, aes(x = ym, y = count)) +
+  geom_line()  +  geom_smooth()+ theme_bw() + theme(axis.text.x = element_text(angle = 45, vjust = 0.1, hjust=0.5)) +  scale_y_continuous(labels =comma) + xlab("Date") + ylab("Frequency") + labs(title = "Frequency of taxis between 2013 and 2021")
+  
+
+ggplotly(p)
+```
+
+
+
+
+### Analysis by district
+To analyze further the change in behaviour of the taxi trips frequency in Chicago we may group our data by districts. In the original dataset we have the information about the community areas, but since the number of areas is very high (77 areas) and it is difficult to visualize frequencies of 77 categories in one plot, we suggest to group our data using another geographical feauture: districts. According to Chicago 77 (http://www.thechicago77.com/chicago-neighborhoods/), we can regroup the areas into 9 districts. We now get a new variable: district which is the district in which the taxi made a pick up.
+
+```{r echo = FALSE, message = FALSE , warning = FALSE}
+data[,"pickup"] <- data[,"pickup_community_area"]
+
+# Rename the levels 
+levels(data$pickup) <- c("Rogers Park", "West Ridge", "Uptown", "Lincoln Square", "North Center", 
+                                                "Lake View", "Lincoln Park", "Near North Side", "Edison Park", "Norwood Park",
+                                                "Jefferson Park", "Forest Glen", "North Park", "Albany Park", "Portage Park", 
+                                                "Irving Park", "Dunning", "Montclare", "Belmont Cragin", "Hermosa", 
+                                                "Avondale", "Logan Square", "Humboldt Park", "West Town", "Austin",
+                                                "West Garfield Park", "East Garfield Park", "Near West Side", "North Lawndale", "South Lawndale",
+                                                "Lower West Side", "The Loop", "Near South Side", "Armour Square","Douglas",
+                                                "Oakland", "Fuller Park", "Grand Boulevard", "Kenwood", "Washington Park",
+                                                "Hyde Park", "Woodlawn", "South Shore","Chatham", "Avalon Park",
+                                                "South Chicago", "Burnside", "Calumet Heights" ,"Roseland", "Pullman",
+                                                "South Deering", "East Side", "West Pullman", "Riverdale", "Hegewisch",
+                                                "Garfield Ridge", "Archer Heights", "Brighton Park", "McKinley Park", "Bridgeport",
+                                                "New City","West Elsdon","Gage Park", "Clearing", "West Lawn",
+                                                "Chicago Lawn", "West Englewood", "Englewood", "Greater Grand Crossing", "Ashburn",
+                                                "Auburn Gresham","Beverly","Washington Heights", "Mount Greenwood", "Morgan Park",
+                                                "O'Hare","Edgewater") 
+
+FarNorthSide.set <- c("Rogers Park", "West Ridge", "Uptown", "Lincoln Square", "Edison Park", 
+                      "Norwood Park", "Jefferson Park", "Forest Glen", "North Park", "Albany Park",
+                      "O'Hare", "Edgewater")
+
+NorthSide.set <- c("North Center", "Lake View", "Lincoln Park","Avondale","Logan Square")
+
+NorthWestSide.set <- c("Portage Park", "Irving Park", "Dunning", "Montclare", "Belmont Cragin", "Hermosa")
+
+Central.set <- c("Near North Side", "The Loop", "Near South Side")
+
+West.set <- c("Humboldt Park", "West Town", "Austin" , "West Garfield Park", "East Garfield Park", 
+              "Near West Side" , "North Lawndale", "South Lawndale", "Lower West Side")
+
+Soutwest.set <- c("Garfield Ridge", "Archer Heights", "Brighton Park", "McKinley Park", "New City",
+                  "West Elsdon", "Gage Park", "Clearing", "West Lawn","Chicago Lawn" , 
+                  "West Englewood", "Englewood")
+
+
+South.set <- c("Armour Square", "Douglas", "Oakland","Fuller Park", "Grand Boulevard",
+               "Kenwood", "Washington Park", "Hyde Park" ,"Woodlawn", "South Shore",
+               "Bridgeport", "Greater Grand Crossing")
+
+
+FarSouthwest.set <- c("Ashburn", "Auburn Gresham", "Beverly", "Washington Heights", "Mount Greenwood",
+                  "Morgan Park")
+
+
+FarSouth.set <- c("Chatham", "Avalon Park", "South Chicago", "Burnside", "Calumet Heights",
+              "Roseland", "Pullman", "South Deering", "East Side", "West Pullman",
+              "Riverdale", "Hegewisch")
+
+
+
+data$district <- Recode(data$pickup, "FarNorthSide.set = 'Far North Side'; NorthSide.set = 'North Side';NorthWestSide.set = 'Northwest Side';
+                              Central.set = 'Central, Near North, and Near South Side'; West.set = 'West and Near West Side'; Soutwest.set = 'Southwest Side';
+                              South.set = 'South Side'; FarSouthwest.set = 'Far Southwest Side'; FarSouth.set =  'Far South Side' ; else=NA")
+
+
+
+# levels(data$district)
+# sum(is.na(data$district)) # recoded all the values
+```
+
+
+
+
+```{r echo = FALSE, message = FALSE , warning = FALSE}
+# Group by district and date
+by_district <- data %>% 
+  group_by(district, ym) %>% 
+  summarise(across(count, sum))
+
+```
+
+
+By plotting the frequencies of taxi trips through time of each district in one plot, we can assess the differences in the decrease rates of the frequency of taxi trips in each area and compare them. We notice that the districts which originally had a very small number of taxi trips (for example, Central, Near North, and Near South Side) didn't had such a strong decrease of frequency as the districts that were had higher values between 2013 and 2015 (for example, Far North Side).
+```{r echo = FALSE, message = FALSE , warning = FALSE}
+p <- ggplot(by_district, aes(x = ym, y = count, color = district, group = district)) +
+  geom_line()  +  geom_smooth()+ theme_bw() + theme(axis.text.x = element_text(angle = 45, vjust = 0.1, hjust=0.5)) +  scale_y_continuous(labels =comma) + xlab("Date") + ylab("Frequency") + labs(title = "Frequency of taxis depending on the district", col = "District")
+  
+
+ggplotly(p)
+```
+
+In this part we suggest to consider that there may be a relation for the taxi frequency through time and propose to perform a time series analysis to estimate the trend, the seasonal effects and see whether the observations are correlated through time and follow a particular time series model.
+```{r echo = FALSE, message = FALSE , warning = FALSE}
+# Time series
+number_of_taxis=ts(number_of_taxis, start=c(2013,1), end=c(2021,10), frequency=12)
+
+#variable 1, time
+time <- 1:106
+
+#variable 2, dummy variables for month
+month <- model.matrix(~-1+factor(cycle(number_of_taxis)))[,-1]#cycle := month as levels
+dimnames(month)[[2]] <- c("Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec")
+```
+
+We first estimate a linear model with a liner trend and dummy variables for months (where we omit the month of January).
+```{r echo = FALSE, message = FALSE , warning = FALSE}
+# model estimation
+number_of_taxis.lm <- lm(number_of_taxis ~ time + month)
+jtools::summ(number_of_taxis.lm, digits = 4)  
+```
+The variable time is significant at 5% level but the dummy variables for months doesn't seem to have an effect on our outhcome variable : frequency.
+
+We propose then to estimate a linear model by squaring the trend.
+```{r echo = FALSE, message = FALSE , warning = FALSE}
+# with trend squared
+number_of_taxis_sq.lm <- lm(number_of_taxis~time+ I(time^2) +month)
+jtools::summ(number_of_taxis_sq.lm, digits = 4)
+```
+In this second model, the trend and the trend squared are both significant at 5% level as well as some of the dummy variables representing months: May, June, Augusr, September and October, meaning that ththere is a significant difference in taxi trips frequency in these month compared to the month of January. 
+The R squared in the second model is higher than in the first model, meaning that the the model with the squared trend explains better the variance.
+
+
+```{r echo = FALSE, message = FALSE , warning = FALSE}
+# Get the data of the residuals and time
+residuals <- resid(number_of_taxis_sq.lm)
+resid_data <- cbind(by_y_m['ym'], residuals)
+```
+
+
+```{r echo = FALSE, message = FALSE , warning = FALSE}
+autoplot(number_of_taxis_sq.lm, PI = TRUE) + theme_bw() 
+```
+
+
+```{r echo = FALSE, message = FALSE , warning = FALSE}
+p <- ggplot(resid_data, aes(x=ym, y=residuals)) +
+  geom_line() + 
+  xlab("Year") + theme_bw()
+ggplotly(p)
+```
+
+
+```{r echo = FALSE, message = FALSE , warning = FALSE}
+par(mfrow=c(2,1))
+acf(residuals, lag.max=80)
+acf(residuals, type="partial", lag.max=80)
+```
+
+
+```{r echo = FALSE, message = FALSE , warning = FALSE}
+# Best model AR(2)
+taxi.arima200 <- arima(x=residuals,order=c(2,0,0), n.cond=3)
+taxi.arima200
+```
+
+
+
+
+
