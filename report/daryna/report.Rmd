@@ -5,9 +5,17 @@ date: "11/16/2021"
 output: html_document
 ---
 
+
+
+```{r echo = FALSE, message = FALSE , warning = FALSE ,include = FALSE}
+# SHould change into your path
+get(load("/Users/darynabilodid/Desktop/EPFL/Stat Vis and Comp/project 2/glob.RData"))
+```
+
+
 ```{r echo = FALSE, message = FALSE , warning = FALSE}
 # Set working directory
-setwd("~/Desktop/EPFL/Stat Vis and Comp/project 2/total data")
+# setwd("~/Desktop/EPFL/Stat Vis and Comp/project 2/total data")
 ```
 
 
@@ -35,44 +43,45 @@ library(qqplotr)
 
 ```{r echo = FALSE, message = FALSE , warning = FALSE}
 # Load the data by years 
-data_2013 <- as.data.frame(fromJSON(txt = "2013count.json")) 
-data_2014 <- as.data.frame(fromJSON(txt = "2014count.json")) 
-data_2015 <- as.data.frame(fromJSON(txt = "2015count.json")) 
-data_2016 <- as.data.frame(fromJSON(txt = "2016count.json")) 
-data_2017 <- as.data.frame(fromJSON(txt = "2017count.json")) 
-data_2018 <- as.data.frame(fromJSON(txt = "2018count.json")) 
-data_2019 <- as.data.frame(fromJSON(txt = "2019count.json")) 
-data_2020 <- as.data.frame(fromJSON(txt = "2020count.json")) 
-data_2021 <- as.data.frame(fromJSON(txt = "2021count.json")) 
+# data_2013 <- as.data.frame(fromJSON(txt = "2013count.json")) 
+# data_2014 <- as.data.frame(fromJSON(txt = "2014count.json")) 
+# data_2015 <- as.data.frame(fromJSON(txt = "2015count.json")) 
+# data_2016 <- as.data.frame(fromJSON(txt = "2016count.json")) 
+# data_2017 <- as.data.frame(fromJSON(txt = "2017count.json")) 
+# data_2018 <- as.data.frame(fromJSON(txt = "2018count.json")) 
+# data_2019 <- as.data.frame(fromJSON(txt = "2019count.json")) 
+# data_2020 <- as.data.frame(fromJSON(txt = "2020count.json")) 
+# data_2021 <- as.data.frame(fromJSON(txt = "2021count.json")) 
 ```
 
 
 ```{r echo = FALSE, message = FALSE , warning = FALSE}
-# ind the data
-data <- rbind(data_2013,data_2014,data_2015,data_2016,data_2017,data_2018,data_2019,data_2020,data_2021)
+# Bind the data
+# data <- rbind(data_2013,data_2014,data_2015,data_2016,data_2017,data_2018,data_2019,data_2020,data_2021)
 ```
 
 
 ```{r echo = FALSE, message = FALSE , warning = FALSE}
 # Delete rows with rows with missing information for pickup 
-data <- data[!is.na(data$pickup_community_area), ]
+# data <- data[!is.na(data$pickup_community_area), ]
 ```
 
 
 ```{r echo = FALSE, message = FALSE , warning = FALSE}
 # Convert data columns into correct type
-data <- data %>%
-  mutate(count = as.numeric(count), pickup_community_area = as.factor(pickup_community_area),
-         month = as.numeric(month), year = as.numeric(year))
+# data <- data %>%
+#  mutate(count = as.numeric(count), pickup_community_area = as.factor(pickup_community_area),
+        # month = as.numeric(month), year = as.numeric(year))
 
-data$ym<- as.yearmon(paste(data$year, data$month, sep="-"))
+#data$ym<- as.yearmon(paste(data$year, data$month, sep="-"))
 ```
+
 
 ```{r echo = FALSE, message = FALSE , warning = FALSE}
 # Get the frequency of trips per year and month
-count_by_year <- data %>% 
-  group_by(year) %>% 
-  summarise(across(count, sum))
+# count_by_year <- data %>% 
+#  summarise(across(count, sum))
+
 
 ```
 
