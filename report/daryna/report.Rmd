@@ -95,7 +95,7 @@ ggplotly(p)
 
 
 ## Hint of seasonality
-Through the plot below we can study the monthly behaviour of taxi frequencies for each year. We notice that between 2013 and 2019 the taxi trips frequency follow a similar behaviour, this may suggest that seasonality may have an influence on the taxi trips frequency. For example, every March, May and October the taxi frequency increased and the fequency seems to decrease for the months of June, July and November. However, We notice that years 2020 and 2021 seem to have a different pattern than the rest of the months.
+Through the plot below we can study the monthly behaviour of taxi frequencies for each year. We notice that between 2013 and 2019 the taxi trips frequency follow a similar behaviour, this may suggest that seasonality may have an influence on the taxi trips frequency. For example, every March, May and October the taxi frequency increased and the fequency seems to decrease for the months of June, July and November. However, We notice that years 2020 and 2021 seem to have a different pattern than the rest of the months. 
 ```{r echo = FALSE, message = FALSE , warning = FALSE}
 p<- ggplot(data, aes(x = strftime(ym,'%m'), color = strftime(ym,'%Y'), group = strftime(ym,'%Y'), y = count)) +
   stat_summary(fun.y = mean, geom = "point") +
@@ -112,7 +112,7 @@ heatmap <- data %>%
   summarise(across(count, sum))
 ```
 
-In this plot, the high frequency is visualized by a a dark colour and the low frequency by a bright colour. In this plot, we can compare the frequency by year and by month. We notice that there may be a monthly (seasonal) effect on the taxi frequency as March and October seem to have a darker pattern over the years.
+In this plot, the high frequency is visualized by a a dark colour and the low frequency by a bright colour. In this plot, we can compare the frequency by year and by month. We notice that there may be a monthly (seasonal) effect on the taxi frequency, for example we see that in March and October the pattern seems to be darker than for the rest of the months. 
 ```{r echo = FALSE, message = FALSE , warning = FALSE}
 p <- ggplot(heatmap, aes(x=as.factor(year), y=as.factor(month))) + geom_tile(aes(fill=count)) + scale_fill_gradient(low="white", high="blue") + scale_y_discrete(limits = rev(levels(as.factor(heatmap$month)))) + xlab("Year") + ylab("Month") + labs(title = "Heatmap of  frequency of taxi trips per year and month") + theme_bw()
 
@@ -134,7 +134,7 @@ by_y_m <- by_y_m[order(by_y_m$ym),]
 number_of_taxis <- by_y_m['count']
 
 ```
-To explore in in more details the relationship between time and taxi frequency we decide to analyze the value of taxi trips frequency as time series. Without any estimation we notice that there's a downward trend after the year of 2014.
+To explore in more details the relationship between time and taxi frequency we decide to analyze the taxi trips frequency as time series. Without any estimation we notice that there seems to be a decreasing trend after 2014.
 ```{r}
 p <- ggplot(by_y_m, aes(x = ym, y = count)) +
   geom_line()  +  geom_smooth()+ theme_bw() + theme(axis.text.x = element_text(angle = 45, vjust = 0.1, hjust=0.5)) +  scale_y_continuous(labels =comma) + xlab("Date") + ylab("Frequency") + labs(title = "Frequency of taxis between 2013 and 2021")
@@ -225,7 +225,7 @@ by_district <- data %>%
 ```
 
 
-By plotting the frequencies of taxi trips through time of each district in one plot, we can assess the differences in the decrease rates of the frequency of taxi trips in each area and compare them. We notice that the districts which originally had a very small number of taxi trips (for example, Central, Near North, and Near South Side) didn't had such a strong decrease of frequency as the districts that were had higher values between 2013 and 2015 (for example, Far North Side).
+By plotting the frequencies of taxi trips through time for each district in one plot, we can assess the differences in the decrease of the frequency of taxi trips in each district and compare them. We notice that the districts which originally had a very small number of taxi trips (for example, Central, Near North, and Near South Side) didn't had such a strong decrease of frequency as the districts that had higher values between 2013 and 2015 (for example, Far North Side). 
 ```{r echo = FALSE, message = FALSE , warning = FALSE}
 p <- ggplot(by_district, aes(x = ym, y = count, color = district, group = district)) +
   geom_line()  +  geom_smooth()+ theme_bw() + theme(axis.text.x = element_text(angle = 45, vjust = 0.1, hjust=0.5)) +  scale_y_continuous(labels =comma) + xlab("Date") + ylab("Frequency") + labs(title = "Frequency of taxis depending on the district", col = "District")
@@ -234,7 +234,7 @@ p <- ggplot(by_district, aes(x = ym, y = count, color = district, group = distri
 ggplotly(p)
 ```
 
-In this part we suggest to consider that there may be a relation for the taxi frequency through time and propose to perform a time series analysis to estimate the trend, the seasonal effects and see whether the observations are correlated through time and follow a particular time series model.
+In this part we suggest to consider that there may be a relation for the taxi frequency through time and propose to perform a time series analysis to estimate the trend, the seasonal effects and see whether the observations are correlated through time and can be represented as a particular time series model.
 ```{r echo = FALSE, message = FALSE , warning = FALSE}
 # Time series
 number_of_taxis=ts(number_of_taxis, start=c(2013,1), end=c(2021,10), frequency=12)
@@ -247,22 +247,23 @@ month <- model.matrix(~-1+factor(cycle(number_of_taxis)))[,-1]#cycle := month as
 dimnames(month)[[2]] <- c("Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec")
 ```
 
-We first estimate a linear model with a liner trend and dummy variables for months (where we omit the month of January).
+We first estimate a linear model with a liner trend and dummy variables for months (where we omit the month of January) as covariates. The output is the taxi trips frequency.
 ```{r echo = FALSE, message = FALSE , warning = FALSE}
 # model estimation
 number_of_taxis.lm <- lm(number_of_taxis ~ time + month)
 jtools::summ(number_of_taxis.lm, digits = 4)  
 ```
-The variable time is significant at 5% level but the dummy variables for months doesn't seem to have an effect on our outhcome variable : frequency.
+The variable time (which represents the trend) is negative and significant at 1% level, meaning that overall, we observe a decreasing trend through time. During the sample period, the number of taxi trips in Chicago decreased by an average of 23006 trips per month.
+The dummy variables representing the months (the seasonal components) are not significant and therefore do not suggest a difference in frequency of taxi trips depending on month in this model.
 
-We propose then to estimate a linear model by squaring the trend.
+We consider to fit a second model as it may be more appropriate to consider the trend as quadratic. From the previous graphics, we notice that before 2014 the number of taxi trips seemed to increase and after 2014 the number of taxi trips decreased.
 ```{r echo = FALSE, message = FALSE , warning = FALSE}
 # with trend squared
-number_of_taxis_sq.lm <- lm(number_of_taxis~time+ I(time^2) +month)
+number_of_taxis_sq.lm <- lm(number_of_taxis~time+ I(time^2) + month)
 jtools::summ(number_of_taxis_sq.lm, digits = 4)
 ```
-In this second model, the trend and the trend squared are both significant at 5% level as well as some of the dummy variables representing months: May, June, Augusr, September and October, meaning that ththere is a significant difference in taxi trips frequency in these month compared to the month of January. 
-The R squared in the second model is higher than in the first model, meaning that the the model with the squared trend explains better the variance.
+In this second model, the trend and the trend squared are both significant at 1% level, as well as some of the dummy variables representing months: May, June, Augusr, September and October, meaning that there is a significant difference in taxi trips frequency in these month compared to the month of January. 
+The R squared in the second model is higher than in the first model, meaning that the the model with the squared trend fits better the observed data.
 
 
 ```{r echo = FALSE, message = FALSE , warning = FALSE}
@@ -270,33 +271,23 @@ The R squared in the second model is higher than in the first model, meaning tha
 residuals <- resid(number_of_taxis_sq.lm)
 resid_data <- cbind(by_y_m['ym'], residuals)
 ```
+## Residual analysis
 
-
+To verify the assumptions of the linear model (the residuals are normally distribued with a mean equal to 0 and a constant variance), we perform a residual analysis. In the first plot representing the residuals versus fitted values, we notice that the average mean of the residuals is close to 0. When the fitted values are small and high, the residuals are spread, in the middle of the plot the residuals seem to be dense. The spread is not constant, and we may suspect a heteroskedasticity issue in our model, to get rid of this heterogeneity we may consider the districts as a part of our model.
+Now looking at the qq plot we see that the points fall alonf the line in the middle of the graph, but not at the extremeties. This suggests that we may have too many extreme values.
 ```{r echo = FALSE, message = FALSE , warning = FALSE}
 autoplot(number_of_taxis_sq.lm, PI = TRUE) + theme_bw() 
 ```
 
-
-```{r echo = FALSE, message = FALSE , warning = FALSE}
-p <- ggplot(resid_data, aes(x=ym, y=residuals)) +
-  geom_line() + 
-  xlab("Year") + theme_bw()
-ggplotly(p)
-```
-
-
+In this part we represent the autocorrelation function and the partial autocorrelation functions which provide information about the dependence structure the time series may have. From the plots we may have a hint that we are in presence of a autoregressive model.
 ```{r echo = FALSE, message = FALSE , warning = FALSE}
 par(mfrow=c(2,1))
 acf(residuals, lag.max=80)
 acf(residuals, type="partial", lag.max=80)
 ```
 
+By comparing different ARMA models, we find that the most appropiate model in terms of the aic is a model without dependence. 
 
-```{r echo = FALSE, message = FALSE , warning = FALSE}
-# Best model AR(2)
-taxi.arima200 <- arima(x=residuals,order=c(2,0,0), n.cond=3)
-taxi.arima200
-```
 
 
 
