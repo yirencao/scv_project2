@@ -134,13 +134,15 @@ This translates to three questions:
 
 ### Approach
 
-We start by exploring the data. This includes getting an overview of different time series, exploring trends and generally looking for differences between areas, companies and points in time.
+We start by exploring the data. This includes getting an overview of different time series, exploring trends and generally looking for differences among areas, companies and points in time.
 
 After exploring our data, we will try to explain our findings by comparing with outside data. We will subsequently look at how the developments uncovered have affected the taxi companies operating in the area, and finally try to draw some general conclusions for the future of the taxi industry in Chicago.
 
-Throughout this report we will combine *OpenStreetMap*, *ggplot2*, *leaflet* and *sf* libraries to construct interactive maps. These interactive maps are made available through the use of *Shiny.*. Such visualizations enable a dynamic and intuitive overview of how basic statistics are distributed over different variables. It also gives the reader the opportunity to display only what is of interest. We have also constructed animation with the *gganimate* library, which seamlessly incorporates time as an extra dimension in each plot.
+Throughout this report we will combine *OpenStreetMap*, *ggplot2*, *leaflet* and *sf* libraries to construct interactive maps. These interactive maps are made available through the use of *Shiny*. Such visualizations enable a dynamic and intuitive overview of how basic statistics are distributed over different variables. It also gives the reader the opportunity to display only what is of interest. We have also constructed animation with the *gganimate* library, which seamlessly incorporates time as an extra dimension in each plot.
 
-Throughout this report(starts with the same as previous paragraph, maybe rewrite) we supply several interactive plots. As it will be hard to cover all the possibilities of these plots, the reader is encouraged to explore the data on his/her own.
+To meet different user needs, we provide interactive shiny apps that allow users to obtain information of interest on their own.
+
+<!-- Throughout this report(starts with the same as previous paragraph, maybe rewrite) we supply several interactive plots. As it will be hard to cover all the possibilities of these plots, the reader is encouraged to explore the data on his/her own. -->
 
 
 ```{r, include = FALSE}
@@ -186,17 +188,14 @@ plot_zone <- function(df_total_count, zone, choice){
   if (choice == "trip_total") {
     p <- ggplot(data = data_selection(df_total_count, new_zones),
               aes(x = date, y = taxi_revenue,
-                  group = community,
                   colour = community))
   } else if (choice == "count") {
     p <- ggplot(data = data_selection(df_total_count, new_zones),
               aes(x = date, y = number_of_trips,
-                  group = community,
                   colour = community))
   } else {
     p <- ggplot(data = data_selection(df_total_count, new_zones),
               aes(x = date, y = average_revenue,
-                  group = community,
                   colour = community))
   }
    p <- p + geom_line(size=0.4) +
@@ -224,7 +223,7 @@ ui <- fluidPage(
               choices = c("trip_total", "count", "average"), selected = "count"),
 
     selectInput("zone", label = "Select Zone: ",
-              choices = c('1, Rogers Park', '2, West Ridge', '3, Uptown', '4, Lincoln Square', '5, North Center', '6, Lake View', '7, Lincoln Park', '8, Near North Side', '9, Edison Park', '10, Norwood Park', '11, Jefferson Park', '12, Forest Glen', '13, North Park', '14, Albany Park', '15, Portage Park', '16, Irving Park', '17, Dunning', '18, Montclare', '19, Belmont Cragin', '20, Hermosa', '21, Avondale', '22, Logan Square', '23, Humboldt Park', '24, West Town', '25, Austin', '26, West Garfield Park', '27, East Garfield Park', '28, Near West Side', '29, North Lawndale', '30, South Lawndale', '31, Lower West Side', '32, The Loop', '33, Near South Side', '34, Armour Square', '35, Douglas', '36, Oakland', '37, Fuller Park', '38, Grand Boulevard', '39, Kenwood', '40, Washington Park', '41, Hyde Park', '42, Woodlawn', '43, South Shore', '44, Chatham', '45, Avalon Park', '46, South Chicago', '47, Burnside', '48, Calumet Heights', '49, Roseland', '50, Pullman', '51, South Deering', '52, East Side', '53, West Pullman', '54, Riverdale', '55, Hegewisch', '56, Garfield Ridge', '57, Archer Heights', '58, Brighton Park', '59, McKinley Park', '60, Bridgeport', '61, New City', '62, West Elsdon', '63, Gage Park', '64, Clearing', '65, West Lawn', '66, Chicago Lawn', '67, West Englewood', '68, Englewood', '69, Greater Grand Crossing', '70, Ashburn', '71, Auburn Gresham', '72, Beverly', '73, Washington Heights', '74, Mount Greenwood', '75, Morgan Park', "76, O'Hare Airport", '77, Edgewater'), selected = c("32, The Loop", "76, O'Hare Airport"), multiple = TRUE)
+              choices = c('1, Rogers Park', '2, West Ridge', '3, Uptown', '4, Lincoln Square', '5, North Center', '6, Lake View', '7, Lincoln Park', '8, Near North Side', '9, Edison Park', '10, Norwood Park', '11, Jefferson Park', '12, Forest Glen', '13, North Park', '14, Albany Park', '15, Portage Park', '16, Irving Park', '17, Dunning', '18, Montclare', '19, Belmont Cragin', '20, Hermosa', '21, Avondale', '22, Logan Square', '23, Humboldt Park', '24, West Town', '25, Austin', '26, West Garfield Park', '27, East Garfield Park', '28, Near West Side', '29, North Lawndale', '30, South Lawndale', '31, Lower West Side', '32, The Loop', '33, Near South Side', '34, Armour Square', '35, Douglas', '36, Oakland', '37, Fuller Park', '38, Grand Boulevard', '39, Kenwood', '40, Washington Park', '41, Hyde Park', '42, Woodlawn', '43, South Shore', '44, Chatham', '45, Avalon Park', '46, South Chicago', '47, Burnside', '48, Calumet Heights', '49, Roseland', '50, Pullman', '51, South Deering', '52, East Side', '53, West Pullman', '54, Riverdale', '55, Hegewisch', '56, Garfield Ridge', '57, Archer Heights', '58, Brighton Park', '59, McKinley Park', '60, Bridgeport', '61, New City', '62, West Elsdon', '63, Gage Park', '64, Clearing', '65, West Lawn', '66, Chicago Lawn', '67, West Englewood', '68, Englewood', '69, Greater Grand Crossing', '70, Ashburn', '71, Auburn Gresham', '72, Beverly', '73, Washington Heights', '74, Mount Greenwood', '75, Morgan Park', "76, O'Hare Airport", '77, Edgewater'), selected = c('6, Lake View', '7, Lincoln Park','28, Near West Side'), multiple = TRUE)
   ),
 
   # Main panel for displaying outputs
@@ -245,7 +244,7 @@ server = function(input, output) {
 
 ## What is going on in the Chicago Taxi industry?
 
-We started this report by noting that there are many articles and analysis describing the decay of the taxi industry. To see how such claims coincides with the taxi industry in Chicago, we start by looking at how the earnings and activity has developed throughout the years.
+We started this report by noting that there are many articles and analysis describing the decay of the taxi industry around the year 2015. To see how such claims coincides with the taxi industry in Chicago, we start by looking at how the earnings and activity has developed throughout the years.
 
 ```{r, echo = FALSE, warning = FALSE, message = FALSE}
 load("yiren/simple plots.RData")
@@ -260,9 +259,9 @@ ggplotly(count_year %>% ggplot(aes(x = date , y=count)) + geom_point() + geom_li
 ```
 
 
-It is clear that there is a trend downwards for the taxi industry in Chicago. The data shows a significant downward slope until 2020. The model therefore works as a good tool to model the data in years ~ 2013 - 2019, but it is not descriptive of more recent years (maybe specify what reasent years means). It is very sensitive to outliers, which early 2020 proved to be. The state of Illinois recorded their first case of Covid 19 January 24th, and two months later the governor declared lockdown (https://www.chicagomag.com/chicago-magazine/march-2021/67-days-to-lockdown/). As this greatly restricted people's movements, it is natural to assume that this caused the great fall in taxi activity early 2020. This dramatic fall causes the model to depict values below zero both for revenue and number of taxi trips in 2021 and on wards. This obviously doesn't make sense, and we should be careful to draw conclusions based on the model.
+It is clear that there is a trend downwards for the taxi industry in Chicago. The data shows a significant downward slope until 2020. The model[?] therefore works as a good tool to model the data in years ~ 2013 - 2019, but it is not descriptive of more recent years (maybe specify what reasent years means). It is very sensitive to outliers, which early 2020 proved to be. The state of Illinois recorded their first case of Covid 19 January 24th, and two months later the governor declared lockdown (https://www.chicagomag.com/chicago-magazine/march-2021/67-days-to-lockdown/). As this greatly restricted people's movements, it is natural to assume that this caused the great fall in taxi activity early 2020. This dramatic fall causes the model to depict values below zero [? since we no longer use geom_smooth, shall we remove this statement?] both for revenue and number of taxi trips in 2021 and on wards. This obviously doesn't make sense, and we should be careful to draw conclusions based on the model.
 
-More interestingly, the taxi industry seems to peak in 2015. As mentioned earlier, the Chicago taxi industry actually claimed that Uber and Lyft had, only over the summer of 2015, reduced their market share by 30-40 %.
+More interestingly, the taxi industry seems to peak in 2015. As mentioned earlier, the Chicago taxi industry actually claimed that Uber and Lyft had, only over the summer of 2015, reduced their market share by 30-40 % [? where did we mention it before].
 
 
 <!-- Unfortunately we didn't find any records specific for Chicago. We instead have gathered data depicting the revenue of the total [ride-hailing]()(todo: find out what to include) market from the entire US. Although not entirely accuracte for the Chicago market, we believe the overall trend in the US will indicate the trend in Chicago as well.  -->
@@ -320,11 +319,9 @@ ggplotly(us_taxi %>% ggplot(aes(x = years, y = revenue)) + geom_line() + ggtitle
 ```
 
 
-From the years we have data, it is clear that as the revenue of the ride-hailing industry has increased, the revenue of the regular taxi industry has decreased. Therefore, US ride-hailing revenue might be a good explanation of why the year 2015 constitutes the zenith of the regular taxi industry. There are however many factors which we should be aware of. The data describing the ride-hailing industry is aggregated over the entire US, and might thus not be applicable for Chicago. In addition, the it is also aggregated over each year. This might lead to loss of important processes in the system, and we should thus be careful about drawing conclusions @clark1976effects.
+From the years we have data, it is clear that as the revenue of the ride-hailing industry has increased and the revenue of the regular taxi industry has decreased. Therefore, US ride-hailing revenue might be a good explanation of why the year 2015 constitutes the zenith of the regular taxi industry. There are however many factors which we should be aware of. The data describing the ride-hailing industry is aggregated over the entire US, and might thus not be applicable for Chicago. In addition, the it is also aggregated over each year. This might lead to loss of important processes in the system, and we should thus be careful about drawing conclusions @clark1976effects.
 
-To explore this relationship we would like to gather data from Uber and Lyft in Chicago.
-
-
+To explore this relationship we would like to gather data from ridesharing trips in Chicago.
 
 
 ### Relationship Between Taxi Trips and Ridehailing Trips
@@ -344,16 +341,12 @@ Findings from the plot:
 - On April 2020, both business were hit hard by the pandemic. While the share riding trips count drops significantly, the taxi trips count is approaching 0.
 - After April 2020, share riding business recovers gradually while taxi business recovers much slower with quite minor increase.
 
-
-
 It is, however, clear that the taxi industry in Chicago at large is on a downwards trend. Nonetheless, the association between the years and revenue might be totally different when dividing our data into subgroups by area. This is well known as the *Simpsons paradox*, which might lead the picture to be totally different when considering each area separately (Sprenger & Weinberger, 2021). We will therefore consider the development in each area.
 
 
 ## How does this development translate to each zone?
 
-
 We start by getting a feel of how the activity, i.e. numbers of trips, has been distributed over the areas by aggregating over the time period. This yields a distribution very similar to the one uncovered in [our first project]()(TODO: add link to shiny app).
-
 
 ### Total Number of Taxi Trips Since 2013
 
@@ -406,23 +399,28 @@ The majority of the trips are concentrated in few areas; the airport *O'Hare* an
 shinyApp(ui = ui, server = server)
 ```
 
-TODO: write summary of trend per area
-When viewing the different areas, most share the same characteristic as Chicago as a whole - decreasing taxi activity. Most interestingly is perhaps to view the most active areas mentioned above. They all have similar shaped modeling curves, and depict similar trends as Chicago. But here the model can be deceiving. If we consider only  - mention that they all have been hit the hardest by coroa, especially airport.
-... the reader is invited to see for himself/herself whether this summary corresponds to the plot above.
 
-(this animation does not make sense, maybe think about changing)
-```{r, echo = FALSE}
-#Comment: This animation doesn't make sense. Keyword: the yellow balls
-knitr::include_graphics("yiren/trips_by_year.gif")
-```
 
-As we have seen above, despite large differences in magnitude between the activity in each zone, their trend is similar. We would now like to explore which outside factors might lead to these vast differences in magnitude between each area. To do this we have acquired area specific information through the datasets ... and ... We will now investigate whether the variables here can explain the differences.
+When viewing the different areas, most share the same characteristic as Chicago as a whole - decreasing taxi activity. Most interestingly is perhaps to view the most active areas mentioned above. Hence by default, we choose community 8 Near North Side, 28 Near West side and 32 The Loop, which are areas with high taxi trips and close to each other. On the plot, we spot that despite all 3 zones has tens of millions of trips since 2013, community 8 has highest taxi trips with largest fluctuation throughout the time, community 28 has lowest trips with smallest fluctuation, and community 32 is in the middle.
 
-### Applying PCA to explain the differences between areas
+Therefore, we would like to ask the next question: Which regions are similar in what sense?
+
+<!-- They all have similar shaped modeling curves, and depict similar trends as Chicago. But here the model can be deceiving. If we consider only  - mention that they all have been hit the hardest by coroa, especially airport. -->
+<!-- ... the reader is invited to see for himself/herself whether this summary corresponds to the plot above. -->
+
+<!-- (this animation does not make sense, maybe think about changing) -->
+<!-- ```{r, echo = FALSE} -->
+<!-- #Comment: This animation doesn't make sense. Keyword: the yellow balls -->
+<!-- knitr::include_graphics("yiren/trips_by_year.gif") -->
+<!-- ``` -->
+
+<!-- As we have seen above, despite large differences in magnitude between the activity in each zone, their trend is similar. We would now like to explore which outside factors might lead to these vast differences in magnitude between each area. To do this we have acquired area specific information through the datasets ... and ... We will now investigate whether the variables here can explain the differences. -->
+
+### PCA and Clustering to explain the differences between areas
 
 To model the differences between areas we start by using *Principle Component Analysis* (PCA) as described in (add site). To fulfill the assumptions of PCA, we assume our dataset to be a linear combination of data variables. We can use PCA to reduce the dimensional of our outside data set. In addition this yields the classification power of our data (what data?). We apply the logarithm onto `count_taxi_trips` and get `log_count`, because `count_taxi_trips` will otherwise dominates all other variables. To classify zones based on the result, we apply k-means clustering.
 
-link to project 1: https://yirencao.github.io/
+[? Hey! kinda remember you ask me to put this link here last time. link to project 1: https://yirencao.github.io/]
 
 <!-- We start by viewing how many components we need to explain the variance (in what?).  -->
 
@@ -449,26 +447,21 @@ link to project 1: https://yirencao.github.io/
 knitr::include_graphics("./yiren/5.png")
 ```
 
-**TODO** Describe high/low of all variables here
+<em>&#8544;: Red cluster - high income per capita, large population and large log_count<br>
+&#8545;: Blue cluster - high income per capita, small population and middle log_count<br>
+&#8546;: Purple cluster - low income per capita, large population and middle log_count<br>
+&#8547;: Green cluster - low income per capita, small population and small log_count</em>
+<!-- (Comment: we should also comment on density and log count for all areas) -->
 
-<em>&#8544;: Red cluster - high income per capita, high density and large population<br>
-&#8545;: Blue cluster - high income per capita and small population<br>
-&#8546;: Purple cluster - low income per capita and large population<br>
-&#8547;: Green cluster - low income per capita and small population</em>
-(Comment: we should also comment on density and log count for all areas)
+<!-- **TODO** Describe how the different clusters do in terms of taxi activity -->
 
-**TODO** Describe how the different clusters do in terms of taxi activity
+<!-- The red cluster consists of zones that all have have high income per capita, population and density, and subsequently high taxi activity. (-> describe how the attributes of each cluster translates to taxi activity) -->
 
-The red cluster consists of zones that all have have high income per capita, population and density, and subsequently high taxi activity. (-> describe how the attributes of each cluster translates to taxi activity)
-
-Attributes for clusters:
-- Both of them have reasonable good amount of taxi trips (refers to blue and purple cluster)
-- hence low number of taxi trips. (green cluster)
+<!-- Attributes for clusters: -->
+<!-- - Both of them have reasonable good amount of taxi trips (refers to blue and purple cluster) -->
+<!-- - hence low number of taxi trips. (green cluster) -->
 
 
-Interestingly, the central zones which we previously classified to be the top earners, all havner in different clusters. (*O'Hare*, *Loop*, *Near West Side* and *Near North Side*) -> analyze
-
-This indicates that both income per capita and population contribute to the activity in each zone.
 
 ```{r, echo = FALSE, warning = FALSE, message = FALSE}
 load("yiren/df_temp_cluster.RData")
@@ -518,32 +511,34 @@ chicago_leaflet %>%
 ```
 
 
-## Comparison on zones
+Interestingly, the central zones which we previously classified to be the top earners, all are located in different clusters, which indicate that there are multiple reasons behind high taxi trips. For example, the high taxi trips in zone O'Hare might be related factors that's not included in PCA, likely caused by the functions of airport while the zone Near North Side might have high taxi trips due to its high per capita income and high population.
 
-### Before and after Log Transformation
-```{r, echo = FALSE}
-knitr::include_graphics(c("./yiren/new_before_log2.gif", "./yiren/new_after_log1.gif"))
-```
-We encode 77 communities in Chicago into different colours. On the plot above, most of the zones with relatively lower trip counts are piled up, which indicates the necessity of doing logrithmic transformation on both axes.
+<!-- ## Comparison on zones -->
 
-For the plot, we scale the x and y axes to give them same visual length when the values are equal.
+<!-- ### Before and after Log Transformation -->
+<!-- ```{r, echo = FALSE} -->
+<!-- knitr::include_graphics(c("./yiren/new_before_log2.gif", "./yiren/new_after_log1.gif")) -->
+<!-- ``` -->
+<!-- We encode 77 communities in Chicago into different colours. On the plot above, most of the zones with relatively lower trip counts are piled up, which indicates the necessity of doing logrithmic transformation on both axes. -->
 
-Excluding the recession in April 2020, we find most bubbles clearly moving to the left over time, which indicates the growth of ride sharing industry.
+<!-- For the plot, we scale the x and y axes to give them same visual length when the values are equal. -->
 
-At the same time, although the changes of taxi trips is minor, the number of both types of trips in each zone always goes up or down together. We did research and find relevant articles to explain it.
+<!-- Excluding the recession in April 2020, we find most bubbles clearly moving to the left over time, which indicates the growth of ride sharing industry. -->
 
-It is known that Uber had astonishing rise in 2015 and gradually overtook the traditional taxis [source](https://www.forbes.com/sites/andrewbender/2015/04/10/ubers-astounding-rise-overtaking-taxis-in-key-markets/?sh=695c65a43d84). We have available data starting from 2019, when the ride sharing companies have been ahead of the traditional cab companies and trip counts for this two types of transportation have entered a more stable phase. Hence, instead of have fierce competition, they go up and down together where the fluctuation is likely to be caused by other factors.
+<!-- At the same time, although the changes of taxi trips is minor, the number of both types of trips in each zone always goes up or down together. We did research and find relevant articles to explain it. -->
+
+<!-- It is known that Uber had astonishing rise in 2015 and gradually overtook the traditional taxis [source](https://www.forbes.com/sites/andrewbender/2015/04/10/ubers-astounding-rise-overtaking-taxis-in-key-markets/?sh=695c65a43d84). We have available data starting from 2019, when the ride sharing companies have been ahead of the traditional cab companies and trip counts for this two types of transportation have entered a more stable phase. Hence, instead of have fierce competition, they go up and down together where the fluctuation is likely to be caused by other factors. -->
 
 
 
-After performing logarithmic transformation, it becomes more clear that zones have same trend of increase and decline.
+<!-- After performing logarithmic transformation, it becomes more clear that zones have same trend of increase and decline. -->
 
-```{r, echo = FALSE}
-load("./yiren/yiren_df_compare_zones2.RData")
-ggpairs(df_compare_zones2[, c("taxi_count", "share_riding_count", "density")])
-```
+<!-- ```{r, echo = FALSE} -->
+<!-- load("./yiren/yiren_df_compare_zones2.RData") -->
+<!-- ggpairs(df_compare_zones2[, c("taxi_count", "share_riding_count", "density")]) -->
+<!-- ``` -->
 
-By conducting correlation test in ggpairs, we get the correlation coefficient to be 0.858, which suggests a strong positive correlation.
+<!-- By conducting correlation test in ggpairs, we get the correlation coefficient to be 0.858, which suggests a strong positive correlation. -->
 
 
 
