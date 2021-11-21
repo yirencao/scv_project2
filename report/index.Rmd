@@ -18,7 +18,6 @@ options(shiny.maxRequestSize=30*1024^2)
 #It created folder named rsconnect which contains two folders: documents and shinyapps.io
 ```
 
-
 ```{r Olav: Include packages and workspace, include=FALSE, eval=TRUE}
 
 library(bibtex)
@@ -75,18 +74,18 @@ chicago_leaflet <- leaflet() %>%
 ```
 
 
-## Background and Purpose of Report
-Since Uber and other ride-hailing applications were introduced, the taxi industry has been under massive pressure. This has has put many drivers and taxi companies in a tough economic position. In 2015 the Chicago taxi industry even claimed that Uber and Lyft had reduced their business by 30-40% during that summer [@aaroncynic]. Due to such developments in the industry, there are many solid analyses of the state of the taxi industry. For examples, @8887602 gives an in-depth analysis of how driving patterns affect drivers income in China, and builds a decision model to optimize there revenue. More closely to our data set, @Schneider gives an interesting comparison of the developments in Chicago and New York, in addition to indicating which areas seem most profitable in Chicago. 
+## Background and purpose of report
+Since Uber and other ride-hailing applications were introduced, the taxi industry has been under massive pressure. This has put many drivers and taxi companies in a tough economic position. In 2015 the Chicago taxi industry even claimed that Uber and Lyft had reduced their business by 30-40% during that summer [@aaroncynic]. Due to such developments in the industry, there are many solid analyses of the state of the taxi industry. For example, @8887602 gives an in-depth analysis of how driving patterns affect drivers income in China, and builds a decision model to optimize their revenue. More closely to our data set, @Schneider gives an interesting comparison of the developments in Chicago and New York, in addition to indicating which areas seem most profitable in Chicago. 
 
 To build on such analysis we have gathered data of all taxi trips made in Chicago in the period 2013 - 2020. This data is collected from Chicago Data Portal, and can be found [here](https://data.cityofchicago.org/Transportation/Taxi-Trips/wrvz-psew) [@taxi_trips]. In addition, we use [this](https://data.cityofchicago.org/Facilities-Geographic-Boundaries/Boundaries-Community-Areas-current-/cauq-8yn6) data set from Chicago Data Portal to draw each area on the maps [@chicago_borders]. To explore relationships with outside factors such as population and living standard in each area, we have collected population-based data from Chicago Data Portal. These include [hardship data](https://data.cityofchicago.org/Health-Human-Services/Hardship-Index/5kdt-irec) [@hardship_index] and [wikidata](https://en.wikipedia.org/wiki/Community_areas_in_Chicago) for each area [@wikidata]. We have acquired data from 
-In addition we include [Transportation Network Providers - Trips](https://data.cityofchicago.org/Transportation/Transportation-Network-Providers-Trips/m6dm-c72p/data) for the trips information given by three licensed Transportation Network Providers in Chicago: Uber, Lyft, and Via [@ridehailing_chicago]. The exact contents of these data sets will be explained below. 
+In addition, we include [Transportation Network Providers - Trips](https://data.cityofchicago.org/Transportation/Transportation-Network-Providers-Trips/m6dm-c72p/data) for the trips information given by three licensed Transportation Network Providers in Chicago: Uber, Lyft, and Via [@ridehailing_chicago]. The exact contents of these data sets will be explained below. 
 
 Based on these data sets, the goal of this project is to visualize the big trends in the Chicago taxi industry and view these trends in the context of external factors. We finally look at how these developments have affected the various companies.
 
 
 This translates to three questions:
 
-* How has the ride-hailing industry effected the development of the taxi industry in Chicago?
+* How has the ride-hailing industry affected the development of the taxi industry in Chicago?
 * How has this affected the different communities of Chicago?
 * How has this affected the different companies?
 
@@ -233,9 +232,9 @@ server = function(input, output) {
 ```
 
 
-## What is going on in the Chicago Taxi industry?
+## What is going on in the Chicago taxi industry?
 
-We started this report by noting that there are many articles and analyses describing the decay of the taxi industry. To see how such claims coincides with the taxi industry in Chicago, we start by looking at how the earnings has developed throughout the years.
+We started this report by noting that there are many articles and analyses describing the decay of the taxi industry. To see how such claims coincides with the taxi industry in Chicago, we start by looking at how the earnings have developed throughout the years.
 We calculate the total revenue as the sum of all trips for which the company of the taxi, the start time and the revenue of the trip had been recorded. There is the possibility to visualize it by days (the sum for each day), by month (the sum for each month), or by year (the sum for each year).
 
 
@@ -253,7 +252,7 @@ knitr::include_app("https://uberlu.shinyapps.io/time_series_dmy/", height = "600
 ```
 
 
-It is clear that there is a trend downwards for the taxi industry in Chicago. The data shows a significant downward slope up to 2020. The smoothed model, therefore, works as a good tool to model the data in the years prior to 2020, but it is not descriptive of more recent years. As can be seen, the model is very sensitive to outliers, which early 2020 proved to be. By viewing day summation and zooming in at 2020, we can see that the drop starts around the 10th of march. The state of Illinois recorded their first case of Covid-19 January 24th, and roughly two months later the governor declared lockdown @thomas. As this greatly restricted people's movements, it is natural to assume that this caused the great fall in taxi activity in early 2020. This dramatic fall causes the model to depict values ~ 0 for revenue in 2021 and onwards. This obviously doesn't make sense, and we should be careful to draw conclusions based on the model.
+It is clear that there is a trend downwards for the taxi industry in Chicago. The data shows a significant downward slope up to 2020. The smoothed model, therefore, works as a good tool to model the data in the years prior to 2020, but it is not descriptive of more recent years. As can be seen, the model is very sensitive to outliers, which early 2020 proved to be. By viewing day summation and zooming in at 2020, we can see that the drop starts around the 10th of march. The state of Illinois recorded their first case of Covid-19 on January 24th, and roughly two months later the governor declared lockdown @thomas. As this greatly restricted people's movements, it is natural to assume that this caused the great fall in taxi activity in early 2020. This dramatic fall causes the model to depict values ~ 0 for revenue in 2021 and onwards. This obviously doesn't make sense, and we should be careful to draw conclusions based on the model.
 
 
 To visualize the differences in earnings between each year, we can group the plot above by year, and make it possible to aggregate the trip total over either day or month.
@@ -264,13 +263,12 @@ knitr::include_app("https://uberlu.shinyapps.io/time_series_comparison/", height
 
 Visualizing by months, we see that generally, the months from June to October have the higher revenue. In addition, the monthly total revenue seems to behave similarly between each year. It is globally increasing from January to June and then decreasing from October to December.
 
-Furthermore, it seems like the daily revenue has same up and down pattern along the years. It usually drops at the beginning of July, which is visible when looking at the all the years. Note that the 4 July is Independence Day, which is a federal holiday in United States. On such a day it is natural that taxi activity decreases, which se see in the plot.
-We also see that revenue generally oscillates by \$ 200'000 to \$ 400'000 between days, which for some days correspond to a change in approximately 30%!
+Furthermore, it seems like the daily revenue has had the same up and down pattern over the years. It usually drops at the beginning of July, which is visible when looking at all the years. Note that the 4 July is Independence Day, which is a federal holiday in the United States. On such a day it is natural that taxi activity decreases as seen in the plot. We also see that revenue generally oscillates by \$ 200'000 to \$ 400'000 between days, which for some days correspond to a change of approximately 30%!
 
 More interestingly, the taxi industry seems to peak in 2014. As mentioned earlier, the Chicago taxi industry actually claimed that Uber and Lyft had, only over the summer of 2015, reduced their market share by 30-40 %. To investigate this claim, we start by depicting the total revenue of ride-hailing companies in the US. Although not entirely accurate for the Chicago market, we believe the overall trend in the US will indicate the trend in Chicago as well. 
 
 
-## Relationship Between Taxi Trips and Ride-hailing Trips
+## Relationship between taxi trips and ride-hailing trips
 
 
 
@@ -290,14 +288,14 @@ ggplotly(us_taxi %>% ggplot(aes(x = years, y = revenue)) + geom_bar(stat="identi
 From the years we have data, it is clear that as the revenue of the ride-hailing industry has increased, the revenue of the regular taxi industry has decreased. Therefore, US ride-hailing revenue might be a good explanation of why the year 2015 constitutes the zenith of the regular taxi industry. However as explained above, we would need data from Chicago to be able to draw a valid picture. Another problem is that the data above is aggregated over each year. This might lead to the loss of important processes in the system, and we should thus be careful about drawing conclusions [@clark1976effects].
 
 
-We therefore searched for data about ride-hailing companies in Chicago, and eventually obtained what we were looking for from *Transportation Network Providers* [@ridehailing_chicago]. However, a downside is that the data set only contains data starting November 2018. Therefore we will not be able to address the claim made by the Chicago Taxi Industry discussed above. It will however, be interesting to view the relationship between the taxi and ride-hailing industry in recent years. Moreover, the data set is updated continuously, where the latest records are from September 2021. To guarantee that we only consider months where all records are registered, we view the data set from November 2018 to August 2021.
+We, therefore, searched for data about ride-hailing companies in Chicago and eventually obtained what we were looking for from *Transportation Network Providers* [@ridehailing_chicago]. However, a downside is that the data set only contains data starting November 2018. Therefore we will not be able to address the claim made by the Chicago Taxi Industry discussed above. It will, however, be interesting to view the relationship between the taxi and ride-hailing industry in recent years. Moreover, the data set is updated continuously, where the latest records are from September 2021. To guarantee that we only consider months where all records are registered, we view the data set from November 2018 to August 2021.
 
 ```{r, echo = FALSE}
 knitr::include_graphics("./yiren/new_transition1.gif")
 ```
 In the animation, *share_count* indicates the number of trips in Chicago from the ride-sharing companies Uber, Lyft, and Via, while *taxi_count* gives the number of normal taxi trips in Chicago.
 
-In contrary to initial belief, the animation depicts a rather *stable* relationship between the taxi industry and ride-hailing industry in Chicago. It is clear that the ride-hailing industry has a much bigger marketshare than the taxi industry in 2018, but they appear to change similarly. The significant event in the plot is the strike of the pandemic early 2020, which hits both industries hard. As time passes from this event, both industries recover gradually. The ride-hailing industry seems however to adjust much better to the changes post-pandemic, and as a result is increasing its market share relative pre-pandemic. 
+In contrary to initial belief, the animation depicts a rather *stable* relationship between the taxi industry and the ride-hailing industry in Chicago. It is clear that the ride-hailing industry has a much bigger market share than the taxi industry in 2018, but they appear to change similarly. The significant event in the plot is the strike of the pandemic in early 2020, which hits both industries hard. As time passes from this event, both industries recover gradually. The ride-hailing industry seems however to adjust much better to the changes post-pandemic, and as a result, is increasing its market share relative to pre-pandemic. 
 
 
 Regardless of the pandemic, it is clear that the taxi industry in Chicago at large is on a downwards trend. Nonetheless, the association between the years and revenue might be totally different when dividing our data into subgroups by area. This is well known as the *Simpsons paradox*, which might lead the picture to be totally different when considering each area separately [@sprenger2021simpson]. With this in mind, we will now consider the development in each *area.*
@@ -309,7 +307,7 @@ Regardless of the pandemic, it is clear that the taxi industry in Chicago at lar
 We start by taking a slightly different view than above. To get an indication of how the activity, i.e. numbers of trips, have been distributed over the areas, we count all trips in each area. This yields a distribution very similar to the one uncovered in [our first project](https://yirencao.github.io/).
 
 
-### Total Number of Taxi Trips Since 2013
+### Total number of taxi trips since 2013
 
 ```{r Map of activity, echo = FALSE, warning = FALSE, message = FALSE}
 
@@ -366,14 +364,14 @@ Since the differences between the areas are so big, we are interested in uncover
 
 ### PCA and Clustering to explain the differences between areas
 
-To model the differences between areas we start by using *Principle Component Analysis* (PCA) as described in the [Stony Brook University Lecture Slides](https://www3.cs.stonybrook.edu/~mueller/teaching/cse564/Lec%2017%20-%20Principal%20Component%20Analysis.pdf) [@pca_lecture]. To fulfill the assumptions of PCA, we assume our data set to be a linear combination of the data variables. We can then use PCA to reduce the dimension of our outside data set. `per_capita_income`, `density`, `Population` and `hardship_index` from Per_Capita_Income.csv dataset are used.  In addition, this yields the classification power of our data. We apply the logarithm onto `count_taxi_trips` and get `log_count`, because `count_taxi_trips` will otherwise dominate all other variables. To classify zones based on the result, we apply k-means clustering.
+To model the differences between areas we start by using *Principle Component Analysis* (PCA) as described in the [Stony Brook University Lecture Slides](https://www3.cs.stonybrook.edu/~mueller/teaching/cse564/Lec%2017%20-%20Principal%20Component%20Analysis.pdf) [@pca_lecture]. To fulfil the assumptions of PCA, we assume our data set to be a linear combination of the data variables. We can then use PCA to reduce the dimension of our outside data set. `per_capita_income`, `density`, `Population` and `hardship_index` from Per_Capita_Income.csv dataset are used.  In addition, this yields the classification power of our data. We apply the logarithm onto `count_taxi_trips` and get `log_count`, because `count_taxi_trips` will otherwise dominate all other variables. To classify zones based on the result, we apply k-means clustering.
 
 
 ```{r Clustering, echo = FALSE}
 knitr::include_graphics("./yiren/5.png")
 ```
 
-Since `per_capita_income` and `Population` are components with larger variance while `log_count` is of our interest, we focus on the 3 variables in the following interpretation.
+Since `per_capita_income` and `Population` are components with a larger variance while `log_count` is of our interest, we focus on the 3 variables in the following interpretation.
 
 
 <em>&#8544;: Red cluster - high income per capita, large population and large log_count<br>
@@ -431,7 +429,7 @@ chicago_leaflet %>%
 
 ```
 
-Interestingly, the central zones which we previously classified to be the top earners, all are located in different clusters. This indicate that there are multiple reasons behind high taxi trips. For example, the high amount of taxi trips in *O'Hare* might be related factors that are not included in PCA, likely caused by the the airport. Moreover, the *Near North Side* might have many taxi trips due to its high per capita income and high population, while *The Loop* might have a lot of activity due the fact that it is the main business area in Chicago.
+Interestingly, the central zones which we previously classified to be the top earners, all are located in different clusters. This indicates that there are multiple reasons behind high taxi trips. For example, the high amount of taxi trips in *O'Hare* might be related to factors that are not included in PCA, likely caused by the airport. Moreover, the *Near North Side* might have many taxi trips due to its high per capita income and high population, while *The Loop* might have a lot of activity due to the fact that it is the main business area in Chicago.
 
 
 
@@ -447,7 +445,7 @@ knitr::include_graphics("./number_of_companies.png")
 knitr::include_graphics("./company_market_share.png")
 ```
 
-As we can see the number of different active taxi companies peaked around 2014, which as seen earlier was the most profitable time for taxi companies in Chicago. After 2014 the amounts of companies follow a very similar trend as the industry as a whole. It drops through most of 2015, but reaches a new local maximum some months into 2016. After this, the number of active taxi companies drop continuously until around 2018 when the curve starts to flatten out.
+As we can see the number of different active taxi companies peaked around 2014, which as seen earlier was the most profitable time for taxi companies in Chicago. After 2014 the amounts of companies follow a very similar trend as the industry as a whole. It drops through most of 2015 but reaches a new local maximum some months into 2016. After this, the number of active taxi companies drops continuously until around 2018 when the curve starts to flatten out.
 
 To indicate the relative size of each company throughout the period, we will consider the revenue of the seven biggest companies. The following animation shows the seven companies with the biggest revenue in each month throughout the time period.
 
@@ -457,7 +455,7 @@ shiny::shinyOptions(shiny.maxRequestSize = 30*1024^2)
 knitr::include_graphics("company_revenue.gif")
 ```
 
-Although the many of the biggest companies, e.g. *Taxi Affiliation Service* and *Flash Cab*, have remained stable top earners throughout the years, the relationship between the companies seems to change a visible amount. It looks as though the market transitions from being dominated by a few very large actors, to being more equally split between the biggest companies. This development abruptly stops when Covid-19 strikes, where Flash Cab and Taxi Affiliation Service managed the situation the best. As a result they captured almost the entire market. However, by the little time that passed after the start of 2020, it looks as though the relationships starts to flatten out again. 
+Although many of the biggest companies, e.g. *Taxi Affiliation Service* and *Flash Cab*, have remained stable top earners throughout the years, the relationship between the companies seems to change a visible amount. It looks as though the market transitions from being dominated by a few very large actors, to being more equally split between the biggest companies. This development abruptly stops when Covid-19 strikes, where Flash Cab and Taxi Affiliation Service managed the situation the best. As a result, they captured almost the entire market. However, by the little time that passed after the start of 2020, it looks as though the relationships starts to flatten out again. 
 
 If the reader is interested, the following plot allows for a more in-depth comparison between individual companies in the time period. Here you will be able to visualize the total revenue per day, month or year for the thirty companies that made the most revenue between 2013 and 2021. 
 
@@ -469,23 +467,23 @@ knitr::include_app("https://uberlu.shinyapps.io/time_series_companies/", height=
 We note that the analysis of companies might be affected by the possibility that some of the taxi companies might have switched names during the period. We have not focused on uncovering this, and have rather been more interested in the overall trends.
 
 
-## Summary & Future Work
+## Summary and future work
 
-With the rise of ride-hailing, the traditional taxi industry has declined. The first signal showed up in 2015, where the market share of ride-hailing started rising. Although the trend for traditional taxis once again was on the in 2016, it's development from that point has paled in comparison to the ride-hailing industry. Finally, the ride-hailing industry occupies most of the market today.
+With the rise of ride-hailing, the traditional taxi industry has declined. The first signal showed up in 2015, where the market share of ride-hailing started rising. Although the trend for traditional taxis once again was on the in 2016, its development from that point has paled in comparison to the ride-hailing industry. Finally, the ride-hailing industry occupies most of the market today.
 
 Our data is insufficient to assess the causality between the development of the two industries since the arrival of ride-hailing applications. Firstly, the data set of total ride-hailing revenue in the US is insufficient due to it incorporating data from the whole of the US and being aggregated by year. Secondly, the data set of the ride-hailing industry in Chicago is insufficient due to it only containing entries from late 2018 until today. The data did, however, indicate that the Chicago taxi and ride-hailing industry had reached a market equilibrium, i.e. a stable position. This abruptly came to an end when Covid-19 struck in 2020, and it seems like the ride-hailing industry is handling the situation best. 
 
-When assessing the individual community areas of Chicago, it is clear that the number of taxi trips is unevenly distributed. Despite most of the areas sharing the similar, declining trend as the industry at large, there is still a non-negligible difference among areas. In addition, we saw that this could be a result of many different factors. By PCA and Clustering, many of the high-activity areas were associated with population and per capita income. On the other hand,  few of the most active areas ended up in the same cluster. Furthermore, the analysis does not explain the high trip count in O’hare either. This indicates that there are several factors that determine amounts of trips in each area, many of which we haven't considered. 
+When assessing the individual community areas of Chicago, it is clear that the number of taxi trips is unevenly distributed. Despite most of the areas sharing a similar, declining trend as the industry at large, there is still a non-negligible difference among areas. In addition, we saw that this could be a result of many different factors. By PCA and Clustering, many of the high-activity areas were associated with population and per capita income. On the other hand,  few of the most active areas ended up in the same cluster. Furthermore, the analysis does not explain the high trip count in O’hare either. This indicates that there are several factors that determine amounts of trips in each area, many of which we haven't considered. 
 
-Furthermore, the decline of the taxi industry lead to a decrease in the amount of active companies. Interestingly though, this seems to have resulted in a equally distributed marked shared among the biggest companies. With the strike of Covid-19, *Taxi Affiliation Service* and *Flash Cab* suddenly captured close to the whole market. However, this market position appeared to quickly even out as the general activity level increased.
+Furthermore, the decline of the taxi industry leads to a decrease in the number of active companies. Interestingly though, this seems to have resulted in an equally distributed marked shared among the biggest companies. With the strike of Covid-19, *Taxi Affiliation Service* and *Flash Cab* suddenly captured close to the whole market. However, this market position appeared to quickly even out as the general activity level increased.
 
-Although the taxi industry and ride-hailing industry seemingly were at an equilibrium in 2018, the ride-hailing industry is once again taking market shares from the taxi industry post pandemic. To mitigate this development, we can in future work consider more factors to explain differences between areas. By getting a more holistic picture, we could possibly build a predictive model based on the developments in these factors. This could possibly help taxi companies knowing which areas they should focus on.
+Although the taxi industry and ride-hailing industry seemingly were at equilibrium in 2018, the ride-hailing industry is once again taking market shares from the taxi industry post-pandemic. To mitigate this development, we can in future work consider more factors to explain differences between areas. By getting a more holistic picture, we could possibly build a predictive model based on the developments in these factors. This could possibly help taxi companies know which areas they should focus on.
 
-Due to the limit of time and the current data sets, we have not yet uncovered the entire story between the taxi and ride-hailing industry. We are particularly interested in how the competition started, evolved and how it possibly will end. What we can consider is the factors behind share riding becoming mainstream, and how the taxi industry can learn from these factors. To address this we might focus on one of the major ride-hailing providers Uber, and try to figure out the reason why it wins customers. Relevant features are prices, service quality, safety and information transparency. We could from that train a predictive model so that the taxi industry can do more of the right things. 
+Due to the limit of time and the current data sets, we have not yet uncovered the entire story between the taxi and ride-hailing industries. We are particularly interested in how the competition started, evolved and how it possibly will end. What we can consider is the factors behind share riding becoming mainstream, and how the taxi industry can learn from these factors. To address this we might focus on one of the major ride-hailing providers Uber, and try to figure out the reason why it wins customers. Relevant features are prices, service quality, safety and information transparency. We could from that train a predictive model so that the taxi industry can do more of the right things. 
 
 Moreover, with more public data, we would like to look at places more than Chicago and expect similar progress of share riding taxis to be found on a greater scale, such as in Europe. 
 
-In addition to the share riding business, some other sharing economies also have a growing trend throughout the years. A great example is the shared housing company Airbnb, which has risen in a similar fashion as Uber. Thus we want to delve deeper into similar industries and expand our story to the general sharing economy.
+In addition to the share riding business, some other sharing economies also have had a growing trend throughout the years. A great example is the shared housing company Airbnb, which has risen in a similar fashion as Uber. Thus we want to delve deeper into similar industries and expand our story to the general sharing economy.
 
 
 
