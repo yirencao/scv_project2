@@ -46,6 +46,22 @@ Looking at daily revenue is quiet interesting because it seems that it has the s
 
 <iframe src ="https://uberlu.shinyapps.io/time_series_comparison/" height=600px width=100% />
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## Comparison of total revenue between 30 companies
 
 In this part we will be able to visualize the total revenue per day, month or year for the thirty companies that made the most revenue between 2013 and 2021.

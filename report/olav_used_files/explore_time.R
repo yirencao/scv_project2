@@ -9,6 +9,12 @@ library(jsonlite)
 #Get workspace: 
 load("./olav_used_files/data/companies_time_workspace.RData")
 
+check <- monthly_revenue_area %>%
+  group_by(year, month) %>%
+  summarise(revenue = sum(revenue, na.rm = TRUE)) %>%
+  View()
+
+
 
 #Soda API query - must be on single line
 QUERY_BASE <- "https://data.cityofchicago.org/resource/wrvz-psew.json?"
